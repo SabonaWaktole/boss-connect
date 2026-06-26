@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clicks — Boss Capital</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Onest:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    :root { --brand:#C5A059; --brand-hover:#b8923e; }
+    body { background:#000; color:#fff; font-family:'Onest',sans-serif; min-height:100vh; }
+    .container { width:100%; max-width:1200px; margin:0 auto;}
+    .gold-label { color:var(--brand); font-size:.75rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; display:block; }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(24px);} to{opacity:1;transform:translateY(0);} }
+      @font-face {
+  font-family: 'ZalandoSans';
+  src: url('../fonts/ZalandoSans-Regular.ttf') format('truetype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'ZalandoSans';
+  src: url('../fonts/ZalandoSans-Italic.ttf') format('truetype');
+  font-weight: 400; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'ZalandoSans';
+  src: url('../fonts/ZalandoSans-Medium.ttf') format('truetype');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'ZalandoSans';
+  src: url('../fonts/ZalandoSans-SemiBold.ttf') format('truetype');
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'ZalandoSans';
+  src: url('../fonts/ZalandoSans-Bold.ttf') format('truetype');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'ZalandoSans';
+  src: url('../fonts/ZalandoSans-BoldItalic.ttf') format('truetype');
+  font-weight: 700; font-style: italic; font-display: swap;
+}
+
+    .hero{position:relative;height:70vh;min-height:480px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+    .hero-bg{position:absolute;inset:0;z-index:0;}
+    .hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.50;display:block;}
+    .hero-bg-grad{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.80) 0%,rgba(0,0,0,.50) 50%,rgba(0,0,0,1) 100%);}
+    .hero-content{position:relative;z-index:10;width:100%;max-width:1200px;padding:0 1.5rem;text-align:center;animation:fadeUp .9s ease both;}
+    .hero-content .overline{color:var(--brand);letter-spacing:.2em;font-size:.875rem;font-weight:700;text-transform:uppercase;margin-bottom:1rem;display:block;}
+    .hero-logo{display:flex;justify-content:center;margin-bottom:1rem;}
+    .hero-logo img{max-width:400px;width:100%;height:auto;}
+    .hero-content p{max-width:42rem;margin:0 auto;color:#d1d5db;font-size:1.125rem;font-weight:300;line-height:1.7;}
+    @media(min-width:768px){.hero-content p{font-size:1.25rem;}}
+    .intro-section{padding:5rem 0;background:#09090b;}
+    .intro-grid{display:grid;grid-template-columns:1fr;gap:4rem;align-items:center;}
+    @media(min-width:768px){.intro-grid{grid-template-columns:1fr 1fr;}}
+    .intro-left{display:flex;flex-direction:column;gap:1.5rem;}
+    .gold-bar{width:3rem;height:4px;background:var(--brand);margin-bottom:.5rem;}
+    .intro-left h2{font-family:'ZalandoSans',sans-serif;font-size:2.25rem;font-weight:200;line-height:1.15;color:#fff;}
+    @media(min-width:768px){.intro-left h2{font-size:3rem;}}
+    .intro-left p{color:#9ca3af;font-size:1.125rem;line-height:1.75;font-weight:500; font-family: 'ZalandoSans', sans-serif;}
+    .intro-right{position:relative;}
+    .intro-right::before{content:'';position:absolute;inset:-1rem;border:1px solid rgba(197,160,89,.30);opacity:.5;transform:translate(1rem,1rem);pointer-events:none;}
+    .intro-right img{position:relative;z-index:10;width:100%;height:100%;object-fit:cover;box-shadow:0 25px 50px rgba(0,0,0,.5);display:block;}
+    .about-section{padding:6rem 0;background:#171717;}
+    .about-grid{display:grid;grid-template-columns:1fr;gap:3rem;}
+    @media(min-width:1024px){.about-grid{grid-template-columns:4fr 8fr;}}
+    .about-left{display:flex;flex-direction:column;gap:2rem;}
+    .about-left h2{font-family:'ZalandoSans',sans-serif;font-size:2.25rem;font-weight:200;color:#fff;line-height:1.2;}
+    .about-left p{color:#9ca3af;line-height:1.75;font-weight:500; font-family: 'ZalandoSans', sans-serif;}
+    .about-cards{display:grid;grid-template-columns:1fr;gap:1.5rem;}
+    @media(min-width:768px){.about-cards{grid-template-columns:1fr 1fr;}}
+    .about-card{padding:2rem;background:#fff;color:#000;}
+    .about-card-icon{width:3rem;height:3rem;background:#f3f4f6;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;color:var(--brand);}
+    .about-card-icon svg{width:2rem;height:2rem;stroke:currentColor;fill:none;}
+    .about-card h4{font-size:1.25rem;font-weight:600;  font-family: 'ZalandoSans', sans-serif; margin-bottom:.75rem;color:#000;}
+    .about-card p{font-size:.875rem;color:#4b5563; font-family: 'ZalandoSans', sans-serif; font-weight: 500; border-top:1px solid #e5e7eb;padding-top:1rem;line-height:1.65;}
+    .serve-section{padding:6rem 0;background:#09090b;border-top:1px solid #171717;}
+    .serve-grid{display:grid;grid-template-columns:1fr;gap:4rem;align-items:center;}
+    @media(min-width:1024px){.serve-grid{grid-template-columns:1fr 1fr;}}
+    .serve-left{display:flex;flex-direction:column;gap:2rem;}
+    .serve-left h2{font-family:'ZalandoSans',sans-serif;font-size:2.25rem;font-weight:200;color:#fff;line-height:1.2;}
+    @media(min-width:768px){.serve-left h2{font-size:2.75rem;}}
+    .serve-left>p{color:#9ca3af;font-size:1.125rem;line-height:1.75;font-weight:500; font-family: 'ZalandoSans', sans-serif;}
+    .serve-list{display:grid;grid-template-columns:1fr;gap:1rem 2rem;}
+    @media(min-width:640px){.serve-list{grid-template-columns:1fr 1fr;}}
+    .serve-list-item{display:flex;align-items:center;gap:.75rem;color:#d1d5db;}
+    .serve-list-item svg{width:1rem;height:1rem;stroke:var(--brand);fill:none;flex-shrink:0;}
+    .serve-list-item span{font-size:.875rem;text-transform:uppercase;letter-spacing:.05em;}
+    .serve-cta{background:linear-gradient(135deg,#171717 0%,#000 100%);padding:2.5rem;border:1px solid #262626;text-align:center;position:relative;overflow:hidden;}
+    .serve-cta::before{content:'';position:absolute;top:-2.5rem;right:-2.5rem;width:8rem;height:8rem;background:rgba(197,160,89,.10);border-radius:50%;filter:blur(2rem);}
+    .serve-cta .cta-icon{width:3rem;height:3rem;stroke:var(--brand);fill:none;margin:0 auto 1.5rem auto;display:block;position:relative;z-index:1;}
+    .serve-cta h3{font-family:'ZalandoSans',sans-serif;font-size:1.5rem;font-weight:200;color:#fff;margin-bottom:1rem;position:relative;z-index:1;}
+    .serve-cta p{color:#9ca3af; font-family: 'ZalandoSans', sans-serif; margin-bottom:2rem;font-weight:500;position:relative;z-index:1;}
+    .cta-btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.75rem 2rem;background:#fff;color:#000;font-family:'Onest',sans-serif;font-size:.875rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;transition:background .3s,color .3s;width:100%;position:relative;z-index:1;}
+    .cta-btn:hover{background:var(--brand);color:#fff;}
+    .cta-btn svg{width:1rem;height:1rem;stroke:currentColor;fill:none;}
+    .form-section{padding:6rem 0;background:#09090b;border-top:1px solid #262626;}
+    .form-wrap{max-width:42rem;margin:0 auto;}
+    .form-header{text-align:center;margin-bottom:3rem;}
+    .form-header h2{font-family:'ZalandoSans',sans-serif;font-size:2.25rem;font-weight:200;color:#fff;margin-bottom:1rem;}
+    @media(min-width:768px){.form-header h2{font-size:3rem;}}
+    .form-header p{color:#9ca3af;font-weight:500; font-family: 'ZalandoSans', sans-serif;}
+    .contact-form{display:flex;flex-direction:column;gap:1.25rem;}
+    .contact-form input,.contact-form textarea{width:100%;padding:1rem 1.25rem;background:#171717;border:1px solid #404040;color:#fff;font-family:'ZalandoSans',sans-serif;font-size:.9375rem;font-weight:400;outline:none;transition:border-color .25s;}
+    .contact-form input::placeholder,.contact-form textarea::placeholder{color:#6b7280;}
+    .contact-form input:focus,.contact-form textarea:focus{border-color:var(--brand);}
+    .contact-form textarea{resize:none;min-height:140px;}
+    .contact-form .honeypot{display:none;}
+    .contact-form button{width:100%;padding:1rem;background:var(--brand);color:#000;font-family:'ZalandoSans',sans-serif;font-size:.875rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;border:none;cursor:pointer;transition:background .3s;}
+    .contact-form button:hover{background:var(--brand-hover);}
+    .contact-form button:disabled{opacity:.5;cursor:not-allowed;}
+   .contact-form > div input::placeholder {
+      color: #848385;
+      font-weight: 600;
+    }
+    .contact-form > div textarea::placeholder {
+      color: #848385;
+      font-weight: 600;
+    }
+
+  </style>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-bg"><img src="../images/clicks/photo-1.avif" alt="Hero"/><div class="hero-bg-grad"></div></div>
+  <div class="hero-content">
+    <span class="overline">Web • Digital • Growth</span>
+    <div class="hero-logo"><img src="../images/clicks/clicks.png" alt="Clicks" width="600" height="300"/></div>
+    <p>Digital solutions focused on visibility, engagement, and performance across web platforms and online channels.</p>
+  </div>
+</section>
+
+<section class="intro-section">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-left">
+        <div class="gold-bar"></div>
+        <h2>Everything digital, built to perform</h2>
+        <p>Clicks covers all web and digital services designed to strengthen online presence. From websites to search visibility and social platforms, we focus on measurable growth and sustainable digital performance.</p>
+      </div>
+      <div class="intro-right"><img src="../images/clicks/image2.png" alt="Clicks intro"/></div>
+    </div>
+  </div>
+</section>
+
+<section class="about-section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-left">
+        <span class="gold-label">About</span>
+        <h2>Digital strategy with execution.</h2>
+        <p>Our digital services combine technical execution with ongoing optimisation. Every channel is aligned to support reach, engagement, and long-term online performance.</p>
+      </div>
+      <div class="about-cards"><div class="about-card"><div class="about-card-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg></div><h4>Web Development</h4><p>Design, build, and optimisation of modern, high-performing websites.</p></div><div class="about-card"><div class="about-card-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div><h4>Search Engine Optimisation</h4><p>Improving visibility through technical SEO, content optimisation, and performance tracking.</p></div><div class="about-card"><div class="about-card-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></div><h4>Social Media</h4><p>Content, scheduling, and engagement strategies across key social platforms.</p></div><div class="about-card"><div class="about-card-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div><h4>Digital Analytics</h4><p>Monitoring, reporting, and improving digital performance using data-driven insights.</p></div></div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="serve-section">
+  <div class="container">
+    <div class="serve-grid">
+      <div class="serve-left">
+        <h2>Who this is for</h2>
+        <p>We don't believe in one-size-fits-all. Our methodologies are adapted to the specific regulatory and operational environments of these key sectors.</p>
+        <div class="serve-list"><div class="serve-list-item"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Businesses</span></div><div class="serve-list-item"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Startups</span></div><div class="serve-list-item"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Brands</span></div><div class="serve-list-item"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Entrepreneurs</span></div><div class="serve-list-item"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>E-Commerce Stores</span></div><div class="serve-list-item"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Digital Teams</span></div></div>
+      </div>
+      <div class="serve-cta">
+        <svg class="cta-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
+        <h3>Ready to elevate your business?</h3><p>Our team is ready to discuss your specific needs and tailor a proposal for your growth.</p>
+        <a class="cta-btn" href="tel:0421121985"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg> Get in touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="form-section"><div class="container"><div class="form-wrap">
+      <div class="form-header"><h2>Contact Us</h2><p>Get in touch with our team. We'll get back to you as soon as possible.</p></div>
+      <form class="contact-form" action="#" method="POST">
+        <input class="honeypot" type="text" name="_gotcha" autocomplete="off" tabindex="-1"/>
+        <div><input type="text" name="name" placeholder="Enter your Name" required/></div>
+        <div><input type="email" name="email" placeholder="Enter a valid email address" required/></div>
+        <div><input type="tel" name="phone" placeholder="Enter Phone Number" required/></div>
+        <div><textarea name="message" rows="5" placeholder="Enter your message" required></textarea></div>
+        <button type="submit">Submit</button>
+      </form>
+    </div></div>
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script src="../nav-footer.js"></script>
+
+<script src="../emailjs-form.js"></script>
+</body>
+</html>

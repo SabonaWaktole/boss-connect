@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home — Boss Capital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet">
+      <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Onest:wght@300;400;600;700&display=swap"
+        rel="stylesheet" />
+
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    ::selection {
+      background: #C5A059;
+      color: #000;
+    }
+
+    :root {
+      --brand: #C5A059;
+      --brand-dark: #A27940;
+    }
+
+    @font-face {
+  font-family: 'ZalandoSans';
+  src: url('fonts/ZalandoSans-Regular.ttf') format('truetype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'ZalandoSans';
+  src: url('fonts/ZalandoSans-Italic.ttf') format('truetype');
+  font-weight: 400; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'ZalandoSans';
+  src: url('fonts/ZalandoSans-Medium.ttf') format('truetype');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'ZalandoSans';
+  src: url('fonts/ZalandoSans-SemiBold.ttf') format('truetype');
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'ZalandoSans';
+  src: url('fonts/ZalandoSans-Bold.ttf') format('truetype');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'ZalandoSans';
+  src: url('fonts/ZalandoSans-BoldItalic.ttf') format('truetype');
+  font-weight: 700; font-style: italic; font-display: swap;
+}
+    /* ...etc */
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Onest', sans-serif;
+      min-height: 100vh;
+    }
+
+    
+
+
+    /* ══ HERO ══ */
+    .hero-wrap {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      background: #000;
+      overflow: hidden;
+    }
+
+    @media(min-width:768px) {
+      .hero-wrap {
+        height: 450px;
+      }
+    }
+
+    @media(min-width:1024px) {
+      .hero-wrap {
+        height: 540px;
+      }
+    }
+
+    .hero-bg-img {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+      z-index: 0;
+      display: block;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      justify-content: center;
+      height: 100%;
+    }
+
+    .hero-text {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-text h1 {
+      font-family: 'ZalandoSans', sans-serif;
+      font-size: 1.5rem;
+      text-align: center;
+      width: 100%;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.1;
+    }
+
+    @media(min-width:768px) {
+      .hero-text h1 {
+        font-size: 2.25rem;
+        text-align: left;
+      }
+    }
+
+    @media(min-width:1024px) {
+      .hero-text h1 {
+        font-size: 3.75rem;
+      }
+    }
+
+    .hero-text h3 {
+      font-family: 'Onest', sans-serif;
+      font-weight: 300;
+      text-align: center;
+      width: 100%;
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, .80);
+      margin-top: 0.5rem;
+    }
+
+    @media(min-width:640px) {
+      .hero-text h3 {
+        font-size: 1.125rem;
+      }
+    }
+
+    @media(min-width:768px) {
+      .hero-text h3 {
+        font-size: 1.5rem;
+        text-align: left;
+      }
+    }
+
+    @media(min-width:1024px) {
+      .hero-text h3 {
+        font-size: 1.875rem;
+      }
+    }
+
+    /* ══ CAPABILITIES GRID ══ */
+    .cap-section {
+      position: relative;
+      width: 100%;
+      background: #1D1D1C;
+      padding: 5rem 0;
+      overflow: hidden;
+    }
+
+    .cap-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .cap-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      grid-auto-rows: 1fr;
+    }
+
+    @media(min-width:640px) {
+      .cap-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(min-width:1024px) {
+      .cap-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .cap-card {
+      position: relative;
+      height: 100%;
+      /* min-height: 380px; */
+      border-radius: 2px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .10);
+      transition: border-color .5s;
+    }
+
+    .cap-card:hover {
+      border-color: rgba(162, 121, 64, .50);
+    }
+
+    .cap-card-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .cap-card-bg img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .7s;
+    }
+
+    .cap-card:hover .cap-card-bg img {
+      transform: scale(1.10);
+    }
+
+    .cap-card-body {
+      position: relative;
+      z-index: 10;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      background: rgba(0, 0, 0, .75);
+      transition: background .5s;
+    }
+
+    @media(min-width:1024px) {
+      .cap-card-body {
+        padding: 2.5rem;
+      }
+    }
+
+    .cap-card:hover .cap-card-body {
+      background: rgba(0, 0, 0, .85);
+    }
+
+    .cap-card-body h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+      letter-spacing: -.015em;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, .6);
+    }
+
+    @media(min-width:1024px) {
+      .cap-card-body h3 {
+        font-size: 1.875rem;
+      }
+    }
+
+    .cap-card-body p {
+      margin-top: 1rem;
+      font-size: .875rem;
+      color: rgba(255, 255, 255, .90);
+      text-align: center;
+      font-weight: 300;
+      line-height: 1.7;
+      flex-grow: 1;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, .5);
+    }
+
+    @media(min-width:768px) {
+      .cap-card-body p {
+        font-size: 1rem;
+      }
+    }
+
+    .cap-btn {
+      margin-top: 2rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: .75rem 2.5rem;
+      font-size: .75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      color: #d6b16a;
+      border: 1px solid rgba(162, 121, 64, .50);
+      background: rgba(0, 0, 0, .20);
+      backdrop-filter: blur(4px);
+      text-decoration: none;
+      transition: all .3s;
+      border-radius: 2px;
+    }
+
+    .cap-btn:hover {
+      color: #fff;
+      background: #A27940;
+      border-color: #A27940;
+    }
+
+    .cap-btn:active {
+      transform: scale(.95);
+    }
+
+    /* ══ MARQUEE ══ */
+    .marquee-section {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .marquee-fade-left,
+    .marquee-fade-right {
+      position: absolute;
+      inset-block: 0;
+      width: 6rem;
+      z-index: 20;
+      pointer-events: none;
+    }
+
+    @media(min-width:768px) {
+
+      .marquee-fade-left,
+      .marquee-fade-right {
+        width: 10rem;
+      }
+    }
+
+    .marquee-fade-left {
+      left: 0;
+      background: linear-gradient(to right, #fff 0%, transparent 100%);
+    }
+
+    .marquee-fade-right {
+      right: 0;
+      background: linear-gradient(to left, #fff 0%, transparent 100%);
+    }
+
+    .marquee-inner {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      padding: 2rem 0;
+    }
+
+    @media(min-width:768px) {
+      .marquee-inner {
+        padding-top: 3rem;
+      }
+    }
+
+    .marquee-heading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    @media(min-width:768px) {
+      .marquee-heading {
+        gap: 1.5rem;
+        margin-bottom: 2.5rem;
+      }
+    }
+
+    .marquee-heading span {
+      height: 1px;
+      width: 2.5rem;
+      background: #1f2937;
+      display: block;
+    }
+
+    @media(min-width:768px) {
+      .marquee-heading span {
+        width: 4rem;
+      }
+    }
+
+    .marquee-heading h2 {
+      font-size: .875rem;
+      font-weight: 500;
+      text-align: center;
+      color: var(--brand);
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      font-family: 'ZalandoSans', sans-serif
+    }
+
+    @media(min-width:640px) {
+      .marquee-heading h2 {
+        font-size: 1.125rem;
+        letter-spacing: .3em;
+      }
+    }
+
+    @media(min-width:768px) {
+      .marquee-heading h2 {
+        font-size: 1.5rem;
+        letter-spacing: .4em;
+      }
+    }
+
+    @media(min-width:1024px) {
+      .marquee-heading h2 {
+        font-size: 1.875rem;
+      }
+    }
+
+    .marquee-track {
+      display: flex;
+      overflow: hidden;
+      width: 100%;
+      min-height: 190px;
+      user-select: none;
+      -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    }
+
+    .marquee-list {
+      display: flex;
+      flex-shrink: 0;
+      align-items: center;
+      justify-content: space-around;
+      gap: 2.5rem;
+      min-width: 100%;
+      animation: marqueeScroll 28s linear infinite;
+    }
+
+    .marquee-track:hover .marquee-list {
+      animation-play-state: paused;
+    }
+
+    @keyframes marqueeScroll {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-100%);
+      }
+    }
+
+    .marquee-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .marquee-logo-wrap {
+      position: relative;
+      width: 9rem;
+      height: 3.75rem;
+      transition: opacity .3s;
+    }
+
+    @media(min-width:768px) {
+      .marquee-logo-wrap {
+        width: 13rem;
+        height: 8rem;
+      }
+    }
+
+    .marquee-logo-wrap:hover {
+      opacity: .80;
+    }
+
+    .marquee-logo-wrap img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* ══ WHY CHOOSE ══ */
+    .why-outer {
+      position: relative;
+      width: 100%;
+    }
+
+    .why-feature-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('./images/home/Feature.png');
+      background-size: cover;
+      background-position: center;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .why-grid {
+      position: relative;
+      z-index: 20;
+      display: grid;
+      grid-template-columns: 1fr;
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+      min-height: 100vh;
+    }
+
+    @media(min-width:768px) {
+      .why-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .why-left {
+      width: 100%;
+      height: 100%;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    @media(min-width:768px) {
+      .why-left {
+        padding: 1.5rem 1rem;
+        gap: 2rem;
+      }
+    }
+
+    @media(min-width:1024px) {
+      .why-left {
+        padding: 2rem 1rem;
+        gap: 2.5rem;
+      }
+    }
+
+    .why-heading {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+
+    @media(min-width:768px) {
+      .why-heading {
+        gap: 1rem;
+      }
+    }
+
+    .why-heading h1 {
+      font-family: 'ZalandoSans', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 1.1;
+      color: #fff;
+    }
+
+    @media(min-width:768px) {
+      .why-heading h1 {
+        font-size: 1.875rem;
+      }
+    }
+
+    @media(min-width:1024px) {
+      .why-heading h1 {
+        font-size: 3.75rem;
+      }
+    }
+
+    .why-heading h1 .brand {
+      color: var(--brand);
+    }
+
+    .why-heading p {
+      font-family: 'Onest', sans-serif;
+      font-weight: 300;
+      font-size: .875rem;
+      opacity: .80;
+      line-height: 1.7;
+    }
+
+    @media(max-width:639px) {
+      .why-heading p {
+        width: 80%;
+      }
+    }
+
+    .why-features {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    @media(min-width:768px) {
+      .why-features {
+        gap: 1.5rem;
+      }
+    }
+
+    @media(min-width:1024px) {
+      .why-features {
+        gap: 2rem;
+      }
+    }
+
+    .why-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    @media(min-width:768px) {
+      .why-row {
+        gap: 1.5rem;
+      }
+    }
+
+    .why-icon {
+      flex-shrink: 0;
+      border: 2px solid var(--brand);
+      padding: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: .375rem;
+    }
+
+    .why-icon svg {
+      width: 1rem;
+      height: 1rem;
+      fill: var(--brand);
+      stroke: var(--brand);
+      display: block;
+    }
+
+    .why-row-text {
+      display: flex;
+      flex-direction: column;
+      gap: .25rem;
+    }
+
+    .why-row-text h5 {
+      font-size: 1.125rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    @media(min-width:768px) {
+      .why-row-text h5 {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media(min-width:1024px) {
+      .why-row-text h5 {
+        font-size: 1.875rem;
+      }
+    }
+
+    .why-row-text p {
+      font-size: .75rem;
+      opacity: .70;
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    @media(min-width:768px) {
+      .why-row-text p {
+        font-size: .875rem;
+      }
+    }
+
+    .why-right {
+      width: 100%;
+      height: 100%;
+    }
+
+    .why-mobile-img {
+      display: block;
+      min-height: 350px;
+      background-image: url('./images/home/gunman.png');
+      background-size: cover;
+      background-position: center;
+      -webkit-mask-image: linear-gradient(to top, black 50%, transparent 100%), linear-gradient(to bottom, black 50%, transparent 100%);
+      -webkit-mask-composite: source-in;
+      mask-image: linear-gradient(to top, black 50%, transparent 100%), linear-gradient(to bottom, black 50%, transparent 100%);
+      mask-composite: intersect;
+    }
+
+    @media(min-width:640px) {
+      .why-mobile-img {
+        height: 400px;
+      }
+    }
+
+    @media(min-width:768px) {
+      .why-mobile-img {
+        display: none;
+      }
+    }
+
+    .why-desktop-photo {
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    @media(min-width:768px) {
+      .why-desktop-photo {
+        display: block;
+      }
+    }
+
+    .why-desktop-photo-inner {
+      height: 100%;
+      background-image: url('./images/home/gunman.png');
+      background-size: cover;
+      background-position: center;
+      -webkit-mask-image: linear-gradient(to left, black 50%, transparent 100%), linear-gradient(to bottom, black 50%, transparent 100%);
+      -webkit-mask-composite: source-in;
+      mask-image: linear-gradient(to left, black 50%, transparent 100%), linear-gradient(to bottom, black 50%, transparent 100%);
+      mask-composite: intersect;
+    }
+
+    /* ══ TESTIMONIALS ══ */
+    .testi-section {
+      padding: 5rem 5%;
+      background: #111111;
+    }
+
+    @media(min-width:1024px) {
+      .testi-section {
+        padding: 8rem 5%;
+      }
+    }
+
+    .testi-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 3rem auto;
+    }
+
+    @media(min-width:1024px) {
+      .testi-header {
+        margin-bottom: 4rem;
+      }
+    }
+
+    .testi-header h2 {
+      /* font-family: 'Montserrat', sans-serif;;. */
+      font-family: 'ZalandoSans', sans-serif;
+      
+      font-size: 1.875rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    @media(min-width:1024px) {
+      .testi-header h2 {
+        font-size: 2.25rem;
+      }
+    }
+
+    .testi-header h2 .brand {
+      color: var(--brand);
+    }
+
+    .testi-header p {
+      color: #9ca3af;
+      font-weight: 300;
+      font-size: .9375rem;
+    }
+
+    .testi-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media(min-width:768px) {
+      .testi-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .testi-card {
+      background: #1a1a1a;
+      padding: 2rem;
+      border-radius: .5rem;
+      border: 1px solid rgba(255, 255, 255, .05);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      transition: border-color .3s, transform .3s;
+    }
+
+    .testi-card:hover {
+      border-color: rgba(162, 121, 64, .35);
+      transform: translateY(-4px);
+    }
+
+    .testi-icon {
+      color: var(--brand);
+      margin-bottom: 1.5rem;
+    }
+
+    .testi-icon svg {
+      width: 2rem;
+      height: 2rem;
+      opacity: .50;
+      fill: currentColor;
+      stroke: currentColor;
+      display: block;
+    }
+
+    .testi-quote {
+      color: #d1d5dc;
+      margin-bottom: 2rem;
+      font-style: italic;
+      line-height: 1.75;
+      flex-grow: 1;
+      font-size: .875rem;
+      font-weight: 300;
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: auto;
+    }
+
+    .testi-author img {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, .10);
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .testi-author img.logo-av {
+      object-fit: contain;
+      background: #fff;
+      padding: .5rem;
+    }
+
+    .testi-author h4 {
+      color: #fff;
+      font-weight: 600;
+      font-size: .875rem;
+    }
+
+    .testi-author p {
+      color: var(--brand);
+      font-size: .75rem;
+      margin-top: .1rem;
+    }
+
+    /* ══ FOOTER ══ */
+    .site-footer {
+      position: relative;
+      width: 100%;
+      padding: 3rem 1rem;
+      color: #fff;
+      font-family: 'Onest', sans-serif;
+    }
+
+    @media(min-width:768px) {
+      .site-footer {
+        padding: 3rem 2rem;
+      }
+    }
+
+    .footer-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .footer-bg img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .footer-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.72);
+    }
+
+    .footer-inner {
+      position: relative;
+      z-index: 20;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-cols {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 3rem;
+    }
+
+    @media(min-width:768px) {
+      .footer-cols {
+        flex-direction: row;
+        gap: 2rem;
+      }
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      min-width: 180px;
+    }
+
+    .footer-brand img {
+      display: block;
+      max-width: 180px;
+    }
+
+    .footer-brand p {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.60);
+      max-width: 220px;
+      margin-left: 0.5rem;
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    .footer-col h3 {
+      font-weight: 700;
+      font-size: 1.125rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-left: 0.25rem;
+    }
+
+    .footer-col ul li a {
+      color: rgba(255, 255, 255, 0.70);
+      font-size: 0.875rem;
+      font-weight: 300;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--brand);
+    }
+
+    .footer-connect {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-left: 0.25rem;
+    }
+
+    .footer-email {
+      color: rgba(255, 255, 255, 0.70);
+      font-size: 0.875rem;
+      font-weight: 300;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-email:hover {
+      color: var(--brand);
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .footer-socials a {
+      color: rgba(255, 255, 255, 0.70);
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      transition: color 0.2s, transform 0.2s;
+    }
+
+    .footer-socials a:hover {
+      color: var(--brand);
+      transform: scale(1.10);
+    }
+
+    .footer-socials svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      fill: currentColor;
+      stroke: currentColor;
+      display: block;
+    }
+
+    .footer-bottom {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.10);
+    }
+
+    .footer-bottom p {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.50);
+      font-size: 0.875rem;
+      font-weight: 300;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ══ NAVBAR ══ -->
+
+  <!-- ══ SECTION 1: HERO ══ -->
+  <div>
+    <div class="hero-wrap">
+      <img class="hero-bg-img" src="./images/home/hero.png" alt="Hero Image" />
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Elevate Your Business Success</h1>
+          <h3>Strategic Consulting For Growth</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 2: CAPABILITIES GRID ══ -->
+  <section class="cap-section">
+    <div class="cap-inner">
+      <div class="cap-grid">
+        <div class="cap-card">
+          <div class="cap-card-bg"><img src="./images/home/1.png" alt="Consulting" /></div>
+          <div class="cap-card-body">
+            <h3>Consulting</h3>
+            <p>Strategic advisory to navigate complex market shifts and optimise operations.</p><a class="cap-btn"
+              href="/capabilities/consulting.html">Learn More</a>
+          </div>
+        </div>
+        <div class="cap-card">
+          <div class="cap-card-bg"><img src="./images/home/2.png" alt="Connect" /></div>
+          <div class="cap-card-body">
+            <h3>Connect</h3>
+            <p>Strategic networking and partnership introductions to expand your reach.</p><a class="cap-btn"
+              href="/capabilities/connect.html">Learn More</a>
+          </div>
+        </div>
+        <div class="cap-card">
+          <div class="cap-card-bg"><img src="./images/home/3.png" alt="Coaching" /></div>
+          <div class="cap-card-body">
+            <h3>Coaching</h3>
+            <p>Performance driven mentorship for a wide range of core business topics.</p><a class="cap-btn"
+              href="/capabilities/coaching.html">Learn More</a>
+          </div>
+        </div>
+        <div class="cap-card">
+          <div class="cap-card-bg"><img src="./images/home/4.png" alt="Creative" /></div>
+          <div class="cap-card-body">
+            <h3>Creative</h3>
+            <p>Premium brand identity and visual storytelling designed to command attention.</p><a class="cap-btn"
+              href="/capabilities/creative.html">Learn More</a>
+          </div>
+        </div>
+        <div class="cap-card">
+          <div class="cap-card-bg"><img src="./images/home/5.png" alt="Clicks" /></div>
+          <div class="cap-card-body">
+            <h3>Clicks</h3>
+            <p>Data backed performance marketing and digital acquisition strategies that scale.</p><a class="cap-btn"
+              href="/capabilities/clicks.html">Learn More</a>
+          </div>
+        </div>
+        <div class="cap-card">
+          <div class="cap-card-bg"><img src="./images/home/6.png" alt="Content" /></div>
+          <div class="cap-card-body">
+            <h3>Content</h3>
+            <p>Authority building editorial and multi channel content production for brand influence.</p><a
+              class="cap-btn" href="/capabilities/content.html">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 3: LOGO MARQUEE ══ -->
+  <section class="marquee-section">
+    <div class="marquee-fade-left"></div>
+    <div class="marquee-fade-right"></div>
+    <div class="marquee-inner">
+      <div class="marquee-heading">
+        <span></span>
+        <h2>Trusted by Leading Companies</h2>
+        <span></span>
+      </div>
+      <div class="marquee-track">
+        <ul class="marquee-list">
+          <li class="marquee-item">
+            <div class="marquee-logo-wrap"><img src="" alt="Client Logo" /></div>
+          </li>
+          <li class="marquee-item">
+            <div class="marquee-logo-wrap"><img src="./images/home/logo-1.png" alt="Client Logo" /></div>
+          </li>
+          <li class="marquee-item">
+            <div class="marquee-logo-wrap"><img src="./images/home/logo-2.png" alt="Client Logo" /></div>
+          </li>
+          <li class="marquee-item">
+            <div class="marquee-logo-wrap"><img src="./images/home/logo-3.png" alt="Client Logo" /></div>
+          </li>
+          <li class="marquee-item">
+            <div class="marquee-logo-wrap"><img src="./images/home/logo-4.png" alt="Client Logo" /></div>
+          </li>
+          <li class="marquee-item">
+            <div class="marquee-logo-wrap"><img src="./images/home/logo-5.png" alt="Client Logo" /></div>
+          </li>
+          <li class="marquee-item">
+            <div class="marquee-logo-wrap"><img src="./images/home/logo-6.png" alt="Client Logo" /></div>
+          </li>
+          <li class="marquee-item">
+            <div class="marquee-logo-wrap"><img src="./images/home/logo-7.png" alt="Client Logo" /></div>
+          </li>
+          <li class="marquee-item">
+            <div class="marquee-logo-wrap"><img src="./images/home/logo-8.png" alt="Client Logo" /></div>
+          </li>
+          <li class="marquee-item">
+            <div class="marquee-logo-wrap"><img src="./images/home/logo-9.png" alt="Client Logo" /></div>
+          </li>
+        </ul>
+        <ul class="marquee-list" aria-hidden="true">
+          <li class="marquee-item">
+            <div class="marquee-logo-wrap"><img src="./images/home/logo-1.png" alt="" /></div>
+          </li>
+          <li class="marquee-item">
+            <div class="marquee-logo-wrap"><img src="./images/home/logo-2.png" alt="" /></div>
+          </li>
+          <li class="marquee-item">
+            <div class="marquee-logo-wrap"><img src="./images/home/logo-3.png" alt="" /></div>
+          </li>
+          <li class="marquee-item">
+            <div class="marquee-logo-wrap"><img src="./images/home/logo-4.png" alt="" /></div>
+          </li>
+          <li class="marquee-item">
+            <div class="marquee-logo-wrap"><img src="./images/home/logo-5.png" alt="" /></div>
+          </li>
+          <li class="marquee-item">
+            <div class="marquee-logo-wrap"><img src="./images/home/logo-6.png" alt="" /></div>
+          </li>
+          <li class="marquee-item">
+            <div class="marquee-logo-wrap"><img src="./images/home/logo-7.png" alt="" /></div>
+          </li>
+          <li class="marquee-item">
+            <div class="marquee-logo-wrap"><img src="./images/home/logo-8.png" alt="" /></div>
+          </li>
+          <li class="marquee-item">
+            <div class="marquee-logo-wrap"><img src="./images/home/logo-9.png" alt="" /></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 4: WHY CHOOSE BOSS CAPITAL ══ -->
+  <div class="why-outer">
+    <div class="why-feature-bg"></div>
+    <div class="why-desktop-photo">
+      <div class="why-desktop-photo-inner"></div>
+    </div>
+    <div class="why-grid">
+      <div class="why-left">
+        <div class="why-heading">
+          <h1>Why Choose <br><span class="brand">Boss Capital?</span></h1>
+          <p>Boss Capital is built on strong foundations, smart strategy, and meaningful connections—focused on creating
+            long-term value for businesses and leaders.</p>
+        </div>
+        <div class="why-features">
+          <div class="why-row">
+            <div class="why-icon"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M17.47 250.9C88.82 328.1 158 397.6 224.5 485.5c72.3-143.8 146.3-288.1 268.4-444.37L460 26.06C356.9 135.4 276.8 238.9 207.2 361.9c-48.4-43.6-126.62-105.3-174.38-137z" />
+              </svg></div>
+            <div class="why-row-text">
+              <h5>Proven Expertise</h5>
+              <p>Backed by real experience, Boss Capital delivers clear, strategic decisions that drive growth.</p>
+            </div>
+          </div>
+          <div class="why-row">
+            <div class="why-icon"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M17.47 250.9C88.82 328.1 158 397.6 224.5 485.5c72.3-143.8 146.3-288.1 268.4-444.37L460 26.06C356.9 135.4 276.8 238.9 207.2 361.9c-48.4-43.6-126.62-105.3-174.38-137z" />
+              </svg></div>
+            <div class="why-row-text">
+              <h5>Result Driven</h5>
+              <p>Focused on measurable outcomes, ensuring every action creates real business impact.</p>
+            </div>
+          </div>
+          <div class="why-row">
+            <div class="why-icon"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M17.47 250.9C88.82 328.1 158 397.6 224.5 485.5c72.3-143.8 146.3-288.1 268.4-444.37L460 26.06C356.9 135.4 276.8 238.9 207.2 361.9c-48.4-43.6-126.62-105.3-174.38-137z" />
+              </svg></div>
+            <div class="why-row-text">
+              <h5>Tailored Solutions</h5>
+              <p>Custom strategies designed to fit each business and unlock its full potential.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="why-right">
+        <div class="why-mobile-img"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 5: TESTIMONIALS ══ -->
+  <section class="testi-section">
+    <div class="testi-header">
+      <h2>What Our <span class="brand">Clients</span> Say</h2>
+      <p>Real feedback from the leaders and businesses we've helped elevate.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-icon"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M0 216C0 149.7 53.7 96 120 96l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-32 0-32 0-72zm256 0c0-66.3 53.7-120 120-120l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-32 0-32 0-72z" />
+          </svg></div>
+        <p class="testi-quote">"I've had the pleasure of working with Chris Pennisi from Boss Capital across many
+          projects, and each experience has delivered outstanding results. Chris consistently brings strategic insight,
+          professionalism and a genuine commitment to achieving success. His ability to understand objectives, navigate
+          challenges and deliver high-quality outcomes makes him an invaluable partner. I highly recommend Chris and
+          Boss Capital for anyone seeking reliable expertise and proven results."</p>
+        <div class="testi-author"><img class="logo-av" src="./images/home/evt.jpg" alt="Dana" />
+          <div>
+            <h4>Dana</h4>
+            <p>EVT NSW Marketing Manager</p>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-icon"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M0 216C0 149.7 53.7 96 120 96l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-32 0-32 0-72zm256 0c0-66.3 53.7-120 120-120l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-32 0-32 0-72z" />
+          </svg></div>
+        <p class="testi-quote">"Chris Pennisi has built Boss Capital on a philosophy grounded in strong foundations,
+          smart strategy and meaningful relationships. He combines commercial intelligence with decisive leadership,
+          identifying opportunities and turning vision into tangible outcomes. His approach is disciplined, thoughtful
+          and driven by integrity and respect. I have no hesitation in recommending Chris and Boss Capital to ambitious
+          leaders seeking a strategic partner who leads with confidence and acts with purpose."</p>
+        <div class="testi-author"><img src="./images/home/sf.png" alt="Carlos" />
+          <div>
+            <h4>Carlos</h4>
+            <p>Sellanes Farasat Immigration</p>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-icon"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M0 216C0 149.7 53.7 96 120 96l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-32 0-32 0-72zm256 0c0-66.3 53.7-120 120-120l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-32 0-32 0-72z" />
+          </svg></div>
+        <p class="testi-quote">"We needed a strategic pivot, and Boss Capital provided the roadmap we were missing.
+          Their clarity, integrity, and market insight gave us the confidence to make bold moves that have since
+          redefined our trajectory. Working with them wasn't just a transaction; it was a transformative experience that
+          unlocked new value and positioned Nexus Global for long-term dominance in our sector."</p>
+        <div class="testi-author"><img src="./images/home/photo-1500648767791-00dcc994a43e.jpg" alt="David Chang" />
+          <div>
+            <h4>David Chang</h4>
+            <p>Director, Nexus Global</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<script src="nav-footer.js"></script>
+
+<script>
+  (function () {
+    const form = document.querySelector('.contact-form');
+    if (!form) return;
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true; btn.textContent = 'Sending…';
+      setTimeout(() => { btn.textContent = 'Message Sent ✓'; btn.style.background = '#2d6a4f'; btn.style.color = '#fff'; form.reset(); }, 1500);
+    });
+  })();
+</script>
+
+</body>
+
+</html>

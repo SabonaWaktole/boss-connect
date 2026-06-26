@@ -1,0 +1,1632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Boss Capital</title>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    ::selection {
+      background: #C5A059;
+      color: #000;
+    }
+
+    :root {
+      --brand: #C5A059;
+      --brand-dark: #A27940;
+      --brand-hover: #b8923e;
+    }
+
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Onest', sans-serif;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ══ ZALANDO SANS FONT ══ */
+    @font-face {
+      font-family: 'ZalandoSans';
+      src: url('fonts/ZalandoSans-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'ZalandoSans';
+      src: url('fonts/ZalandoSans-Italic.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'ZalandoSans';
+      src: url('fonts/ZalandoSans-Medium.ttf') format('truetype');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'ZalandoSans';
+      src: url('fonts/ZalandoSans-SemiBold.ttf') format('truetype');
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'ZalandoSans';
+      src: url('fonts/ZalandoSans-Bold.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'ZalandoSans';
+      src: url('fonts/ZalandoSans-BoldItalic.ttf') format('truetype');
+      font-weight: 700;
+      font-style: italic;
+      font-display: swap;
+    }
+
+    /* ══ NAVBAR ══ */
+    .navbar-wrap {
+      background: #0a0a0a;
+      width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .navbar {
+      max-width: 1400px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 3.75rem;
+      padding: 0 0.5rem;
+      position: relative;
+    }
+
+    @media(min-width:768px) {
+      .navbar {
+        height: 4.5rem;
+      }
+    }
+
+    .nav-logo img {
+      width: 160px;
+      height: auto;
+      display: block;
+    }
+
+    @media(min-width:768px) {
+      .nav-logo img {
+        width: 240px;
+      }
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    @media(min-width:640px) {
+      .nav-right {
+        gap: 1rem;
+      }
+    }
+
+    @media(min-width:1024px) {
+      .nav-right {
+        gap: 1.5rem;
+      }
+    }
+
+    .nav-links {
+      display: none;
+      list-style: none;
+      align-items: center;
+      gap: 2rem;
+      position: relative;
+      font-weight: 500;
+    }
+
+    @media(min-width:768px) {
+      .nav-links {
+        display: flex;
+      }
+    }
+
+    .nav-links li a,
+    .nav-links li .cap-toggle {
+      padding: 0.5rem 0;
+      color: rgba(255, 255, 255, 0.80);
+      text-decoration: none;
+      transition: color 0.2s;
+      background: none;
+      border: none;
+      font-family: 'Onest', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li .cap-toggle:hover {
+      color: #fff;
+    }
+
+    .nav-links li a.active {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .nav-indicator {
+      position: absolute;
+      bottom: 0;
+      height: 2px;
+      border-radius: 9999px;
+      background: linear-gradient(to right, #A27940, #d6b16a, #A27940);
+      opacity: 0.9;
+      transition: left 0.3s ease, width 0.3s ease;
+      pointer-events: none;
+      left: 0;
+      width: 0;
+    }
+
+    .cap-toggle svg {
+      width: 1em;
+      height: 1em;
+      transition: transform 0.25s;
+      fill: currentColor;
+    }
+
+    .cap-toggle.open svg {
+      transform: rotate(180deg);
+    }
+
+    .cap-dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      background: #111;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      padding: 0.5rem 0;
+      min-width: 190px;
+      z-index: 200;
+      flex-direction: column;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+    }
+
+    .cap-dropdown.open {
+      display: flex;
+    }
+
+    .cap-dropdown a {
+      padding: 0.65rem 1.25rem;
+      font-size: 0.875rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+      transition: color 0.2s, background 0.2s;
+      display: block;
+    }
+
+    .cap-dropdown a:hover {
+      color: var(--brand);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-divider {
+      display: none;
+      color: #4b5563;
+      font-size: 1.2rem;
+      padding: 0 0.75rem;
+      margin-top: 0.5rem;
+    }
+
+    @media(min-width:768px) {
+      .nav-divider {
+        display: block;
+      }
+    }
+
+    .nav-phone {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-phone:hover {
+      color: #d6b16a;
+    }
+
+    .nav-phone svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      fill: currentColor;
+    }
+
+    .nav-phone span {
+      display: none;
+      font-size: 0.875rem;
+      font-weight: 700;
+    }
+
+    @media(min-width:1024px) {
+      .nav-phone span {
+        display: inline;
+      }
+    }
+
+    .nav-hamburger {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.875rem;
+      color: #fff;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0.25rem;
+      line-height: 1;
+    }
+
+    @media(min-width:768px) {
+      .nav-hamburger {
+        display: none;
+      }
+    }
+
+    .drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: 998;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+
+    .drawer-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .mobile-drawer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 72%;
+      max-width: 320px;
+      background: #000;
+      z-index: 999;
+      padding: 1rem;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+
+    .mobile-drawer.open {
+      transform: translateX(0);
+    }
+
+    .drawer-close-row {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 1.5rem;
+    }
+
+    .drawer-close {
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      padding: 0.25rem;
+    }
+
+    .drawer-close svg {
+      width: 1.75rem;
+      height: 1.75rem;
+      fill: currentColor;
+      display: block;
+    }
+
+    .drawer-nav ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      font-size: 1.25rem;
+      padding: 0 1rem;
+    }
+
+    .drawer-nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      transition: color 0.2s;
+    }
+
+    .drawer-nav ul li a:hover {
+      color: var(--brand);
+    }
+
+    .drawer-cap-btn {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.25rem;
+      font-family: 'Onest', sans-serif;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0;
+    }
+
+    .drawer-cap-btn svg {
+      width: 1em;
+      height: 1em;
+      fill: currentColor;
+      transition: transform 0.25s;
+    }
+
+    .drawer-cap-btn.open svg {
+      transform: rotate(180deg);
+    }
+
+    .drawer-sub {
+      display: none;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 0.5rem 0 0 1rem;
+    }
+
+    .drawer-sub.open {
+      display: flex;
+    }
+
+    .drawer-sub a {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .drawer-sub a:hover {
+      color: var(--brand);
+    }
+
+    .drawer-phone-li {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.10);
+    }
+
+    .drawer-phone-li a {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #d6b16a !important;
+      font-size: 1.125rem;
+      text-decoration: none;
+    }
+
+    .drawer-phone-li svg {
+      width: 1em;
+      height: 1em;
+      fill: currentColor;
+    }
+
+    /* ══ SECTION 1: HERO
+       relative h-[60vh] min-h-[450px] flex items-center justify-center
+       text-center bg-[#0f0f0f]
+    ══ */
+    .hero {
+      position: relative;
+      height: 60vh;
+      min-height: 450px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: #0f0f0f;
+    }
+
+    /* absolute inset-0 bg-cover bg-center */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('./images/about/photo-1486406146926-c627a92ad1ab.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* absolute inset-0 bg-[#0f0f0f]/80 */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(15, 15, 15, 0.80);
+    }
+
+    /* relative z-10 max-w-[800px] px-8 animate-fade-up */
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 800px;
+      padding: 0 2rem;
+      animation: fadeUp 0.9s ease both;
+    }
+
+    /* font-montserrat text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-4 */
+    .hero-content h1 {
+      font-family: 'ZalandoSans', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 1rem;
+      line-height: 1.1;
+    }
+
+    @media(min-width:768px) {
+      .hero-content h1 {
+        font-size: 3rem;
+      }
+    }
+
+    @media(min-width:1024px) {
+      .hero-content h1 {
+        font-size: 3.75rem;
+      }
+    }
+
+    .hero-content h1 .brand {
+      color: var(--brand);
+    }
+
+    /* text-gray-400 text-base lg:text-lg font-light tracking-wide */
+    .hero-content p {
+      color: #9ca3af;
+      font-size: 1rem;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+    }
+
+    @media(min-width:1024px) {
+      .hero-content p {
+        font-size: 1.125rem;
+      }
+    }
+
+    /* ══ SECTION 2: STORY
+       py-20 lg:py-32 px-[5%] bg-[#0f0f0f]
+    ══ */
+    .story-section {
+      padding: 5rem 5%;
+      background: #0f0f0f;
+    }
+
+    @media(min-width:1024px) {
+      .story-section {
+        padding: 8rem 5%;
+      }
+    }
+
+    /* max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center */
+    .story-grid {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    @media(min-width:1024px) {
+      .story-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+      }
+    }
+
+    /* Image col: relative */
+    .story-img-col {
+      position: relative;
+    }
+
+    /* Inner wrap with gold corner brackets
+       before:-top-5 before:-left-5 before:w-24 before:h-24 before:border-l-4 before:border-t-4 before:border-brand
+       after:-bottom-5 after:-right-5 after:w-24 after:h-24 after:border-r-4 after:border-b-4 after:border-brand
+       max-md:before:hidden max-md:after:hidden */
+    .story-img-wrap {
+      position: relative;
+    }
+
+    .story-img-wrap::before,
+    .story-img-wrap::after {
+      content: '';
+      position: absolute;
+      width: 6rem;
+      height: 6rem;
+    }
+
+    .story-img-wrap::before {
+      top: -1.25rem;
+      left: -1.25rem;
+      border-left: 4px solid var(--brand);
+      border-top: 4px solid var(--brand);
+    }
+
+    .story-img-wrap::after {
+      bottom: -1.25rem;
+      right: -1.25rem;
+      border-right: 4px solid var(--brand);
+      border-bottom: 4px solid var(--brand);
+    }
+
+    @media(max-width:767px) {
+
+      .story-img-wrap::before,
+      .story-img-wrap::after {
+        display: none;
+      }
+    }
+
+    /* w-full h-[350px] lg:h-[500px] object-cover rounded-lg */
+    .story-img-wrap img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 0.5rem;
+      display: block;
+    }
+
+    @media(min-width:1024px) {
+      .story-img-wrap img {
+        height: 500px;
+      }
+    }
+
+    /* Stat badge
+       absolute bottom-8 right-4 lg:-right-10 bg-brand px-6 py-5 rounded-lg
+       max-md:relative max-md:mt-4 max-md:inline-block max-md:right-auto */
+    .story-badge {
+      position: absolute;
+      bottom: 2rem;
+      right: 1rem;
+      background: var(--brand);
+      padding: 1.25rem 1.5rem;
+      border-radius: 0.5rem;
+    }
+
+    @media(min-width:1024px) {
+      .story-badge {
+        right: -2.5rem;
+      }
+    }
+
+    @media(max-width:767px) {
+      .story-badge {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        margin-top: 1rem;
+        display: inline-block;
+      }
+    }
+
+    /* text-4xl lg:text-5xl font-bold leading-none text-[#0f0f0f] */
+    .story-badge .badge-num {
+      font-size: 2.25rem;
+      font-weight: 700;
+      line-height: 1;
+      color: #0f0f0f;
+    }
+
+    @media(min-width:1024px) {
+      .story-badge .badge-num {
+        font-size: 3rem;
+      }
+    }
+
+    /* text-xs font-semibold uppercase tracking-wider mt-1 text-[#0f0f0f] */
+    .story-badge .badge-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 0.25rem;
+      color: #0f0f0f;
+    }
+
+    /* Text col */
+    /* font-montserrat text-3xl lg:text-4xl xl:text-5xl font-semibold text-white mb-6 leading-tight */
+    .story-text h2 {
+      font-family: 'ZalandoSans', sans-serif;
+      font-size: 1.875rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    @media(min-width:1024px) {
+      .story-text h2 {
+        font-size: 2.25rem;
+      }
+    }
+
+    @media(min-width:1280px) {
+      .story-text h2 {
+        font-size: 3rem;
+      }
+    }
+
+    .story-text h2 .brand {
+      color: var(--brand);
+    }
+
+    /* space-y-5 */
+    .story-paras {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    /* text-gray-400 */
+    .story-paras p {
+      color: #9ca3af;
+      font-weight: 300;
+      line-height: 1.75;
+      font-size: 0.9375rem;
+    }
+
+    /* mt-8 */
+    .story-founder {
+      margin-top: 2rem;
+    }
+
+    .story-founder .name {
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .story-founder .title {
+      color: var(--brand);
+      font-size: 0.875rem;
+      margin-top: 0.125rem;
+    }
+
+    /* ══ SECTION 3: CAPABILITIES HEADER
+       py-20 lg:py-32 px-[5%] bg-[#111111]
+    ══ */
+    .caps-section {
+      padding: 5rem 5%;
+      background: #111111;
+    }
+
+    @media(min-width:1024px) {
+      .caps-section {
+        padding: 8rem 5%;
+      }
+    }
+
+    /* text-center max-w-[600px] mx-auto mb-12 lg:mb-16 */
+    .caps-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 3rem auto;
+    }
+
+    @media(min-width:1024px) {
+      .caps-header {
+        margin-bottom: 4rem;
+      }
+    }
+
+    /* font-montserrat text-3xl lg:text-4xl font-semibold text-white mb-4 */
+    .caps-header h2 {
+      font-family: 'ZalandoSans', sans-serif;
+      font-size: 1.875rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    @media(min-width:1024px) {
+      .caps-header h2 {
+        font-size: 2.25rem;
+      }
+    }
+
+    .caps-header h2 .brand {
+      color: var(--brand);
+    }
+
+    .caps-header p {
+      color: #9ca3af;
+      font-weight: 300;
+    }
+
+    /* ══ CAPABILITIES INNER SECTION
+       relative w-full bg-[#1D1D1C] py-20 overflow-hidden
+    ══ */
+    .caps-inner {
+      position: relative;
+      width: 100%;
+      background: #1D1D1C;
+      padding: 5rem 0;
+      overflow: hidden;
+    }
+
+    /* relative z-10 max-w-[1300px] mx-auto px-6 */
+    .caps-inner-wrap {
+      position: relative;
+      z-index: 10;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-fr */
+    .caps-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      grid-auto-rows: 1fr;
+    }
+
+    @media(min-width:640px) {
+      .caps-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(min-width:1024px) {
+      .caps-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* group relative h-full rounded-sm overflow-hidden border border-white/10
+       hover:border-[#A27940]/50 transition-all duration-500 */
+    .cap-card {
+      position: relative;
+      height: 100%;
+      /* min-height: 380px; */
+      border-radius: 2px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      transition: border-color 0.5s ease;
+    }
+
+    .cap-card:hover {
+      border-color: rgba(162, 121, 64, 0.50);
+    }
+
+    /* absolute inset-0 z-0 object-cover group-hover:scale-110 duration-700 */
+    .cap-card-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .cap-card-bg img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.7s ease;
+    }
+
+    .cap-card:hover .cap-card-bg img {
+      transform: scale(1.10);
+    }
+
+    /* relative z-10 h-full flex flex-col items-center p-8 lg:p-10
+       bg-black/75 group-hover:bg-black/85 transition-all duration-500 */
+    .cap-card-body {
+      position: relative;
+      z-index: 10;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.75);
+      transition: background 0.5s;
+    }
+
+    @media(min-width:1024px) {
+      .cap-card-body {
+        padding: 2.5rem;
+      }
+    }
+
+    .cap-card:hover .cap-card-body {
+      background: rgba(0, 0, 0, 0.85);
+    }
+
+    /* text-2xl lg:text-3xl font-bold text-white text-center tracking-tight drop-shadow-md */
+    .cap-card-body h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+      letter-spacing: -0.015em;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    }
+
+    @media(min-width:1024px) {
+      .cap-card-body h3 {
+        font-size: 1.875rem;
+      }
+    }
+
+    /* mt-4 text-sm md:text-base text-white/90 text-center font-light leading-relaxed flex-grow drop-shadow-sm */
+    .cap-card-body p {
+      margin-top: 1rem;
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.90);
+      text-align: center;
+      font-weight: 300;
+      line-height: 1.7;
+      flex-grow: 1;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    @media(min-width:768px) {
+      .cap-card-body p {
+        font-size: 1rem;
+      }
+    }
+
+    /* mt-8 inline-flex px-10 py-3 text-xs font-bold uppercase tracking-[0.2em]
+       text-[#d6b16a] border border-[#A27940]/50 bg-black/20 backdrop-blur-sm
+       hover:text-white hover:bg-[#A27940] hover:border-[#A27940] active:scale-95 */
+    .cap-btn {
+      margin-top: 2rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 2.5rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: #d6b16a;
+      border: 1px solid rgba(162, 121, 64, 0.50);
+      background: rgba(0, 0, 0, 0.20);
+      backdrop-filter: blur(4px);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border-radius: 2px;
+    }
+
+    .cap-btn:hover {
+      color: #fff;
+      background: #A27940;
+      border-color: #A27940;
+    }
+
+    .cap-btn:active {
+      transform: scale(0.95);
+    }
+
+    /* ══ SECTION 4: TESTIMONIALS
+       py-20 lg:py-32 px-[5%] bg-[#111111]
+    ══ */
+    .testi-section {
+      padding: 5rem 5%;
+      background: #111111;
+    }
+
+    @media(min-width:1024px) {
+      .testi-section {
+        padding: 8rem 5%;
+      }
+    }
+
+    /* text-center max-w-[600px] mx-auto mb-12 lg:mb-16 */
+    .testi-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 3rem auto;
+    }
+
+    @media(min-width:1024px) {
+      .testi-header {
+        margin-bottom: 4rem;
+      }
+    }
+
+    /* font-montserrat text-3xl lg:text-4xl font-semibold text-white mb-4 */
+    .testi-header h2 {
+      font-family: 'ZalandoSans', sans-serif;
+      font-size: 1.875rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    @media(min-width:1024px) {
+      .testi-header h2 {
+        font-size: 2.25rem;
+      }
+    }
+
+    .testi-header h2 .brand {
+      color: var(--brand);
+    }
+
+    .testi-header p {
+      color: #9ca3af;
+      font-weight: 300;
+    }
+
+    /* max-w-[1200px] mx-auto grid md:grid-cols-3 gap-8 */
+    .testi-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media(min-width:768px) {
+      .testi-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* bg-[#1a1a1a] p-8 rounded-lg relative border border-white/5 flex flex-col h-full */
+    .testi-card {
+      background: #1a1a1a;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .testi-card:hover {
+      border-color: rgba(162, 121, 64, 0.35);
+      transform: translateY(-4px);
+    }
+
+    /* text-brand mb-6 w-8 h-8 opacity-50 */
+    .testi-icon {
+      color: var(--brand);
+      margin-bottom: 1.5rem;
+    }
+
+    .testi-icon svg {
+      width: 2rem;
+      height: 2rem;
+      opacity: 0.50;
+      fill: currentColor;
+      stroke: currentColor;
+      display: block;
+    }
+
+    /* text-gray-300 mb-8 italic leading-relaxed flex-grow */
+    .testi-quote {
+      color: #d1d5db;
+      margin-bottom: 2rem;
+      font-style: italic;
+      line-height: 1.75;
+      flex-grow: 1;
+      font-size: 0.875rem;
+      font-weight: 300;
+    }
+
+    /* flex items-center gap-4 mt-auto */
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: auto;
+    }
+
+    /* w-12 h-12 rounded-full border border-white/10 object-cover */
+    .testi-author img {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .testi-author img.logo-av {
+      object-fit: contain;
+      background: #fff;
+      padding: 0.5rem;
+    }
+
+    .testi-author h4 {
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.875rem;
+    }
+
+    .testi-author p {
+      color: var(--brand);
+      font-size: 0.75rem;
+      margin-top: 0.1rem;
+    }
+
+    /* ══ SECTION 5: CTA
+       py-20 lg:py-24 px-[5%] text-center bg-[#0f0f0f]
+       bg-fixed bg-cover bg-center
+    ══ */
+    .cta-section {
+      padding: 5rem 5%;
+      text-align: center;
+      background-color: #0f0f0f;
+      background-image: linear-gradient(rgba(15, 15, 15, 0.9), rgba(15, 15, 15, 0.9)),
+        url('./images/about/photo-1486406146926-c627a92ad1ab.jpg');
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+    }
+
+    @media(min-width:1024px) {
+      .cta-section {
+        padding: 6rem 5%;
+      }
+    }
+
+    /* font-montserrat text-3xl lg:text-4xl xl:text-5xl font-semibold text-white mb-4 */
+    .cta-section h2 {
+      font-family: 'ZalandoSans', sans-serif;
+      font-size: 1.875rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    @media(min-width:1024px) {
+      .cta-section h2 {
+        font-size: 2.25rem;
+      }
+    }
+
+    @media(min-width:1280px) {
+      .cta-section h2 {
+        font-size: 3rem;
+      }
+    }
+
+    .cta-section h2 .brand {
+      color: var(--brand);
+    }
+
+    /* text-gray-400 text-lg max-w-[600px] mx-auto mb-8 */
+    .cta-section p {
+      color: #9ca3af;
+      font-size: 1.125rem;
+      max-width: 600px;
+      margin: 0 auto 2rem auto;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* ══ FOOTER ══ */
+    .site-footer {
+      position: relative;
+      width: 100%;
+      padding: 3rem 1rem;
+      color: #fff;
+      font-family: 'Onest', sans-serif;
+    }
+
+    @media(min-width:768px) {
+      .site-footer {
+        padding: 3rem 2rem;
+      }
+    }
+
+    .footer-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .footer-bg img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .footer-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.72);
+    }
+
+    .footer-inner {
+      position: relative;
+      z-index: 20;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-cols {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 3rem;
+    }
+
+    @media(min-width:768px) {
+      .footer-cols {
+        flex-direction: row;
+        gap: 2rem;
+      }
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      min-width: 180px;
+    }
+
+    .footer-brand img {
+      display: block;
+      max-width: 180px;
+    }
+
+    .footer-brand p {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.60);
+      max-width: 220px;
+      margin-left: 0.5rem;
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    .footer-col h3 {
+      font-weight: 700;
+      font-size: 1.125rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-left: 0.25rem;
+    }
+
+    .footer-col ul li a {
+      color: rgba(255, 255, 255, 0.70);
+      font-size: 0.875rem;
+      font-weight: 300;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--brand);
+    }
+
+    .footer-connect {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-left: 0.25rem;
+    }
+
+    .footer-email {
+      color: rgba(255, 255, 255, 0.70);
+      font-size: 0.875rem;
+      font-weight: 300;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-email:hover {
+      color: var(--brand);
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .footer-socials a {
+      color: rgba(255, 255, 255, 0.70);
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      transition: color 0.2s, transform 0.2s;
+    }
+
+    .footer-socials a:hover {
+      color: var(--brand);
+      transform: scale(1.10);
+    }
+
+    .footer-socials svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      fill: currentColor;
+      stroke: currentColor;
+      display: block;
+    }
+
+    .footer-bottom {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.10);
+    }
+
+    .footer-bottom p {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.50);
+      font-size: 0.875rem;
+      font-weight: 300;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+        @font-face {
+  font-family: 'ZalandoSans';
+  src: url('fonts/ZalandoSans-Regular.ttf') format('truetype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'ZalandoSans';
+  src: url('fonts/ZalandoSans-Italic.ttf') format('truetype');
+  font-weight: 400; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'ZalandoSans';
+  src: url('fonts/ZalandoSans-Medium.ttf') format('truetype');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'ZalandoSans';
+  src: url('fonts/ZalandoSans-SemiBold.ttf') format('truetype');
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'ZalandoSans';
+  src: url('fonts/ZalandoSans-Bold.ttf') format('truetype');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'ZalandoSans';
+  src: url('fonts/ZalandoSans-BoldItalic.ttf') format('truetype');
+  font-weight: 700; font-style: italic; font-display: swap;
+}
+  </style>
+</head>
+
+<body>
+
+
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-close-row">
+      <button class="drawer-close" id="drawerClose">
+        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M52.47 16.94L16.95 52.45 71.3 106.6h22.59L215 227.7v56.5L93.84 405.4H71.28l-54.26 54.2 35.34 35.5 54.24-54.4v-22.5L227.8 297h56.4l121.2 121.2v22.5l54.2 54.3 35.4-35.4-54.3-54.2h-22.5L297 284.2v-56.5l121.1-121.1h22.6L495 52.36 459.7 17l-54.3 54.25v22.57L284.2 215h-56.4L106.6 93.86V71.28L52.47 16.94z" />
+        </svg>
+      </button>
+    </div>
+    <nav class="drawer-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li>
+          <button class="drawer-cap-btn" id="drawerCapBtn">Capabilities
+            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z" />
+            </svg>
+          </button>
+          <div class="drawer-sub" id="drawerSub">
+            <a href="consulting.html">Consulting</a>
+            <a href="connect.html">Connect</a>
+            <a href="coaching.html">Coaching</a>
+            <a href="creative.html">Creative</a>
+            <a href="clicks.html">Clicks</a>
+            <a href="content.html">Content</a>
+          </div>
+        </li>
+        <li class="drawer-phone-li">
+          <a href="tel:0421121985">
+            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M426.666 330.667a250.385 250.385 0 0 1-75.729-11.729c-7.469-2.136-16-1.073-21.332 5.333l-46.939 46.928c-60.802-30.928-109.864-80-140.802-140.803l46.939-46.927c5.332-5.333 7.462-13.864 5.332-21.333-8.537-24.531-12.802-50.136-12.802-76.803C181.333 73.604 171.734 64 160 64H85.333C73.599 64 64 73.604 64 85.333 64 285.864 226.136 448 426.666 448c11.73 0 21.334-9.604 21.334-21.333V352c0-11.729-9.604-21.333-21.334-21.333z" />
+            </svg>
+            0421 121 985
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- ══ SECTION 1: HERO ══ -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>About <span class="brand">Us</span></h1>
+      <p>Strategic Consulting For Growth</p>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 2: OUR STORY ══ -->
+  <section class="story-section">
+    <div class="story-grid">
+
+      <!-- Left: image + badge -->
+      <div class="story-img-col">
+        <div class="story-img-wrap">
+          <img src="./images/about/About.png" alt="Team collaboration" />
+        </div>
+        <div class="story-badge">
+          <div class="badge-num">20+</div>
+          <div class="badge-label">Years Experience</div>
+        </div>
+      </div>
+
+      <!-- Right: text -->
+      <div class="story-text">
+        <h2>Our Story of <span class="brand">Excellence</span></h2>
+        <div class="story-paras">
+          <p>Boss Capital was built on a simple belief: that true business success comes from strong foundations, smart
+            strategy and the right connections. From the beginning, Boss Capital set out to do more than just invest or
+            advise — it set out to elevate. By combining commercial insight with a people-first approach, the business
+            quickly became known for backing ideas, leaders, and opportunities with real potential for long-term impact.
+          </p>
+          <p>Excellence at Boss Capital is not an aspiration; it is a standard. Every decision is guided by clarity,
+            integrity, and a commitment to delivering measurable outcomes. Whether supporting growth-stage businesses,
+            structuring strategic ventures, or identifying untapped opportunities, Boss Capital applies disciplined
+            thinking and a forward-focused mindset. This consistency has earned trust across industries and positioned
+            the company as a partner of choice for ambitious leaders.</p>
+          <p>The story of Boss Capital is ultimately one of leadership, legacy, and momentum. It is about building value
+            that lasts — for businesses, communities, and the people behind them. As Boss Capital continues to grow, its
+            focus remains unchanged: to lead with confidence, act with purpose, and set the benchmark for excellence in
+            everything it does.</p>
+        </div>
+        <div class="story-founder">
+          <div class="name">Chris Pennisi</div>
+          <div class="title">Founder &amp; CEO</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ SECTION 3: OUR CORE CAPABILITIES ══ -->
+  <section class="caps-section">
+
+    <div class="caps-header">
+      <h2>Our Core <span class="brand">Capabilities</span></h2>
+      <p>Guided by principles that drive long-term value and growth.</p>
+    </div>
+
+    <section class="caps-inner">
+      <div class="caps-inner-wrap">
+        <div class="caps-grid">
+
+          <div class="cap-card">
+            <div class="cap-card-bg"><img src="images/home/1.png" alt="Consulting" /></div>
+            <div class="cap-card-body">
+              <h3>Consulting</h3>
+              <p>Strategic advisory to navigate complex market shifts and optimise operations.</p>
+              <a class="cap-btn" href="/capabilities/consulting.html">Learn More</a>
+            </div>
+          </div>
+
+          <div class="cap-card">
+            <div class="cap-card-bg"><img src="images/home/2.png" alt="Connect" /></div>
+            <div class="cap-card-body">
+              <h3>Connect</h3>
+              <p>Strategic networking and partnership introductions to expand your reach.</p>
+              <a class="cap-btn" href="/capabilities/connect.html">Learn More</a>
+            </div>
+          </div>
+
+          <div class="cap-card">
+            <div class="cap-card-bg"><img src="images/home/3.png" alt="Coaching" /></div>
+            <div class="cap-card-body">
+              <h3>Coaching</h3>
+              <p>Performance driven mentorship for a wide range of core business topics.</p>
+              <a class="cap-btn" href="/capabilities/coaching.html">Learn More</a>
+            </div>
+          </div>
+
+          <div class="cap-card">
+            <div class="cap-card-bg"><img src="images/home/4.png" alt="Creative" /></div>
+            <div class="cap-card-body">
+              <h3>Creative</h3>
+              <p>Premium brand identity and visual storytelling designed to command attention.</p>
+              <a class="cap-btn" href="/capabilities/creative.html">Learn More</a>
+            </div>
+          </div>
+
+          <div class="cap-card">
+            <div class="cap-card-bg"><img src="images/home/5.png" alt="Clicks" /></div>
+            <div class="cap-card-body">
+              <h3>Clicks</h3>
+              <p>Data backed performance marketing and digital acquisition strategies that scale.</p>
+              <a class="cap-btn" href="/capabilities/clicks.html">Learn More</a>
+            </div>
+          </div>
+
+          <div class="cap-card">
+            <div class="cap-card-bg"><img src="images/home/6.png" alt="Content" /></div>
+            <div class="cap-card-body">
+              <h3>Content</h3>
+              <p>Authority building editorial and multi channel content production for brand influence.</p>
+              <a class="cap-btn" href="/capabilities/content.html">Learn More</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </section>
+
+  <!-- ══ SECTION 4: TESTIMONIALS ══ -->
+  <section class="testi-section">
+
+    <div class="testi-header">
+      <h2>What Our <span class="brand">Clients</span> Say</h2>
+      <p>Real feedback from the leaders and businesses we've helped elevate.</p>
+    </div>
+
+    <div class="testi-grid">
+
+      <div class="testi-card">
+        <div class="testi-icon"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M0 216C0 149.7 53.7 96 120 96l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-32 0-32 0-72zm256 0c0-66.3 53.7-120 120-120l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-32 0-32 0-72z" />
+          </svg></div>
+        <p class="testi-quote">"I've had the pleasure of working with Chris Pennisi from Boss Capital across many
+          projects, and each experience has delivered outstanding results. Chris consistently brings strategic insight,
+          professionalism and a genuine commitment to achieving success. His ability to understand objectives, navigate
+          challenges and deliver high-quality outcomes makes him an invaluable partner. I highly recommend Chris and
+          Boss Capital for anyone seeking reliable expertise and proven results."</p>
+        <div class="testi-author">
+          <img class="logo-av" src="./images/home/evt.jpg" alt="Dana" />
+          <div>
+            <h4>Dana</h4>
+            <p>EVT NSW Marketing Manager</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-icon"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M0 216C0 149.7 53.7 96 120 96l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-32 0-32 0-72zm256 0c0-66.3 53.7-120 120-120l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-32 0-32 0-72z" />
+          </svg></div>
+        <p class="testi-quote">"Chris Pennisi has built Boss Capital on a philosophy grounded in strong foundations,
+          smart strategy and meaningful relationships. He combines commercial intelligence with decisive leadership,
+          identifying opportunities and turning vision into tangible outcomes. His approach is disciplined, thoughtful
+          and driven by integrity and respect. I have no hesitation in recommending Chris and Boss Capital to ambitious
+          leaders seeking a strategic partner who leads with confidence and acts with purpose."</p>
+        <div class="testi-author">
+          <img src="./images/home/sf.png" alt="Carlos" />
+          <div>
+            <h4>Carlos</h4>
+            <p>Sellanes Farasat Immigration</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-icon"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M0 216C0 149.7 53.7 96 120 96l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-32 0-32 0-72zm256 0c0-66.3 53.7-120 120-120l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-32 0-32 0-72z" />
+          </svg></div>
+        <p class="testi-quote">"We needed a strategic pivot, and Boss Capital provided the roadmap we were missing.
+          Their clarity, integrity, and market insight gave us the confidence to make bold moves that have since
+          redefined our trajectory. Working with them wasn't just a transaction; it was a transformative experience that
+          unlocked new value and positioned Nexus Global for long-term dominance in our sector."</p>
+        <div class="testi-author">
+          <img src="./images/home/photo-1500648767791-00dcc994a43e.jpg" alt="David Chang" />
+          <div>
+            <h4>David Chang</h4>
+            <p>Director, Nexus Global</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ SECTION 5: CTA ══ -->
+  <section class="cta-section">
+    <h2>Ready to <span class="brand">Transform</span> Your Business?</h2>
+    <p>Partner with Boss Capital and build a legacy of success.</p>
+  </section>
+
+  <script src="nav-footer.js"></script>
+  
+  <script>
+    (function () {
+      const form = document.querySelector('.contact-form');
+      if (!form) return;
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const btn = form.querySelector('button[type="submit"]');
+        btn.disabled = true; btn.textContent = 'Sending…';
+        setTimeout(() => { btn.textContent = 'Message Sent ✓'; btn.style.background = '#2d6a4f'; btn.style.color = '#fff'; form.reset(); }, 1500);
+      });
+    })();
+  </script>
+
+
+</body>
+
+</html>

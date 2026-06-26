@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Western Sydney International Airport — Boss Capital Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <style>
+        @font-face {
+            font-family: 'ZalandoSans';
+            src: url('../fonts/ZalandoSans-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'ZalandoSans';
+            src: url('../fonts/ZalandoSans-Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ::selection {
+            background: #C5A059;
+            color: #000;
+        }
+
+        :root {
+            --brand: #C5A059;
+        }
+
+        body {
+            background: #000;
+            color: #fff;
+            font-family: 'Onest', sans-serif;
+            min-height: 100vh;
+        }
+
+        /* ══ NAVBAR ══ */
+        .navbar-wrap {
+            background: #0a0a0a;
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .navbar {
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 3.75rem;
+            padding: 0 0.5rem;
+            position: relative;
+        }
+
+        @media(min-width:768px) {
+            .navbar {
+                height: 4.5rem;
+            }
+        }
+
+        .nav-logo img {
+            width: 160px;
+            height: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        @media(min-width:768px) {
+            .nav-logo img {
+                width: 240px;
+            }
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        @media(min-width:640px) {
+            .nav-right {
+                gap: 1rem;
+            }
+        }
+
+        @media(min-width:1024px) {
+            .nav-right {
+                gap: 1.5rem;
+            }
+        }
+
+        .nav-links {
+            display: none;
+            list-style: none;
+            align-items: center;
+            gap: 2rem;
+            position: relative;
+            font-weight: 500;
+        }
+
+        @media(min-width:768px) {
+            .nav-links {
+                display: flex;
+            }
+        }
+
+        .nav-links li a,
+        .nav-links li .cap-toggle {
+            padding: 0.5rem 0;
+            color: rgba(255, 255, 255, 0.80);
+            text-decoration: none;
+            transition: color 0.2s;
+            background: none;
+            border: none;
+            font-family: 'Onest', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .nav-links li a:hover,
+        .nav-links li .cap-toggle:hover {
+            color: #fff;
+        }
+
+        .nav-indicator {
+            position: absolute;
+            bottom: 0;
+            height: 2px;
+            border-radius: 9999px;
+            background: linear-gradient(to right, #A27940, #d6b16a, #A27940);
+            opacity: 0.9;
+            transition: left 0.3s ease, width 0.3s ease;
+            pointer-events: none;
+            left: 0;
+            width: 0;
+        }
+
+        .cap-toggle svg {
+            width: 1em;
+            height: 1em;
+            transition: transform 0.25s;
+            fill: currentColor;
+        }
+
+        .cap-li {
+            position: relative;
+        }
+
+        .cap-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(8px);
+            background: #111;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 8px;
+            padding: 0.5rem 0;
+            min-width: 200px;
+            z-index: 500;
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.8);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s, transform 0.2s;
+        }
+
+        .cap-dropdown::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 0;
+            right: 0;
+            height: 10px;
+        }
+
+        @media(min-width:768px) {
+            .cap-li:hover .cap-dropdown {
+                opacity: 1;
+                pointer-events: all;
+                transform: translateX(-50%) translateY(0);
+            }
+
+            .cap-li:hover .cap-toggle svg {
+                transform: rotate(180deg);
+            }
+        }
+
+        .cap-dropdown a {
+            display: block;
+            padding: 0.65rem 1.4rem;
+            font-size: 0.9rem;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.78);
+            text-decoration: none;
+            transition: color 0.15s, background 0.15s;
+        }
+
+        .cap-dropdown a:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+        .cap-dropdown a.active {
+            color: var(--brand);
+            font-weight: 600;
+        }
+
+        .nav-divider {
+            display: none;
+            color: #374151;
+            font-size: 1.2rem;
+            padding: 0 0.25rem;
+        }
+
+        @media(min-width:768px) {
+            .nav-divider {
+                display: block;
+            }
+        }
+
+        .nav-phone {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-phone:hover {
+            color: #d6b16a;
+        }
+
+        .nav-phone svg {
+            width: 1.4rem;
+            height: 1.4rem;
+            fill: currentColor;
+        }
+
+        .nav-phone span {
+            display: none;
+            font-size: 0.875rem;
+            font-weight: 700;
+        }
+
+        @media(min-width:1024px) {
+            .nav-phone span {
+                display: inline;
+            }
+        }
+
+        .nav-hamburger {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.875rem;
+            color: #fff;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0.25rem;
+            line-height: 1;
+        }
+
+        @media(min-width:768px) {
+            .nav-hamburger {
+                display: none;
+            }
+        }
+
+        .drawer-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: 998;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .drawer-overlay.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .mobile-drawer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 72%;
+            max-width: 320px;
+            background: #0a0a0a;
+            z-index: 999;
+            padding: 1rem;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+
+        .mobile-drawer.open {
+            transform: translateX(0);
+        }
+
+        .drawer-close-row {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 1.5rem;
+        }
+
+        .drawer-close {
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            padding: 0.25rem;
+        }
+
+        .drawer-close svg {
+            width: 1.75rem;
+            height: 1.75rem;
+            fill: currentColor;
+            display: block;
+        }
+
+        .drawer-nav ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            font-size: 1.125rem;
+            padding: 0 0.5rem;
+        }
+
+        .drawer-nav ul li a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            display: block;
+            padding: 0.35rem 0;
+            transition: color 0.2s;
+        }
+
+        .drawer-nav ul li a:hover {
+            color: #fff;
+        }
+
+        .drawer-cap-btn {
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.125rem;
+            font-family: 'Onest', sans-serif;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0.35rem 0;
+        }
+
+        .drawer-cap-btn svg {
+            width: 1em;
+            height: 1em;
+            fill: currentColor;
+            transition: transform 0.25s;
+        }
+
+        .drawer-cap-btn.open svg {
+            transform: rotate(180deg);
+        }
+
+        .drawer-sub {
+            display: none;
+            flex-direction: column;
+            gap: 0.5rem;
+            padding: 0.5rem 0 0.25rem 1.25rem;
+        }
+
+        .drawer-sub.open {
+            display: flex;
+        }
+
+        .drawer-sub a {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.65);
+            text-decoration: none;
+            padding: 0.25rem 0;
+            transition: color 0.2s;
+        }
+
+        .drawer-sub a:hover {
+            color: #fff;
+        }
+
+        .drawer-sub a.active {
+            color: var(--brand);
+        }
+
+        .drawer-phone-li {
+            margin-top: 1.25rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .drawer-phone-li a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #d6b16a !important;
+            font-size: 1.125rem;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .drawer-phone-li svg {
+            width: 1em;
+            height: 1em;
+            fill: currentColor;
+        }
+
+        /* ══ PAGE: HEADER
+       bg-black border-b border-neutral-800
+    ══ */
+        .page-header {
+            background: #000;
+            border-bottom: 1px solid #262626;
+        }
+
+        /* container mx-auto px-6 py-12 md:py-16 */
+        .page-header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        @media(min-width:768px) {
+            .page-header-inner {
+                padding: 4rem 1.5rem;
+            }
+        }
+
+        /* max-w-4xl */
+        .page-header-text {
+            max-width: 56rem;
+        }
+
+        /* text-[#C5A059] text-sm font-bold tracking-widest uppercase mb-3 */
+        .page-header-text .overline {
+            color: var(--brand);
+            font-size: 0.875rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 0.75rem;
+        }
+
+        /* text-4xl md:text-6xl font-zolando leading-tight */
+        .page-header-text h1 {
+            font-family: 'ZalandoSans', sans-serif;
+            font-size: 2.25rem;
+            font-weight: 200;
+            line-height: 1.1;
+            color: #fff;
+        }
+
+        @media(min-width:768px) {
+            .page-header-text h1 {
+                font-size: 3.75rem;
+            }
+        }
+
+        /* text-gray-500 mt-4 text-lg */
+        .page-header-text p {
+            color: #6b7280;
+            margin-top: 1rem;
+            font-size: 1.125rem;
+            font-weight: 300;
+        }
+
+        /* Back link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--brand);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            text-decoration: none;
+            margin-bottom: 1.5rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: #fff;
+        }
+
+        .back-link svg {
+            width: 0.875rem;
+            height: 0.875rem;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        /* ══ GALLERY GRID SECTION
+       container mx-auto px-6 py-12
+    ══ */
+        .gallery-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        /* grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        @media(min-width:768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        @media(min-width:1024px) {
+            .gallery-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        /* button — group relative aspect-[4/3] overflow-hidden rounded-xl bg-neutral-900 */
+        .gallery-btn {
+            position: relative;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            border-radius: 0.75rem;
+            background: #171717;
+            cursor: pointer;
+            border: none;
+            padding: 0;
+            display: block;
+            width: 100%;
+        }
+
+        /* img — w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 */
+        .gallery-btn img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.7s ease;
+        }
+
+        .gallery-btn:hover img {
+            transform: scale(1.10);
+        }
+
+        /* Hover overlay — absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300
+       flex items-center justify-center */
+        .gallery-btn-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+
+        .gallery-btn:hover .gallery-btn-overlay {
+            background: rgba(0, 0, 0, 0.40);
+        }
+
+        /* Gold zoom icon — bg-[#C5A059] p-3 rounded-full
+       opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0
+       transition-all duration-300 */
+        .zoom-icon {
+            background: var(--brand);
+            padding: 0.75rem;
+            border-radius: 50%;
+            opacity: 0;
+            transform: translateY(1rem);
+            transition: opacity 0.3s, transform 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-btn:hover .zoom-icon {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .zoom-icon svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            stroke: #000;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        /* ══ LIGHTBOX — fullscreen photo viewer with thumbnail strip ══ */
+        .pv-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: #000;
+            flex-direction: column;
+        }
+
+        .pv-overlay.open {
+            display: flex;
+            animation: pvFade 0.2s ease;
+        }
+
+        @keyframes pvFade {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        /* Top bar */
+        .pv-topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.25rem 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .pv-counter {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.50);
+            font-weight: 300;
+            letter-spacing: 0.05em;
+        }
+
+        .pv-close {
+            width: 2.75rem;
+            height: 2.75rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #fff;
+            transition: background 0.2s;
+        }
+
+        .pv-close:hover {
+            background: rgba(255, 255, 255, 0.20);
+        }
+
+        .pv-close svg {
+            width: 1.1rem;
+            height: 1.1rem;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2.5;
+        }
+
+        /* Main image area */
+        .pv-main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 0 4rem;
+        }
+
+        .pv-main-img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            display: block;
+            border-radius: 0.5rem;
+            animation: pvZoom 0.25s ease;
+        }
+
+        @keyframes pvZoom {
+            from {
+                opacity: 0;
+                transform: scale(0.94)
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1)
+            }
+        }
+
+        /* Prev / Next */
+        .pv-prev,
+        .pv-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 3rem;
+            height: 3rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #fff;
+            transition: background 0.2s, border-color 0.2s;
+            z-index: 5;
+        }
+
+        .pv-prev {
+            left: 0.75rem;
+        }
+
+        .pv-next {
+            right: 0.75rem;
+        }
+
+        .pv-prev:hover,
+        .pv-next:hover {
+            background: rgba(197, 160, 89, 0.35);
+            border-color: var(--brand);
+        }
+
+        .pv-prev svg,
+        .pv-next svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        /* Thumbnail strip */
+        .pv-strip-wrap {
+            flex-shrink: 0;
+            padding: 0.75rem 1rem;
+            background: rgba(0, 0, 0, 0.6);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .pv-strip {
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+            padding-bottom: 0.25rem;
+        }
+
+        .pv-strip::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .pv-strip::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+        }
+
+        .pv-thumb {
+            flex-shrink: 0;
+            width: 5.5rem;
+            height: 3.75rem;
+            border-radius: 0.375rem;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border-color 0.2s, opacity 0.2s;
+            opacity: 0.50;
+        }
+
+        @media(min-width:768px) {
+            .pv-thumb {
+                width: 6.5rem;
+                height: 4.25rem;
+            }
+        }
+
+        .pv-thumb.active {
+            border-color: var(--brand);
+            opacity: 1;
+        }
+
+        .pv-thumb:hover {
+            opacity: 0.85;
+        }
+
+        .pv-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* ══ FOOTER ══ */
+        .site-footer {
+            position: relative;
+            width: 100%;
+            padding: 3rem 1rem;
+            color: #fff;
+        }
+
+        @media(min-width:768px) {
+            .site-footer {
+                padding: 3rem 2rem;
+            }
+        }
+
+        .footer-bg {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+        }
+
+        .footer-bg img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .footer-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.72);
+        }
+
+        .footer-inner {
+            position: relative;
+            z-index: 20;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-cols {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        @media(min-width:768px) {
+            .footer-cols {
+                flex-direction: row;
+                gap: 2rem;
+            }
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            min-width: 180px;
+        }
+
+        .footer-brand img {
+            display: block;
+            max-width: 180px;
+            object-fit: contain;
+        }
+
+        .footer-brand p {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.60);
+            max-width: 220px;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        .footer-col h3 {
+            font-weight: 700;
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-col ul li a {
+            color: rgba(255, 255, 255, 0.70);
+            font-size: 0.875rem;
+            font-weight: 300;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--brand);
+        }
+
+        .footer-connect {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .footer-email {
+            color: rgba(255, 255, 255, 0.70);
+            font-size: 0.875rem;
+            font-weight: 300;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-email:hover {
+            color: var(--brand);
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-socials a {
+            color: rgba(255, 255, 255, 0.70);
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            transition: color 0.2s, transform 0.2s;
+        }
+
+        .footer-socials a:hover {
+            color: var(--brand);
+            transform: scale(1.10);
+        }
+
+        .footer-socials svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            fill: currentColor;
+            display: block;
+        }
+
+        .footer-bottom {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.10);
+        }
+
+        .footer-bottom p {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.50);
+            font-size: 0.875rem;
+            font-weight: 300;
+        }
+    </style>
+</head>
+
+<body>
+
+  
+
+    <!-- ══ PAGE HEADER
+     bg-black border-b border-neutral-800
+══ -->
+    <header class="page-header">
+        <div class="page-header-inner">
+            <div class="page-header-text">
+               
+                <span class="overline">Event Gallery</span>
+                <h1>Western Sydney International Airport</h1>
+                <p>Boss Connect — 24 Professional Captures</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- ══ GALLERY GRID ══ -->
+    <main>
+        <section class="gallery-section">
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Photos 1–24 from Gallery/1.jpeg → Gallery/24.jpeg -->
+            </div>
+        </section>
+    </main>
+
+    <!-- ══ FULLSCREEN PHOTO VIEWER ══ -->
+    <div class="pv-overlay" id="pvOverlay">
+        <div class="pv-topbar">
+            <span class="pv-counter" id="pvCounter">1 / 13</span>
+            <button class="pv-close" id="pvClose" aria-label="Close">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
+        </div>
+        <div class="pv-main">
+            <button class="pv-prev" id="pvPrev" aria-label="Previous">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6" />
+                </svg>
+            </button>
+            <img class="pv-main-img" id="pvImg" src="" alt="" />
+            <button class="pv-next" id="pvNext" aria-label="Next">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6" />
+                </svg>
+            </button>
+        </div>
+        <div class="pv-strip-wrap">
+            <div class="pv-strip" id="pvStrip"></div>
+        </div>
+    </div>
+
+<script src="../nav-footer.js"></script>
+
+
+    <script>
+        (function () {
+
+     
+            /* ═══════════════════════════════════════════
+               PHOTOS — 24 images from Gallery folder
+               Add more paths here if needed
+            ═══════════════════════════════════════════ */
+            const PHOTOS = [
+                { src: '../images/gallery/w/1.jpeg', alt: 'Western — photo 1' },
+                { src: '../images/gallery/w/2.jpeg', alt: 'Western — photo 2' },
+                { src: '../images/gallery/w/3.jpeg', alt: 'Western — photo 3' },
+                { src: '../images/gallery/w/4.jpeg', alt: 'Western — photo 4' },
+                { src: '../images/gallery/w/5.jpeg', alt: 'Western — photo 5' },
+                { src: '../images/gallery/w/6.jpeg', alt: 'Western — photo 6' },
+                { src: '../images/gallery/w/7.jpeg', alt: 'Western — photo 7' },
+                { src: '../images/gallery/w/8.jpeg', alt: 'Western — photo 8' },
+                { src: '../images/gallery/w/9.jpeg', alt: 'Western — photo 9' },
+                { src: '../images/gallery/w/10.jpeg', alt: 'Western — photo 10' },
+				{ src: '../images/gallery/w/2years.png', alt: 'Western — photo 11'},
+                { src: '../images/gallery/w/12.jpeg', alt: 'Western — photo 12' },
+                { src: '../images/gallery/w/13.jpeg', alt: 'Western — photo 13' },
+                { src: '../images/gallery/w/14.jpeg', alt: 'Western — photo 14' },
+                { src: '../images/gallery/w/15.jpeg', alt: 'Western — photo 15' },
+                { src: '../images/gallery/w/16.jpeg', alt: 'Western — photo 16' },
+                { src: '../images/gallery/w/17.jpeg', alt: 'Western — photo 17' },
+                { src: '../images/gallery/w/18.jpeg', alt: 'Western — photo 18' },
+                { src: '../images/gallery/w/19.jpeg', alt: 'Western — photo 19' },
+                { src: '../images/gallery/w/20.jpeg', alt: 'Western — photo 20' },
+                { src: '../images/gallery/w/21.jpeg', alt: 'Western — photo 21' },
+                { src: '../images/gallery/w/22.jpeg', alt: 'Western — photo 22' },
+                { src: '../images/gallery/w/23.jpeg', alt: 'Western — photo 23' },
+                { src: '../images/gallery/w/24.jpeg', alt: 'Western — photo 24' },
+            ];
+
+            const TOTAL = PHOTOS.length;
+
+            /* ── Build the grid ── */
+            const grid = document.getElementById('galleryGrid');
+
+            PHOTOS.forEach(function (photo, index) {
+                // For the 2 years anniversary image, use an anchor that opens mailto
+                if (photo.src.indexOf('2years') !== -1) {
+                    const link = document.createElement('a');
+                    link.className = 'gallery-btn';
+                    link.href = 'mailto:Info@bosscapital.com.au?subject=Boss Connect Movie Tickets';
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                    link.setAttribute('aria-label', 'Contact Boss Capital');
+                    link.innerHTML = `
+      <img src="${photo.src}" alt="${photo.alt}" loading="${index < 8 ? 'eager' : 'lazy'}"/>
+      <div class="gallery-btn-overlay">
+        <div class="zoom-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <polyline points="22,4 12,13 2,4"/>
+          </svg>
+        </div>
+      </div>`;
+                    grid.appendChild(link);
+                } else {
+                    const btn = document.createElement('button');
+                    btn.className = 'gallery-btn';
+                    btn.setAttribute('aria-label', `View photo ${index + 1}`);
+                    btn.innerHTML = `
+      <img src="${photo.src}" alt="${photo.alt}" loading="${index < 8 ? 'eager' : 'lazy'}"/>
+      <div class="gallery-btn-overlay">
+        <div class="zoom-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" x2="16.65" y1="21" y2="16.65"/>
+            <line x1="11" x2="11" y1="8" y2="14"/>
+            <line x1="8" x2="14" y1="11" y2="11"/>
+          </svg>
+        </div>
+      </div>`;
+                    btn.addEventListener('click', () => openViewer(index));
+                    grid.appendChild(btn);
+                }
+            });
+
+            /* ── Photo viewer ── */
+            const pvOverlay = document.getElementById('pvOverlay');
+            const pvImg = document.getElementById('pvImg');
+            const pvCounter = document.getElementById('pvCounter');
+            const pvStrip = document.getElementById('pvStrip');
+            const pvClose = document.getElementById('pvClose');
+            const pvPrev = document.getElementById('pvPrev');
+            const pvNext = document.getElementById('pvNext');
+
+            let current = 0;
+
+            /* Build thumbnail strip once */
+            PHOTOS.forEach(function (photo, i) {
+                const t = document.createElement('div');
+                t.className = 'pv-thumb';
+                t.innerHTML = `<img src="${photo.src}" alt="thumb ${i + 1}" loading="lazy"/>`;
+                t.addEventListener('click', () => showPhoto(i));
+                pvStrip.appendChild(t);
+            });
+
+            function openViewer(index) {
+                current = index;
+                showPhoto(current);
+                pvOverlay.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeViewer() {
+                pvOverlay.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+
+            function showPhoto(index) {
+                current = index;
+                const photo = PHOTOS[index];
+
+                /* Re-trigger zoom animation */
+                pvImg.style.animation = 'none';
+                pvImg.offsetHeight;
+                pvImg.style.animation = '';
+
+                pvImg.src = photo.src;
+                pvImg.alt = photo.alt;
+                pvCounter.textContent = (index + 1) + ' / ' + TOTAL;
+
+                /* Update strip */
+                const thumbs = pvStrip.querySelectorAll('.pv-thumb');
+                thumbs.forEach((t, i) => t.classList.toggle('active', i === index));
+                if (thumbs[index]) {
+                    thumbs[index].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                }
+            }
+
+            function prevPhoto() { showPhoto((current - 1 + TOTAL) % TOTAL); }
+            function nextPhoto() { showPhoto((current + 1) % TOTAL); }
+
+            pvClose.addEventListener('click', closeViewer);
+            pvPrev.addEventListener('click', (e) => { e.stopPropagation(); prevPhoto(); });
+            pvNext.addEventListener('click', (e) => { e.stopPropagation(); nextPhoto(); });
+            pvOverlay.addEventListener('click', (e) => { if (e.target === pvOverlay) closeViewer(); });
+
+            /* Keyboard */
+            document.addEventListener('keydown', (e) => {
+                if (!pvOverlay.classList.contains('open')) return;
+                if (e.key === 'Escape') closeViewer();
+                if (e.key === 'ArrowLeft') prevPhoto();
+                if (e.key === 'ArrowRight') nextPhoto();
+            });
+
+        })();
+    </script>
+
+</body>
+
+</html>

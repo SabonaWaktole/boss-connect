@@ -1,0 +1,1924 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consulting — Boss Capital</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Onest:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap"
+    rel="stylesheet" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    ::selection {
+      background: #C5A059;
+      color: #000;
+    }
+
+    :root {
+      --brand: #C5A059;
+      --brand-dark: #A27940;
+      --brand-hover: #b8923e;
+    }
+
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Onest', sans-serif;
+      min-height: 100vh;
+    }
+
+    /* Shared container */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* ══ NAVBAR ══ */
+    .navbar-wrap {
+      background: #0a0a0a;
+      width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .navbar {
+      max-width: 1400px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 3.75rem;
+      padding: 0 0.5rem;
+      position: relative;
+    }
+
+    @media(min-width:768px) {
+      .navbar {
+        height: 4.5rem;
+      }
+    }
+
+    .nav-logo img {
+      width: 160px;
+      height: auto;
+      display: block;
+    }
+
+    @media(min-width:768px) {
+      .nav-logo img {
+        width: 240px;
+      }
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    @media(min-width:640px) {
+      .nav-right {
+        gap: 1rem;
+      }
+    }
+
+    @media(min-width:1024px) {
+      .nav-right {
+        gap: 1.5rem;
+      }
+    }
+
+    .nav-links {
+      display: none;
+      list-style: none;
+      align-items: center;
+      gap: 2rem;
+      position: relative;
+      font-weight: 500;
+    }
+
+    @media(min-width:768px) {
+      .nav-links {
+        display: flex;
+      }
+    }
+
+    .nav-links li a,
+    .nav-links li .cap-toggle {
+      padding: 0.5rem 0;
+      color: rgba(255, 255, 255, 0.80);
+      text-decoration: none;
+      transition: color 0.2s;
+      background: none;
+      border: none;
+      font-family: 'Onest', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li .cap-toggle:hover {
+      color: #fff;
+    }
+
+    .nav-links li a.active {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .nav-indicator {
+      position: absolute;
+      bottom: 0;
+      height: 2px;
+      border-radius: 9999px;
+      background: linear-gradient(to right, #A27940, #d6b16a, #A27940);
+      opacity: 0.9;
+      transition: left 0.3s ease, width 0.3s ease;
+      pointer-events: none;
+      left: 0;
+      width: 0;
+    }
+
+    .cap-toggle svg {
+      width: 1em;
+      height: 1em;
+      transition: transform 0.25s;
+      fill: currentColor;
+    }
+
+    .cap-toggle.open svg {
+      transform: rotate(180deg);
+    }
+
+    .cap-dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      background: #111;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      padding: 0.5rem 0;
+      min-width: 190px;
+      z-index: 200;
+      flex-direction: column;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+    }
+
+    .cap-dropdown.open {
+      display: flex;
+    }
+
+    .cap-dropdown a {
+      padding: 0.65rem 1.25rem;
+      font-size: 0.875rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+      transition: color 0.2s, background 0.2s;
+      display: block;
+    }
+
+    .cap-dropdown a:hover,
+    .cap-dropdown a.active {
+      color: var(--brand);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-divider {
+      display: none;
+      color: #4b5563;
+      font-size: 1.2rem;
+      padding: 0 0.75rem;
+      margin-top: 0.5rem;
+      user-select: none;
+    }
+
+    @media(min-width:768px) {
+      .nav-divider {
+        display: block;
+      }
+    }
+
+    .nav-phone {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-phone:hover {
+      color: #d6b16a;
+    }
+
+    .nav-phone svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      fill: currentColor;
+    }
+
+    .nav-phone span {
+      display: none;
+      font-size: 0.875rem;
+      font-weight: 700;
+    }
+
+    @media(min-width:1024px) {
+      .nav-phone span {
+        display: inline;
+      }
+    }
+
+    .nav-hamburger {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.875rem;
+      color: #fff;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0.25rem;
+      line-height: 1;
+    }
+
+    @media(min-width:768px) {
+      .nav-hamburger {
+        display: none;
+      }
+    }
+
+    .drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: 998;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+
+    .drawer-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .mobile-drawer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 72%;
+      max-width: 320px;
+      background: #000;
+      z-index: 999;
+      padding: 1rem;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+
+    .mobile-drawer.open {
+      transform: translateX(0);
+    }
+
+    .drawer-close-row {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 1.5rem;
+    }
+
+    .drawer-close {
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      padding: 0.25rem;
+    }
+
+    .drawer-close svg {
+      width: 1.75rem;
+      height: 1.75rem;
+      fill: currentColor;
+      display: block;
+    }
+
+    .drawer-nav ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      font-size: 1.25rem;
+      padding: 0 1rem;
+    }
+
+    .drawer-nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      transition: color 0.2s;
+    }
+
+    .drawer-nav ul li a:hover {
+      color: var(--brand);
+    }
+
+    .drawer-cap-btn {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.25rem;
+      font-family: 'Onest', sans-serif;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0;
+    }
+
+    .drawer-cap-btn svg {
+      width: 1em;
+      height: 1em;
+      fill: currentColor;
+      transition: transform 0.25s;
+    }
+
+    .drawer-cap-btn.open svg {
+      transform: rotate(180deg);
+    }
+
+    .drawer-sub {
+      display: none;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 0.5rem 0 0 1rem;
+    }
+
+    .drawer-sub.open {
+      display: flex;
+    }
+
+    .drawer-sub a {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .drawer-sub a:hover,
+    .drawer-sub a.active {
+      color: var(--brand);
+    }
+
+    .drawer-phone-li {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.10);
+    }
+
+    .drawer-phone-li a {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #d6b16a !important;
+      font-size: 1.125rem;
+      text-decoration: none;
+    }
+
+    .drawer-phone-li svg {
+      width: 1em;
+      height: 1em;
+      fill: currentColor;
+    }
+
+    /* ══ SECTION 1: HERO
+       relative h-[70vh] flex items-center justify-center overflow-hidden
+    ══ */
+    .hero {
+      position: relative;
+      height: 70vh;
+      min-height: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* absolute inset-0 z-0 */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    /* w-full h-full object-cover opacity-50 */
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.50;
+      display: block;
+    }
+
+    /* absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black */
+    .hero-bg-grad {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.80) 0%, rgba(0, 0, 0, 0.50) 50%, rgba(0, 0, 0, 1) 100%);
+    }
+
+    /* relative z-10 container mx-auto px-6 text-center */
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      text-align: center;
+      animation: fadeUp 0.9s ease both;
+    }
+
+    /* text-[#C5A059] tracking-[0.2em] text-sm md:text-base font-bold uppercase mb-4 */
+    .hero-overline {
+      color: var(--brand);
+      letter-spacing: 0.2em;
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    @media(min-width:768px) {
+      .hero-overline {
+        font-size: 1rem;
+      }
+    }
+
+    /* flex justify-center mb-4 */
+    .hero-logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .hero-logo img {
+      max-width: 400px;
+      width: 100%;
+      height: auto;
+    }
+
+    /* max-w-2xl mx-auto text-gray-300 text-lg md:text-xl font-light */
+    .hero-content p {
+      max-width: 42rem;
+      margin: 0 auto;
+      color: #d1d5db;
+      font-size: 1.125rem;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    @media(min-width:768px) {
+      .hero-content p {
+        font-size: 1.25rem;
+      }
+    }
+
+    /* ══ SECTION 2: INTRO
+       py-20 bg-zinc-950
+    ══ */
+    .intro-section {
+      padding: 5rem 0;
+      /* py-20 */
+      background: #09090b;
+      /* bg-zinc-950 */
+    }
+
+    /* grid md:grid-cols-2 gap-16 items-center */
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4rem;
+      /* gap-16 */
+      align-items: center;
+    }
+
+    @media(min-width:768px) {
+      .intro-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* space-y-6 */
+    .intro-left {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    /* w-12 h-1 bg-[#C5A059] mb-6 */
+    .gold-bar {
+      width: 3rem;
+      height: 4px;
+      background: var(--brand);
+      margin-bottom: 0.5rem;
+    }
+
+    /* text-4xl md:text-5xl font-zolando font-medium leading-tight */
+    .intro-left h2 {
+      font-family: 'ZalandoSans', sans-serif;
+      font-size: 2.25rem;
+      /* text-4xl */
+      font-weight: 500;
+      line-height: 1.15;
+      color: #fff;
+    }
+
+    @media(min-width:768px) {
+      .intro-left h2 {
+        font-size: 3rem;
+      }
+    }
+
+    /* text-gray-400 text-lg leading-relaxed */
+    .intro-left p {
+      color: #9ca3af;
+      font-size: 1.125rem;
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    /* relative (image wrapper) */
+    .intro-right {
+      position: relative;
+    }
+
+    /* absolute -inset-4 border border-[#C5A059]/30 opacity-50 translate-x-4 translate-y-4 */
+    .intro-right::before {
+      content: '';
+      position: absolute;
+      inset: -1rem;
+      border: 1px solid rgba(197, 160, 89, 0.30);
+      opacity: 0.50;
+      transform: translate(1rem, 1rem);
+      pointer-events: none;
+    }
+
+    /* relative z-10 w-full h-full object-cover shadow-2xl */
+    .intro-right img {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+      display: block;
+    }
+
+    /* ══ SECTION 3: ABOUT + CARDS
+       py-24 bg-neutral-900 relative
+    ══ */
+    .about-section {
+      padding: 6rem 0;
+      /* py-24 */
+      background: #171717;
+      /* bg-neutral-900 */
+      position: relative;
+    }
+
+    /* grid lg:grid-cols-12 gap-12 */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    @media(min-width:1024px) {
+      .about-grid {
+        grid-template-columns: 4fr 8fr;
+      }
+    }
+
+    /* lg:col-span-4 space-y-8 */
+    .about-left {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    /* text-[#C5A059] text-sm font-bold tracking-widest uppercase */
+    .about-label {
+      color: var(--brand);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      display: block;
+    }
+
+    /* text-4xl font-zolando text-white leading-tight */
+    .about-left h2 {
+      font-family: 'ZalandoSans', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 100;
+      color: #fff;
+      line-height: 1.2;
+    }
+
+    /* text-gray-400 leading-relaxed */
+    .about-left p {
+      color: #9ca3af;
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    /* lg:col-span-8 grid md:grid-cols-2 gap-6 */
+    .about-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .about-card h4 {
+      font-family: zalandoSans, sans-serif;
+    }
+
+    @media(min-width:768px) {
+      .about-cards {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* p-8 bg-white text-black */
+    .about-card {
+      padding: 2rem;
+      background: #fff;
+      color: #000;
+    }
+
+    /* w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mb-6 text-[#C5A059] */
+    .card-icon {
+      width: 3rem;
+      height: 3rem;
+      background: #f3f4f6;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      color: var(--brand);
+    }
+
+    .card-icon svg {
+      width: 2rem;
+      height: 2rem;
+      stroke: currentColor;
+      fill: none;
+    }
+
+    /* text-xl font-bold mb-3 */
+    .about-card h4 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: #000;
+    }
+
+    /* text-sm text-gray-600 border-t border-gray-200 pt-4 */
+    .about-card p {
+      font-size: 0.875rem;
+      color: #4b5563;
+      border-top: 1px solid #e5e7eb;
+      padding-top: 1rem;
+      line-height: 1.65;
+    }
+
+    /* ══ SECTION 4: SIGNATURE OFFERINGS
+       py-24 bg-zinc-950 border-t border-zinc-900
+    ══ */
+    .offerings-section {
+      padding: 6rem 0;
+      background: #09090b;
+      border-top: 1px solid #18181b;
+    }
+
+    /* text-center mb-16 space-y-4 */
+    .offerings-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    /* text-[#C5A059] tracking-widest uppercase text-sm font-bold */
+    .offerings-header .label {
+      color: var(--brand);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      font-weight: 700;
+      display: block;
+    }
+
+    /* text-4xl md:text-5xl font-zolando text-white */
+    .offerings-header h3 {
+      font-family: 'ZalandoSans', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 200;
+      color: #fff;
+      margin-top: 1rem;
+    }
+
+    @media(min-width:768px) {
+      .offerings-header h3 {
+        font-size: 3rem;
+      }
+    }
+
+    /* text-gray-400 max-w-2xl mx-auto */
+    .offerings-header p {
+      color: #9ca3af;
+      max-width: 42rem;
+      margin: 0.75rem auto 0;
+      font-family: 'ZalandoSans', sans-serif;
+      font-weight: 500;
+    }
+
+    /* grid md:grid-cols-3 gap-8 */
+    .offerings-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media(min-width:768px) {
+      .offerings-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* relative bg-neutral-900 border-t-2 border-t-[#C5A059] p-10 flex flex-col h-full */
+    .offering-card {
+      position: relative;
+      background: #171717;
+      border-top: 2px solid var(--brand);
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    /* text-2xl font-zolando text-white mb-2 */
+    .offering-card h4 {
+      font-family: 'ZalandoSans', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    /* text-[#C5A059] text-sm font-medium mb-6 uppercase tracking-wider */
+    .offering-tier {
+      color: var(--brand);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.5rem;
+    }
+
+    /* text-gray-400 text-sm mb-8 leading-relaxed border-b border-neutral-800 pb-6 min-h-[60px] */
+    .offering-desc {
+      color: #9ca3af;
+      font-size: 0.875rem;
+      margin-bottom: 2rem;
+      line-height: 1.65;
+      border-bottom: 1px solid #262626;
+      padding-bottom: 1.5rem;
+      min-height: 60px;
+      font-weight: 300;
+    }
+
+    /* space-y-4 */
+    .offering-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      list-style: none;
+    }
+
+    /* flex items-start gap-3 text-gray-300 text-sm */
+    .offering-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      color: #d1d5db;
+      font-size: 0.875rem;
+    }
+
+    /* w-5 h-5 text-[#C5A059] shrink-0 */
+    .offering-list li svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      stroke: var(--brand);
+      fill: none;
+      flex-shrink: 0;
+    }
+
+    /* ══ SECTION 5: FULL SERVICE CAPABILITIES
+       py-24 bg-black border-t border-neutral-900
+    ══ */
+    .services-section {
+      padding: 6rem 0;
+      background: #000;
+      border-top: 1px solid #171717;
+    }
+
+    /* text-center max-w-3xl mx-auto mb-16 */
+    .services-header {
+      text-align: center;
+      max-width: 48rem;
+      margin: 0 auto 4rem auto;
+    }
+
+    .services-header .label {
+      color: var(--brand);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      display: block;
+      font-family: 'ZalandoSans', sans-serif;
+    }
+
+    /* text-4xl md:text-5xl font-zolando text-white leading-tight mb-6 */
+    .services-header h2 {
+      font-family: 'ZalandoSans', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 200;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    @media(min-width:768px) {
+      .services-header h2 {
+        font-size: 3rem;
+      }
+    }
+
+    /* w-20 h-1 bg-[#C5A059] mx-auto mb-6 */
+    .gold-divider {
+      width: 5rem;
+      height: 4px;
+      background: var(--brand);
+      margin: 0 auto 1.5rem auto;
+    }
+
+    /* text-gray-400 text-lg italic */
+    .services-header p {
+      color: #9ca3af;
+      font-size: 1.125rem;
+      font-style: italic;
+      font-weight: 500;
+      font-family: zalandoSans, sans-serif;
+    }
+
+    /* grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 */
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media(min-width:640px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(min-width:1024px) {
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media(min-width:1280px) {
+      .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    /* relative h-80 overflow-hidden border border-neutral-800 group */
+    .service-tile {
+      position: relative;
+      height: 20rem;
+      overflow: hidden;
+      border: 1px solid #262626;
+    }
+
+    /* absolute inset-0 */
+    .service-tile-bg {
+      position: absolute;
+      inset: 0;
+    }
+
+    /* w-full h-full object-cover */
+    .service-tile-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .service-tile:hover .service-tile-bg img {
+      transform: scale(1.05);
+    }
+
+    /* absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent */
+    .service-tile-grad {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.40) 50%, transparent 100%);
+    }
+
+    /* absolute inset-0 p-8 flex flex-col justify-end items-center text-center */
+    .service-tile-content {
+      position: absolute;
+      inset: 0;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* text-white text-xl font-bold tracking-wide mb-2 */
+    .service-tile-content h3 {
+      color: #fff;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.5rem;
+      font-family: 'ZalandoSans', sans-serif;
+    }
+
+    /* w-10 h-[2px] bg-[#C5A059] */
+    .service-tile-line {
+      width: 2.5rem;
+      height: 2px;
+      background: var(--brand);
+    }
+
+    /* ══ SECTION 6: WHO WE SERVE + CTA
+       py-24 bg-zinc-950 border-t border-neutral-900
+    ══ */
+    .serve-section {
+      padding: 6rem 0;
+      background: #09090b;
+      border-top: 1px solid #171717;
+    }
+
+    /* grid lg:grid-cols-2 gap-16 items-center */
+    .serve-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    @media(min-width:1024px) {
+      .serve-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* space-y-8 */
+    .serve-left {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    /* text-4xl md:text-5xl font-zolando text-white leading-tight */
+    .serve-left h2 {
+      font-family: 'ZalandoSans', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 200;
+      color: #fff;
+      line-height: 1.2;
+    }
+
+    @media(min-width:768px) {
+      .serve-left h2 {
+        font-size: 3rem;
+      }
+    }
+
+    /* grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 mt-8 */
+    .serve-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem 2rem;
+    }
+
+    @media(min-width:640px) {
+      .serve-list {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* flex items-center gap-3 text-gray-300 */
+    .serve-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: #d1d5db;
+    }
+
+    .serve-item svg {
+      width: 1rem;
+      height: 1rem;
+      stroke: var(--brand);
+      fill: none;
+      flex-shrink: 0;
+    }
+
+    /* text-sm tracking-wide uppercase */
+    .serve-item span {
+      font-size: 0.875rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* bg-gradient-to-br from-neutral-900 to-black p-10 border border-neutral-800 text-center relative overflow-hidden */
+    .serve-cta {
+      background: linear-gradient(135deg, #171717 0%, #000 100%);
+      padding: 2.5rem;
+      border: 1px solid #262626;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* w-12 h-12 text-[#C5A059] mx-auto mb-6 */
+    .serve-cta svg.cta-icon {
+      width: 3rem;
+      height: 3rem;
+      stroke: var(--brand);
+      fill: none;
+      margin: 0 auto 1.5rem auto;
+      display: block;
+    }
+
+    /* text-2xl font-zolando text-white mb-4 */
+    .serve-cta h3 {
+      font-family: 'ZalandoSans', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    /* text-gray-400 mb-8 */
+    .serve-cta p {
+      color: #9ca3af;
+      margin-bottom: 2rem;
+      font-weight: 300;
+    }
+
+    /* inline-flex items-center justify-center gap-2 px-8 py-3 bg-white text-black
+       font-bold uppercase tracking-widest hover:bg-[#C5A059] hover:text-white
+       transition-all duration-300 w-full */
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 2rem;
+      background: #fff;
+      color: #000;
+      font-family: 'Onest', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      text-decoration: none;
+      width: 100%;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .cta-btn:hover {
+      background: var(--brand);
+      color: #fff;
+    }
+
+    .cta-btn svg {
+      width: 1rem;
+      height: 1rem;
+      stroke: currentColor;
+      fill: none;
+    }
+
+    /* ══ SECTION 7: CONTACT FORM
+       py-24 bg-zinc-950 border-t border-neutral-800
+    ══ */
+    .form-section {
+      padding: 6rem 0;
+      background: #09090b;
+      border-top: 1px solid #262626;
+    }
+
+    /* max-w-2xl */
+    .form-inner {
+      max-width: 42rem;
+      margin: 0 auto;
+    }
+
+    /* text-center mb-12 */
+    .form-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    /* text-4xl md:text-5xl font-zolando text-white mb-4 */
+    .form-header h2 {
+      font-family: ZalandoSans, sans-serif;
+      font-size: 2.25rem;
+      font-weight: 100;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    @media(min-width:768px) {
+      .form-header h2 {
+        font-size: 3rem;
+      }
+    }
+
+    /* text-gray-400 */
+    .form-header p {
+      color: #9ca3af;
+      font-weight: 500;
+      font-family: zalandoSans, sans-serif;
+      
+    }
+
+    /* space-y-5 */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    /* w-full px-5 py-4 bg-neutral-900 border border-neutral-700 text-white
+       placeholder-gray-500 focus:outline-none focus:border-[#C5A059] transition-colors */
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 1rem 1.25rem;
+      background: #171717;
+      border: 1px solid #404040;
+      color: #fff;
+      font-family: 'Onest', sans-serif;
+      font-size: 0.9375rem;
+      font-weight: 300;
+      outline: none;
+      transition: border-color 0.25s;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: #6b7280;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--brand);
+    }
+
+    .contact-form textarea {
+      resize: none;
+      min-height: 140px;
+    }
+
+    .contact-form .honeypot {
+      display: none;
+    }
+
+    /* w-full py-4 bg-[#C5A059] text-black font-bold uppercase tracking-widest
+       hover:bg-[#b8923e] disabled:opacity-50 transition-colors duration-300 */
+    .contact-form button {
+      width: 100%;
+      padding: 1rem;
+      background: var(--brand);
+      color: #000;
+      font-family: 'Onest', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .contact-form button:hover {
+      background: var(--brand-hover);
+    }
+
+    .contact-form button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* ══ FOOTER ══ */
+    .site-footer {
+      position: relative;
+      width: 100%;
+      padding: 3rem 1rem;
+      color: #fff;
+      font-family: 'Onest', sans-serif;
+    }
+
+    @media(min-width:768px) {
+      .site-footer {
+        padding: 3rem 2rem;
+      }
+    }
+
+    .footer-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .footer-bg img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .footer-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.72);
+    }
+
+    .footer-inner {
+      position: relative;
+      z-index: 20;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-cols {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 3rem;
+    }
+
+    @media(min-width:768px) {
+      .footer-cols {
+        flex-direction: row;
+        gap: 2rem;
+      }
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      min-width: 180px;
+    }
+
+    .footer-brand img {
+      display: block;
+      max-width: 180px;
+    }
+
+    .footer-brand p {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.60);
+      max-width: 220px;
+      margin-left: 0.5rem;
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    .footer-col h3 {
+      font-weight: 700;
+      font-size: 1.125rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-left: 0.25rem;
+    }
+
+    .footer-col ul li a {
+      color: rgba(255, 255, 255, 0.70);
+      font-size: 0.875rem;
+      font-weight: 300;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--brand);
+    }
+
+    .footer-connect {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-left: 0.25rem;
+    }
+
+    .footer-email {
+      color: rgba(255, 255, 255, 0.70);
+      font-size: 0.875rem;
+      font-weight: 300;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-email:hover {
+      color: var(--brand);
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .footer-socials a {
+      color: rgba(255, 255, 255, 0.70);
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      transition: color 0.2s, transform 0.2s;
+    }
+
+    .footer-socials a:hover {
+      color: var(--brand);
+      transform: scale(1.10);
+    }
+
+    .footer-socials svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      fill: currentColor;
+      stroke: currentColor;
+      display: block;
+    }
+
+    .footer-bottom {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.10);
+    }
+
+    .footer-bottom p {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.50);
+      font-size: 0.875rem;
+      font-weight: 300;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+      @font-face {
+  font-family: 'ZalandoSans';
+  src: url('../fonts/ZalandoSans-Regular.ttf') format('truetype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'ZalandoSans';
+  src: url('../fonts/ZalandoSans-Italic.ttf') format('truetype');
+  font-weight: 400; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'ZalandoSans';
+  src: url('../fonts/ZalandoSans-Medium.ttf') format('truetype');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'ZalandoSans';
+  src: url('../fonts/ZalandoSans-SemiBold.ttf') format('truetype');
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'ZalandoSans';
+  src: url('../fonts/ZalandoSans-Bold.ttf') format('truetype');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'ZalandoSans';
+  src: url('../fonts/ZalandoSans-BoldItalic.ttf') format('truetype');
+  font-weight: 700; font-style: italic; font-display: swap;
+}
+   
+  </style>
+</head>
+
+<body>
+
+
+
+  <!-- ══ SECTION 1: HERO ══ -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="../images/consulting/hero.avif"
+        alt="Hero Background" />
+      <div class="hero-bg-grad"></div>
+    </div>
+    <div class="hero-content">
+      <span class="hero-overline">Strategic Advisory &amp; Operations</span>
+      <div class="hero-logo">
+        <img src="../images/consulting/consulting.png" alt="Consulting" width="600" height="300" />
+      </div>
+      <p>Strategic advisory to navigate complex market shifts and optimise operations for sustainable growth.</p>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 2: INTRO ══ -->
+  <section class="intro-section">
+    <div class="container consulting-intro">
+      <div class="intro-grid">
+        <div class="intro-left">
+          <div class="gold-bar"></div>
+          <h2>Unlock Your Business Potential</h2>
+          <p>We can help you whether it's managing your business through bespoke solutions, strategic insights,
+            impactful promotions, or exceptional client engagement to drive success and growth.</p>
+        </div>
+        <div class="intro-right">
+          <img src="../images/consulting/photo-1507679799987-c73779587ccf.avif"
+            alt="Intro" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 3: ABOUT + CARDS ══ -->
+  <section class="about-section">
+    <div class="container">
+      <div class="about-grid">
+
+        <!-- Left col -->
+        <div class="about-left">
+          <span class="about-label">About</span>
+          <h2>We understand your situation. Let us guide you.</h2>
+          <p>We partner with you to develop tailored strategies, turn data into actionable insights, accelerate sales
+            through customised marketing, and create meaningful customer interactions that enhance loyalty and drive
+            success.</p>
+        </div>
+
+        <!-- Right col: 4 white cards -->
+        <div class="about-cards">
+
+          <div class="about-card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M3 3v16a2 2 0 0 0 2 2h16" />
+                <path d="m19 9-5 5-4-4-3 3" />
+              </svg>
+            </div>
+            <h4>Business Plan</h4>
+            <p>Let us help with your strategic roadmap, guiding your business towards success, growth and
+              sustainability.</p>
+          </div>
+
+          <div class="about-card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <circle cx="12" cy="12" r="6" />
+                <circle cx="12" cy="12" r="2" />
+              </svg>
+            </div>
+            <h4>Analysis &amp; Strategy</h4>
+            <p>Data-driven insights shaping effective strategies for informed decision-making and rapid growth.</p>
+          </div>
+
+          <div class="about-card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" />
+                <path d="M9 18h6" />
+                <path d="M10 22h4" />
+              </svg>
+            </div>
+            <h4>Sales &amp; Marketing</h4>
+            <p>Driving customer engagement, boosting revenue, and building strong brand presence across all channels.
+            </p>
+          </div>
+
+          <div class="about-card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                <path d="M16 3.128a4 4 0 0 1 0 7.744" />
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                <circle cx="9" cy="7" r="4" />
+              </svg>
+            </div>
+            <h4>Customer Experience</h4>
+            <p>Enhancing interactions to build loyalty, satisfaction, and lasting relationships with your clientele.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 4: SIGNATURE OFFERINGS ══ -->
+  <section class="offerings-section">
+    <div class="container">
+      <div class="offerings-header">
+        <span class="label">Strategic Tiers</span>
+        <h3>Our Signature Offerings</h3>
+        <p>Tailored solutions designed for immediate impact</p>
+      </div>
+
+      <div class="offerings-grid">
+
+        <!-- Card 1 -->
+        <div class="offering-card">
+          <h4>The Strategic Audit</h4>
+          <p class="offering-tier">For businesses seeking clarity</p>
+          <p class="offering-desc">A comprehensive review of your current operations and market position.</p>
+          <ul class="offering-list">
+            <li><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <path d="m9 12 2 2 4-4" />
+              </svg><span>360° Operational Assessment</span></li>
+            <li><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <path d="m9 12 2 2 4-4" />
+              </svg><span>Competitor Market Analysis</span></li>
+            <li><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <path d="m9 12 2 2 4-4" />
+              </svg><span>SWOT &amp; Gap Analysis</span></li>
+            <li><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <path d="m9 12 2 2 4-4" />
+              </svg><span>Roadmap for Growth</span></li>
+          </ul>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="offering-card">
+          <h4>Growth Accelerator</h4>
+          <p class="offering-tier">For businesses ready to scale</p>
+          <p class="offering-desc">Hands-on support to drive revenue and optimize your sales funnel.</p>
+          <ul class="offering-list">
+            <li><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <path d="m9 12 2 2 4-4" />
+              </svg><span>Sales Process Optimization</span></li>
+            <li><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <path d="m9 12 2 2 4-4" />
+              </svg><span>Marketing Campaign Management</span></li>
+            <li><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <path d="m9 12 2 2 4-4" />
+              </svg><span>Customer Retention Strategies</span></li>
+            <li><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <path d="m9 12 2 2 4-4" />
+              </svg><span>Performance Reviews</span></li>
+          </ul>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="offering-card">
+          <h4>Executive Partnership</h4>
+          <p class="offering-tier">Full-service advisory</p>
+          <p class="offering-desc">We act as your extended C-suite, handling strategy while you run the business.</p>
+          <ul class="offering-list">
+            <li><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <path d="m9 12 2 2 4-4" />
+              </svg><span>Weekly Strategy Sessions</span></li>
+            <li><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <path d="m9 12 2 2 4-4" />
+              </svg><span>Financial Planning &amp; Forecasting</span></li>
+            <li><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <path d="m9 12 2 2 4-4" />
+              </svg><span>Leadership Mentoring</span></li>
+            <li><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <path d="m9 12 2 2 4-4" />
+              </svg><span>24/7 Crisis Support</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 5: FULL SERVICE CAPABILITIES ══ -->
+  <section class="services-section">
+    <div class="container">
+      <div class="services-header">
+        <span class="label">Our Services</span>
+        <h2>Full Service Capabilities</h2>
+        <div class="gold-divider"></div>
+        <p>From strategy to execution, we cover every channel.</p>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="service-tile">
+          <div class="service-tile-bg"><img src="../images/consulting/buissnes.png" alt="Business Services" />
+            <div class="service-tile-grad"></div>
+          </div>
+          <div class="service-tile-content">
+            <h3>Business Services</h3>
+            <div class="service-tile-line"></div>
+          </div>
+        </div>
+
+        <div class="service-tile">
+          <div class="service-tile-bg"><img
+              src="../images/consulting/photo-142.avif"
+              alt="Web Design & Development" />
+            <div class="service-tile-grad"></div>
+          </div>
+          <div class="service-tile-content">
+            <h3>Web Design &amp; Development</h3>
+            <div class="service-tile-line"></div>
+          </div>
+        </div>
+
+        <div class="service-tile">
+          <div class="service-tile-bg"><img src="../images/consulting/bus.png" alt="PR & Communications" />
+            <div class="service-tile-grad"></div>
+          </div>
+          <div class="service-tile-content">
+            <h3>PR &amp; Communications</h3>
+            <div class="service-tile-line"></div>
+          </div>
+        </div>
+
+        <div class="service-tile">
+          <div class="service-tile-bg"><img src="../images/consulting/social.png"
+              alt="Social Media Advertising" />
+            <div class="service-tile-grad"></div>
+          </div>
+          <div class="service-tile-content">
+            <h3>Social Media Advertising</h3>
+            <div class="service-tile-line"></div>
+          </div>
+        </div>
+
+        <div class="service-tile">
+          <div class="service-tile-bg"><img src="../images/consulting/radio.png" alt="Radio Advertising" />
+            <div class="service-tile-grad"></div>
+          </div>
+          <div class="service-tile-content">
+            <h3>Radio Advertising</h3>
+            <div class="service-tile-line"></div>
+          </div>
+        </div>
+
+        <div class="service-tile">
+          <div class="service-tile-bg"><img src="../images/consulting/letter.png" alt="Letterbox Distribution" />
+            <div class="service-tile-grad"></div>
+          </div>
+          <div class="service-tile-content">
+            <h3>Letterbox Distribution</h3>
+            <div class="service-tile-line"></div>
+          </div>
+        </div>
+
+        <div class="service-tile">
+          <div class="service-tile-bg"><img src="../images/consulting/print.png" alt="Print & Produce" />
+            <div class="service-tile-grad"></div>
+          </div>
+          <div class="service-tile-content">
+            <h3>Print &amp; Produce</h3>
+            <div class="service-tile-line"></div>
+          </div>
+        </div>
+
+        <div class="service-tile">
+          <div class="service-tile-bg"><img src="../images/consulting/television.png"
+              alt="Television Advertising" />
+            <div class="service-tile-grad"></div>
+          </div>
+          <div class="service-tile-content">
+            <h3>Television Advertising</h3>
+            <div class="service-tile-line"></div>
+          </div>
+        </div>
+
+        <div class="service-tile">
+          <div class="service-tile-bg"><img src="../images/consulting/outdoor.png" alt="Outdoor & Billboard" />
+            <div class="service-tile-grad"></div>
+          </div>
+          <div class="service-tile-content">
+            <h3>Outdoor &amp; Billboard</h3>
+            <div class="service-tile-line"></div>
+          </div>
+        </div>
+
+        <div class="service-tile">
+          <div class="service-tile-bg"><img
+              src="../images/consulting/photo-1432888498266-38ffec3eaf0a.avif"
+              alt="Digital Advertising & Creative" />
+            <div class="service-tile-grad"></div>
+          </div>
+          <div class="service-tile-content">
+            <h3>Digital Advertising &amp; Creative</h3>
+            <div class="service-tile-line"></div>
+          </div>
+        </div>
+
+        <div class="service-tile">
+          <div class="service-tile-bg"><img
+              src="../images/consulting/photo-1489599849927-2ee91cede3ba.avif"
+              alt="Cinema & Screen" />
+            <div class="service-tile-grad"></div>
+          </div>
+          <div class="service-tile-content">
+            <h3>Cinema &amp; Screen</h3>
+            <div class="service-tile-line"></div>
+          </div>
+        </div>
+
+        <div class="service-tile">
+          <div class="service-tile-bg"><img
+              src="../images/consulting/photo-1504711434969-e33886168f5c.avif"
+              alt="Newspaper & Magazine" />
+            <div class="service-tile-grad"></div>
+          </div>
+          <div class="service-tile-content">
+            <h3>Newspaper &amp; Magazine</h3>
+            <div class="service-tile-line"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 6: WHO WE SERVE + CTA ══ -->
+  <section class="serve-section">
+    <div class="container">
+      <div class="serve-grid">
+
+        <!-- Left: checklist -->
+        <div class="serve-left">
+          <h2>We tailor our solutions to support every type of business.</h2>
+          <div class="serve-list">
+            <div class="serve-item"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5" />
+              </svg><span>Retail</span></div>
+            <div class="serve-item"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5" />
+              </svg><span>Hospitality</span></div>
+            <div class="serve-item"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5" />
+              </svg><span>Media</span></div>
+            <div class="serve-item"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5" />
+              </svg><span>Tech</span></div>
+            <div class="serve-item"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5" />
+              </svg><span>Government</span></div>
+            <div class="serve-item"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5" />
+              </svg><span>Travel</span></div>
+            <div class="serve-item"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5" />
+              </svg><span>Leisure</span></div>
+            <div class="serve-item"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5" />
+              </svg><span>Health &amp; Aged Care</span></div>
+          </div>
+        </div>
+
+        <!-- Right: CTA card -->
+        <div class="serve-cta">
+          <svg class="cta-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+            <rect width="20" height="14" x="2" y="6" rx="2" />
+          </svg>
+          <h3>Ready to elevate your business?</h3>
+          <p>Our team is ready to discuss your specific needs.</p>
+          <a class="cta-btn" href="tel:0421121985">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path
+                d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
+            </svg>
+            Get in touch
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 7: CONTACT FORM ══ -->
+  <section class="form-section">
+    <div class="container">
+      <div class="form-inner">
+        <div class="form-header">
+          <h2>Contact Us</h2>
+          <p>Get in touch with our team. We'll get back to you as soon as possible.</p>
+        </div>
+        <form class="contact-form" action="#" method="POST">
+          <input class="honeypot" type="text" name="_gotcha" autocomplete="off" tabindex="-1"/>
+          <div><input type="text"  name="name"    placeholder="Enter your Name"            required/></div>
+          <div><input type="email" name="email"   placeholder="Enter a valid email address" required/></div>
+          <div><input type="tel"   name="phone"   placeholder="Enter Phone Number"          required/></div>
+          <div><textarea           name="message" rows="5" placeholder="Enter your message"  required></textarea></div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </section>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script src="../nav-footer.js"></script>
+
+<script src="../emailjs-form.js"></script>
+
+
+
+
+
+</body>
+
+</html>
