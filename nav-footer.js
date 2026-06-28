@@ -1,9 +1,9 @@
 /**
- * nav-footer.js  — Boss Capital shared Navbar + Footer
+ * nav-footer.js  — Boss Connect shared Navbar + Footer
  *
  * Works in TWO environments:
  *  1. Local  — file:///path/to/index.html  (links use .html filenames)
- *  2. Server — https://bosscapital.com.au/ (links use clean paths)
+ *  2. Server — https://bossconnect.com.au/ (links use clean paths)
  *
  * Drop ALL pages + this file in the SAME folder.
  * Each page just needs: <script src="nav-footer.js"></script>
@@ -25,7 +25,7 @@
   // 1. Opening as file:// locally
   // 2. Running on localhost dev server
   // 3. OR deployed to a subfolder (not the root of the domain)
-  //    e.g. https://bosscapital.com.au/web1_v1/ → basePath = "/web1_v1/"
+  //    e.g. https://bossconnect.com.au/web1_v1/ → basePath = "/web1_v1/"
   const useRelative = isLocal || isLocalServer;
 
   /* ─── 1b. DETECT IF INSIDE A SUBFOLDER ──────────────────────── */
@@ -72,11 +72,14 @@
     about       : prefix + "about.html",
     contact     : prefix + "contact.html",
     consulting  : prefix + "capabilities/consulting.html",
-    connect     : prefix + "capabilities/connect.html",
+    events      : prefix + "capabilities/events.html",
     coaching    : prefix + "capabilities/coaching.html",
     creative    : prefix + "capabilities/creative.html",
     clicks      : prefix + "capabilities/clicks.html",
-    content     : prefix + "capabilities/content.html",
+    publications: prefix + "capabilities/publications.html",
+    champions   : prefix + "capabilities/champions.html",
+    pyob        : prefix + "capabilities/pyob.html",
+    media       : prefix + "capabilities/media.html",
     galleryWsi        : prefix + "gallery/wsi.html",
     galleryAmazon     : prefix + "gallery/amazon.html",
     galleryDoltone    : prefix + "gallery/doltone_house.html",
@@ -95,11 +98,14 @@
     "contact.html"    : "contact",
     // ── Capability pages (inside capabilities/ folder) ──
     "consulting.html" : "consulting",
-    "connect.html"    : "connect",
+    "events.html"     : "events",
     "coaching.html"   : "coaching",
     "creative.html"   : "creative",
     "clicks.html"     : "clicks",
-    "content.html"    : "content",
+    "publications.html" : "publications",
+    "champions.html"  : "champions",
+    "pyob.html"       : "pyob",
+    "media.html"      : "media",
     // ── PDF / magazine pages — no active class ──
     "museum-magazine.html"       : null,
     "view-pdf.html"              : null,
@@ -127,11 +133,14 @@
     !noActive &&
     [
       "consulting",
-      "connect",
+      "events",
       "coaching",
       "creative",
       "clicks",
-      "content",
+      "publications",
+      "champions",
+      "pyob",
+      "media",
     ].includes(activePage);
 
   // Only return active class when activePage matches AND is not null
@@ -397,7 +406,7 @@
     <nav class="bc-navbar">
 
       <a class="bc-nav-logo" href="${L.home}">
-        <img src="../images/logo.png" alt="Boss Capital" width="160" height="50"/>
+        <img src="${prefix}images/connect/connect_2.png" alt="Boss Connect" width="160" height="50"/>
       </a>
 
       <div class="bc-nav-right">
@@ -414,11 +423,14 @@
             </button>
             <div class="bc-cap-dropdown" id="bcCapDropdown" role="menu">
               <a href="${L.consulting}"${acHref("consulting")} role="menuitem">Consulting</a>
-              <a href="${L.connect}"${acHref("connect")} role="menuitem">Connect</a>
+              <a href="${L.events}"${acHref("events")} role="menuitem">Events</a>
               <a href="${L.coaching}"${acHref("coaching")} role="menuitem">Coaching</a>
               <a href="${L.creative}"${acHref("creative")} role="menuitem">Creative</a>
               <a href="${L.clicks}"${acHref("clicks")} role="menuitem">Clicks</a>
-              <a href="${L.content}"${acHref("content")} role="menuitem">Content</a>
+              <a href="${L.publications}"${acHref("publications")} role="menuitem">Publications</a>
+              <a href="${L.champions}"${acHref("champions")} role="menuitem">Champions</a>
+              <a href="${L.pyob}"${acHref("pyob")} role="menuitem">PYOB</a>
+              <a href="${L.media}"${acHref("media")} role="menuitem">Media</a>
             </div>
           </li>
 
@@ -454,11 +466,14 @@
           </button>
           <div class="bc-drawer-sub${isCapability ? " open" : ""}" id="bcDrawerSub">
             <a href="${L.consulting}"${acHref("consulting")}>Consulting</a>
-            <a href="${L.connect}"${acHref("connect")}>Connect</a>
+            <a href="${L.events}"${acHref("events")}>Events</a>
             <a href="${L.coaching}"${acHref("coaching")}>Coaching</a>
             <a href="${L.creative}"${acHref("creative")}>Creative</a>
             <a href="${L.clicks}"${acHref("clicks")}>Clicks</a>
-            <a href="${L.content}"${acHref("content")}>Content</a>
+            <a href="${L.publications}"${acHref("publications")}>Publications</a>
+            <a href="${L.champions}"${acHref("champions")}>Champions</a>
+            <a href="${L.pyob}"${acHref("pyob")}>PYOB</a>
+            <a href="${L.media}"${acHref("media")}>Media</a>
           </div>
         </li>
         <li class="bc-drawer-phone-li">
@@ -478,8 +493,8 @@
     <div class="bc-footer-inner">
       <div class="bc-footer-cols">
         <div class="bc-footer-brand">
-          <a href="${L.home}"><img src="../images/logo.png" alt="Boss Capital" /></a>
-          <p>Empowering businesses with strategic capital solutions.</p>
+          <a href="${L.home}"><img src="${prefix}images/connect/connect_2.png" alt="Boss Connect" /></a>
+          <p>Empowering businesses with strategic connections for growth.</p>
         </div>
         <div class="bc-footer-col">
           <h3>Company</h3>
@@ -492,22 +507,22 @@
           <h3>Capabilities</h3>
           <ul>
             <li><a href="${L.consulting}">Consulting</a></li>
-            <li><a href="${L.connect}">Connect</a></li>
+            <li><a href="${L.events}">Events</a></li>
             <li><a href="${L.coaching}">Coaching</a></li>
             <li><a href="${L.creative}">Creative</a></li>
             <li><a href="${L.clicks}">Clicks</a></li>
-            <li><a href="${L.content}">Content</a></li>
+            <li><a href="${L.publications}">Publications</a></li>
+            <li><a href="${L.champions}">Champions</a></li>
+            <li><a href="${L.pyob}">PYOB</a></li>
+            <li><a href="${L.media}">Media</a></li>
           </ul>
         </div>
         <div class="bc-footer-col">
           <h3>Connect</h3>
           <div class="bc-footer-connect">
-            <a href="mailto:info@bosscapital.com.au" class="bc-footer-email">info@bosscapital.com.au</a>
+            <a href="mailto:info@bossconnect.com.au" class="bc-footer-email">info@bossconnect.com.au</a>
             <div class="bc-footer-socials">
-              <a href="https://www.facebook.com/BossCapitalAus" target="_blank" rel="noopener" aria-label="Facebook">
-                <svg viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
-              </a>
-              <a href="https://www.linkedin.com/company/bosscapital-aus" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/company/boss-connect-aus" target="_blank" rel="noopener" aria-label="LinkedIn">
                 <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
               </a>
             </div>
@@ -515,7 +530,7 @@
         </div>
       </div>
       <div class="bc-footer-bottom">
-        <p>© ${year} Boss Capital. All rights reserved.</p>
+        <p>© ${year} Boss Connect. All rights reserved.</p>
       </div>
     </div>
   </footer>`;

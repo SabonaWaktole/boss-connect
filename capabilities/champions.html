@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Connect — Boss Capital</title>
+  <title>Champions — Boss Connect</title>
   <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <style>
     /* ══ ZALANDO SANS ══ */
@@ -456,18 +456,18 @@
     /* ══ HERO ══ */
     .hero {
       position: relative;
-      height: 70vh;
-      min-height: 480px;
+      min-height: 70vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
+      padding: 5rem 0 4rem;
     }
 
     .hero-bg {
       position: absolute;
       inset: 0;
       z-index: 0;
+      overflow: hidden;
     }
 
     .hero-bg img {
@@ -514,13 +514,48 @@
     .hero-logo {
       display: flex;
       justify-content: center;
-      margin-bottom: 1rem;
+      margin-bottom: 1.25rem;
     }
 
     .hero-logo img {
-      max-width: 400px;
+      max-width: 180px;
       width: 100%;
       height: auto;
+    }
+
+    @media(min-width:768px) {
+      .hero-logo img {
+        max-width: 260px;
+      }
+    }
+
+    .hero-title {
+      color: #fff;
+      font-family: 'ZalandoSans', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+
+    @media(min-width:768px) {
+      .hero-title {
+        font-size: 3rem;
+      }
+    }
+
+    .hero-tagline {
+      color: #d6b16a;
+      font-size: 1.125rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      margin-bottom: 1rem;
+    }
+
+    @media(min-width:768px) {
+      .hero-tagline {
+        font-size: 1.375rem;
+      }
     }
 
     .hero-content p {
@@ -1945,15 +1980,17 @@
   <!-- ══ SECTION 1: HERO ══ -->
   <section class="hero">
     <div class="hero-bg">
-      <img src="../images/connect/connect_1.avif" alt="Hero Background" />
+      <img src="../images/champions/hero-bg.jpg" alt="Hero Background" />
       <div class="hero-bg-grad"></div>
     </div>
     <div class="hero-content">
-      <span class="hero-overline">Strategic Partnerships &amp; Introductions</span>
       <div class="hero-logo">
-        <img src="../images/connect/connect_2.png" alt="Connect" width="600" height="300" />
+        <img src="../images/champions/logo.png" alt="Industry Champions" />
       </div>
-      <p>Strategic networking and partnership introductions designed to unlock opportunity and accelerate growth.</p>
+      <span class="hero-overline">Professional Profiles</span>
+      <h1 class="hero-title">Industry Champions</h1>
+      <p class="hero-tagline">Exceptional professionals</p>
+      <p>A curated directory of exceptional professionals defining excellence.</p>
     </div>
   </section>
 
@@ -1963,12 +2000,11 @@
       <div class="intro-grid">
         <div class="intro-left">
           <div class="gold-bar"></div>
-          <h2>The Right Connections Change Everything</h2>
-          <p>Boss Connect brings businesses, leaders, and capital together through trusted relationships. We don't chase volume
-            — we curate meaningful connections that create leverage, momentum, and long-term value.</p>
+          <h2>Leading the Future of Industry</h2>
+          <p>Showcasing excellence in business. We connect industry leaders to share stories, insights, and unparalleled expertise with the world. Explore profiles, browse by sector, and discover the leaders shaping tomorrow.</p>
         </div>
         <div class="intro-right">
-          <img src="../images/connect/connect_social.jpeg" alt="Connect" />
+          <img src="../images/champions/modern-business.jpg" alt="Industry Champions" />
         </div>
       </div>
     </div>
@@ -1979,17 +2015,21 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-left">
-          <h2>Who we connect.</h2>
-          <p>We identify alignment between people, opportunities, and markets, facilitating introductions that are
-            strategic, relevant, and built for scale.<br><br>
-            
-            FOUNDERS<br>
-INVESTORS<br>
-OPERATORS<br>
-ADVISORS<br>
-FAMILY OFFICES<br>
-GROWTH PARTNERS<br>
-</p>
+          <h2>Explore Industries.</h2>
+          <p>Browse by sector to find leaders shaping tomorrow.<br><br>
+            EDUCATION &amp; NONPROFIT<br>
+            FINANCIAL<br>
+            HEALTHCARE<br>
+            LEGAL<br>
+            MANUFACTURING<br>
+            MEDIA &amp; ENTERTAINMENT<br>
+            PROFESSIONAL SERVICES<br>
+            PROPERTY<br>
+            RETAIL<br>
+            TECHNOLOGY &amp; DIGITAL<br>
+            TOURISM &amp; HOSPITALITY<br>
+            TRADES<br>
+          </p>
         </div>
         <div class="about-cards">
           <div class="about-card">
@@ -2000,8 +2040,8 @@ GROWTH PARTNERS<br>
                 <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
                 <circle cx="9" cy="7" r="4" />
               </svg></div>
-            <h4>Strategic Introductions</h4>
-            <p>High-value introductions to partners, investors, and decision-makers aligned with your objectives.</p>
+            <h4>Curated Profiles</h4>
+            <p>Verified professional profiles highlighting expertise, achievements, and the value each leader brings to their industry.</p>
           </div>
           <div class="about-card">
             <div class="card-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2"
@@ -2010,8 +2050,8 @@ GROWTH PARTNERS<br>
                 <circle cx="12" cy="12" r="6" />
                 <circle cx="12" cy="12" r="2" />
               </svg></div>
-            <h4>Network Expansion</h4>
-            <p>Purpose-driven relationship building to extend your reach into the right circles.</p>
+            <h4>Sector Directory</h4>
+            <p>Browse leaders organised by industry and specialisation — from financial services to technology and trades.</p>
           </div>
           <div class="about-card">
             <div class="card-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2"
@@ -2021,8 +2061,8 @@ GROWTH PARTNERS<br>
                 <path d="M13 17V5" />
                 <path d="M8 17v-3" />
               </svg></div>
-            <h4>Capital Access</h4>
-            <p>Connecting businesses with funding pathways and growth capital opportunities.</p>
+            <h4>Featured Professionals</h4>
+            <p>Discover standout leaders defining excellence — profiles that spotlight experience, credibility, and results.</p>
           </div>
           <div class="about-card">
             <div class="card-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2"
@@ -2030,8 +2070,8 @@ GROWTH PARTNERS<br>
                 <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
                 <rect width="20" height="14" x="2" y="6" rx="2" />
               </svg></div>
-            <h4>Strategic Alliances</h4>
-            <p>Partnerships structured for mutual benefit, longevity, and measurable impact.</p>
+            <h4>Become a Member</h4>
+            <p>Apply to join the directory and showcase your professional profile to a wider audience of peers and clients.</p>
           </div>
         </div>
       </div>
@@ -2042,54 +2082,62 @@ GROWTH PARTNERS<br>
   <section id="events" class="events-section">
     <div class="container">
       <div class="events-header">
-        <h2>Upcoming Events</h2>
-        <p>Exclusive site tours, factory visits, and networking opportunities for ambitious business leaders.</p>
+        <h2>Featured Professionals</h2>
+        <p>Discover the leaders shaping tomorrow — exceptional professionals defining excellence across their industries.</p>
       </div>
 
       <div class="events-grid">
-        <!-- Event 1: Amazon Factory Tour -->
         <div class="event-card">
           <div class="event-image-wrap" style="aspect-ratio: 16/9;">
-            <img src="../images/gallery/aws/AmazonTours2_nsyebr.jpg" alt="Amazon Factory Tour" class="event-image" />
+            <img src="../images/champions/chris-pennisi.jpg" alt="Chris Pennisi" class="event-image" />
           </div>
           <div class="event-content">
-            <span class="event-badge">Exclusive Site Tour</span>
-            <h3 class="event-title">Amazon Factory Tour</h3>
-            <p class="event-desc">Get an exclusive, behind-the-scenes look at one of the world's most advanced fulfillment centers. Discover cutting-edge logistics and robotics in action.</p>
+            <span class="event-badge">Featured</span>
+            <h3 class="event-title">Chris Pennisi</h3>
+            <p class="event-desc">Founder &amp; Business Strategist. Chris Pennisi is an accomplished business strategist with over 20 years of experience across sales, marketing, technology, and enterprise growth. He helps businesses move beyond obstacles and unlock sustainable, strategic expansion.</p>
             <div class="event-meta">
               <div class="event-meta-item">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="meta-icon"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                <span>Wednesday, July 1  •  1:30 PM - 3 PM</span>
-              </div>
-              <div class="event-meta-item">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="meta-icon"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                <span>Amazon Fulfillment Centre BWU2 Kemps Creek, NSW</span>
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="meta-icon"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                <span>Professional Services | Technology &amp; Digital</span>
               </div>
             </div>
-            <a href="https://BossConnectAmazon.eventbrite.com.au" target="_blank" rel="noopener" class="event-btn">BOOK TICKETS</a>
+            <a href="https://www.industrychampions.com.au/profiles/chris-pennisi/" target="_blank" rel="noopener" class="event-btn">View Profile</a>
           </div>
         </div>
 
-        <!-- Event 2: Bradfield City -->
         <div class="event-card">
           <div class="event-image-wrap" style="aspect-ratio: 16/9;">
-            <img src="../images/connect/bradfield.png" alt="Bradfield City" class="event-image" />
+            <img src="../images/champions/genene-wilson.jpg" alt="Genene Wilson" class="event-image" />
           </div>
           <div class="event-content">
-            <span class="event-badge">Strategic Tour &amp; Briefing</span>
-            <h3 class="event-title">Bradfield City</h3>
-            <p class="event-desc">Explore the future of Sydney's newest smart city and advanced manufacturing hub. Align your business with tomorrow's premier industrial and technology corridor.</p>
+            <span class="event-badge">Featured</span>
+            <h3 class="event-title">Genene Wilson</h3>
+            <p class="event-desc">Revenue Architect &amp; Sales Performance Strategist. Founder of the PROSPER Method helping business owners increase conversions, strengthen leadership identity, and build sustainable revenue through strategic positioning and behavioural sales psychology.</p>
             <div class="event-meta">
               <div class="event-meta-item">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="meta-icon"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                <span>Monday, August 3  •  1 PM - 3 PM</span>
-              </div>
-              <div class="event-meta-item">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="meta-icon"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                <span>Advanced Manufacturing Readiness Facility Bradfield, NSW</span>
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="meta-icon"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                <span>Professional Services</span>
               </div>
             </div>
-            <a href="https://BossConnectBradfield.eventbrite.com.au" target="_blank" rel="noopener" class="event-btn">Book Tickets</a>
+            <a href="https://www.industrychampions.com.au/profiles/genene-wilson/" target="_blank" rel="noopener" class="event-btn">View Profile</a>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-image-wrap" style="aspect-ratio: 16/9;">
+            <img src="../images/champions/daller-badaloff.jpg" alt="Daller Badaloff" class="event-image" />
+          </div>
+          <div class="event-content">
+            <span class="event-badge">Featured</span>
+            <h3 class="event-title">Daller Badaloff</h3>
+            <p class="event-desc">Senior Technology Leader. Senior technology and transformation leader helping organisations align strategy, delivery and execution to achieve measurable business outcomes. Experienced across financial services, consulting and complex enterprise environments.</p>
+            <div class="event-meta">
+              <div class="event-meta-item">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="meta-icon"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                <span>Technology &amp; Digital | Professional Services</span>
+              </div>
+            </div>
+            <a href="https://www.industrychampions.com.au/profiles/daller-badaloff/" target="_blank" rel="noopener" class="event-btn">View Profile</a>
           </div>
         </div>
       </div>
@@ -2100,89 +2148,76 @@ GROWTH PARTNERS<br>
   <section id="gallery" class="gallery-section">
     <div class="container">
       <div class="gallery-header">
-        <h2>Galleries</h2>
-        <p>Where meaningful connections are made.</p>
+        <h2>Explore Industries</h2>
+        <p>Browse by sector to find leaders shaping tomorrow.</p>
       </div>
 
       <div class="gallery-grid">
 
-        <!-- Tile 1 — data-index used by lightbox JS -->
-        <a class="gallery-tile" data-index="0" href="/gallery/wsi.html">
-          <img src="../images/connect/wsl.jpeg" alt="Western Sydney International Airport" />
+        <a class="gallery-tile" href="https://www.industrychampions.com.au/industries/professional-services/" target="_blank" rel="noopener">
+          <img src="../images/champions/sector-professional-services.avif" alt="Professional Services" />
           <div class="gallery-overlay"></div>
           <div class="gallery-text">
-            <span class="tile-label">Boss Connect</span>
-            <h4>Western Sydney International Airport</h4>
+            <span class="tile-label">Industry Champions</span>
+            <h4>Professional Services</h4>
             <div class="gallery-view">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round">
                 <circle cx="11" cy="11" r="8" />
                 <line x1="21" x2="16.65" y1="21" y2="16.65" />
-                <line x1="11" x2="11" y1="8" y2="14" />
-                <line x1="8" x2="14" y1="11" y2="11" />
               </svg>
-              View Gallery
+              Explore Sector
             </div>
           </div>
         </a>
 
-        <!-- Tile 2 -->
-        <a href="/gallery/amazon.html" class="gallery-tile" data-index="1">
-          <img src="../images/connect/amazon_article_nadoda.jpg"
-            alt="Amazon Factory Tour" />
+        <a href="https://www.industrychampions.com.au/industries/technology-digital/" target="_blank" rel="noopener" class="gallery-tile">
+          <img src="../images/champions/sector-technology.avif" alt="Technology & Digital" />
           <div class="gallery-overlay"></div>
           <div class="gallery-text">
-            <span class="tile-label">Boss Connect</span>
-            <h4>Amazon Factory Tour</h4>
+            <span class="tile-label">Industry Champions</span>
+            <h4>Technology &amp; Digital</h4>
             <div class="gallery-view">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round">
                 <circle cx="11" cy="11" r="8" />
                 <line x1="21" x2="16.65" y1="21" y2="16.65" />
-                <line x1="11" x2="11" y1="8" y2="14" />
-                <line x1="8" x2="14" y1="11" y2="11" />
               </svg>
-              View Gallery
+              Explore Sector
             </div>
           </div>
         </a>
 
-        <!-- Tile 3 -->
-        <a href="/gallery/doltone_house.html" class="gallery-tile" data-index="2">
-          <img src="../images/gallery/doltone_house/Club1.jpg" alt="Doltone House" />
+        <a href="https://www.industrychampions.com.au/industries/financial/" target="_blank" rel="noopener" class="gallery-tile">
+          <img src="../images/champions/sector-financial.jpg" alt="Financial" />
           <div class="gallery-overlay"></div>
           <div class="gallery-text">
-            <span class="tile-label">Boss Connect</span>
-            <h4>Doltone House</h4>
+            <span class="tile-label">Industry Champions</span>
+            <h4>Financial</h4>
             <div class="gallery-view">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round">
                 <circle cx="11" cy="11" r="8" />
                 <line x1="21" x2="16.65" y1="21" y2="16.65" />
-                <line x1="11" x2="11" y1="8" y2="14" />
-                <line x1="8" x2="14" y1="11" y2="11" />
               </svg>
-              View Gallery
+              Explore Sector
             </div>
           </div>
         </a>
 
-        <!-- Tile 4 -->
-        <a href="/gallery/expos.html" class="gallery-tile" data-index="3">
-          <img src="../images/connect/wep.jpeg" alt="WEXPO" />
+        <a href="https://www.industrychampions.com.au/industries/healthcare/" target="_blank" rel="noopener" class="gallery-tile">
+          <img src="../images/champions/sector-healthcare.avif" alt="Healthcare" />
           <div class="gallery-overlay"></div>
           <div class="gallery-text">
-            <span class="tile-label">Boss Connect</span>
-            <h4>EXPOS</h4>
+            <span class="tile-label">Industry Champions</span>
+            <h4>Healthcare</h4>
             <div class="gallery-view">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round">
                 <circle cx="11" cy="11" r="8" />
                 <line x1="21" x2="16.65" y1="21" y2="16.65" />
-                <line x1="11" x2="11" y1="8" y2="14" />
-                <line x1="8" x2="14" y1="11" y2="11" />
               </svg>
-              View Gallery
+              Explore Sector
             </div>
           </div>
         </a>
@@ -2244,18 +2279,18 @@ GROWTH PARTNERS<br>
     <div class="container">
       <div class="magazine-inner">
         <div class="magazine-header">
-          <h3>Boss Connect Magazine</h3>
+          <h3>Explore the Full Directory</h3>
         </div>
         <div class="magazine-body">
-          <a class="magazine-link" href="https://heyzine.com/flip-book/80e8163137.html" download="https://heyzine.com/flip-book/80e8163137.html" target="_blank">
+          <a class="magazine-link" href="https://www.industrychampions.com.au/directory/" target="_blank" rel="noopener">
             <div class="magazine-cover">
               <img
-                src="../images/connect/Screenshot_2026-04-03_181405_tivnau.png"
-                alt="Boss Connect PDF cover" />
+                src="../images/champions/logo.png"
+                alt="Industry Champions directory" />
               <div class="magazine-cover-overlay"></div>
             </div>
           </a>
-          <a class="magazine-download" href="https://heyzine.com/flip-book/80e8163137.html" target="_blank" download="https://heyzine.com/flip-book/80e8163137.html">Download</a>
+          <a class="magazine-download" href="https://www.industrychampions.com.au" target="_blank" rel="noopener">Visit industrychampions.com.au</a>
         </div>
       </div>
     </div>
@@ -2267,8 +2302,8 @@ GROWTH PARTNERS<br>
       <div class="form-inner">
         <div class="form-header">
           <div class="form-gold-bar"></div>
-          <h2>Register Your Interest to Attend</h2>
-          <p>Submit your inquiry and we'll be in touch shortly.</p>
+          <h2>Become a Member</h2>
+          <p>Register your interest to join the Industry Champions directory.</p>
         </div>
         <form class="contact-form" action="#" method="POST">
           <input class="honeypot" type="text" name="_gotcha" autocomplete="off" tabindex="-1" />
@@ -2333,7 +2368,7 @@ GROWTH PARTNERS<br>
         }
 
         emailjs.send(SERVICE_ID, TEMPLATE_ID, {
-          title: 'Boss Capital',
+          title: 'Boss Connect',
           NAME     : val("name"),
           EMAIL    : val("email"),
           PHONE    : val("phone"),
