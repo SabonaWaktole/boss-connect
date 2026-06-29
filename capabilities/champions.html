@@ -1083,6 +1083,168 @@
       border-color: #A27940;
     }
 
+    /* ══ FEATURED PROFILES (Industry Champions style) ══ */
+    .profiles-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media(min-width:768px) {
+      .profiles-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .profile-card {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      background: #0a0a0c;
+      border: 1px solid #27272a;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+    }
+
+    .profile-card:hover {
+      border-color: rgba(197, 160, 89, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+    }
+
+    .profile-photo-wrap {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      background: #18181b;
+    }
+
+    .profile-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .profile-card:hover .profile-photo {
+      transform: scale(1.05);
+    }
+
+    .profile-photo-grad {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10, 10, 12, 0.35) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .profile-badge {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+      z-index: 2;
+      background: var(--brand);
+      color: #000;
+      font-size: 0.625rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.5rem;
+      border-radius: 0.125rem;
+    }
+
+    .profile-body {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      flex: 1;
+    }
+
+    .profile-name {
+      font-family: 'ZalandoSans', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      transition: color 0.2s;
+    }
+
+    .profile-card:hover .profile-name {
+      color: var(--brand);
+    }
+
+    .profile-industry {
+      color: rgba(197, 160, 89, 0.85);
+      font-size: 0.625rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .profile-role {
+      color: #a1a1aa;
+      font-size: 0.75rem;
+    }
+
+    .profile-bio {
+      color: #71717a;
+      font-size: 0.75rem;
+      line-height: 1.55;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .profile-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem;
+      padding-top: 0.75rem;
+      margin-top: auto;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      max-height: 1.6rem;
+      overflow: hidden;
+    }
+
+    .profile-tag {
+      font-size: 0.625rem;
+      background: #18181b;
+      color: #a1a1aa;
+      padding: 0.15rem 0.4rem;
+      border-radius: 0.25rem;
+      border: 1px solid #27272a;
+      white-space: nowrap;
+    }
+
+    .profile-view {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.35rem;
+      margin-top: 0.75rem;
+      color: #a1a1aa;
+      font-size: 0.75rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .profile-card:hover .profile-view {
+      color: #fff;
+    }
+
+    .profile-view span {
+      color: var(--brand);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
     /* ══ MAGAZINE ══ */
     .magazine-section {
       padding: 4rem 0;
@@ -2015,21 +2177,8 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-left">
-          <h2>Explore Industries.</h2>
-          <p>Browse by sector to find leaders shaping tomorrow.<br><br>
-            EDUCATION &amp; NONPROFIT<br>
-            FINANCIAL<br>
-            HEALTHCARE<br>
-            LEGAL<br>
-            MANUFACTURING<br>
-            MEDIA &amp; ENTERTAINMENT<br>
-            PROFESSIONAL SERVICES<br>
-            PROPERTY<br>
-            RETAIL<br>
-            TECHNOLOGY &amp; DIGITAL<br>
-            TOURISM &amp; HOSPITALITY<br>
-            TRADES<br>
-          </p>
+          <h2>Why Industry Champions.</h2>
+          <p>Showcasing excellence in business. We connect industry leaders to share stories, insights, and unparalleled expertise with the world.</p>
         </div>
         <div class="about-cards">
           <div class="about-card">
@@ -2064,15 +2213,6 @@
             <h4>Featured Professionals</h4>
             <p>Discover standout leaders defining excellence — profiles that spotlight experience, credibility, and results.</p>
           </div>
-          <div class="about-card">
-            <div class="card-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-                <rect width="20" height="14" x="2" y="6" rx="2" />
-              </svg></div>
-            <h4>Become a Member</h4>
-            <p>Apply to join the directory and showcase your professional profile to a wider audience of peers and clients.</p>
-          </div>
         </div>
       </div>
     </div>
@@ -2086,193 +2226,73 @@
         <p>Discover the leaders shaping tomorrow — exceptional professionals defining excellence across their industries.</p>
       </div>
 
-      <div class="events-grid">
-        <div class="event-card">
-          <div class="event-image-wrap" style="aspect-ratio: 16/9;">
-            <img src="../images/champions/chris-pennisi.jpg" alt="Chris Pennisi" class="event-image" />
+      <div class="profiles-grid">
+        <a href="https://www.industrychampions.com.au/profiles/chris-pennisi/" target="_blank" rel="noopener" class="profile-card">
+          <div class="profile-photo-wrap">
+            <span class="profile-badge">Featured</span>
+            <img src="../images/champions/chris-pennisi.jpg" alt="Chris Pennisi" class="profile-photo" />
+            <div class="profile-photo-grad"></div>
           </div>
-          <div class="event-content">
-            <span class="event-badge">Featured</span>
-            <h3 class="event-title">Chris Pennisi</h3>
-            <p class="event-desc">Founder &amp; Business Strategist. Chris Pennisi is an accomplished business strategist with over 20 years of experience across sales, marketing, technology, and enterprise growth. He helps businesses move beyond obstacles and unlock sustainable, strategic expansion.</p>
-            <div class="event-meta">
-              <div class="event-meta-item">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="meta-icon"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-                <span>Professional Services | Technology &amp; Digital</span>
-              </div>
+          <div class="profile-body">
+            <h3 class="profile-name">Chris Pennisi</h3>
+            <p class="profile-industry">Professional Services | Technology &amp; Digital</p>
+            <p class="profile-role">Founder &amp; Business Strategist</p>
+            <p class="profile-bio">Chris Pennisi is an accomplished business strategist with over 20 years of experience across sales, marketing, technology, and enterprise growth. He helps businesses move beyond obstacles and unlock sustainable, strategic expansion.</p>
+            <div class="profile-tags">
+              <span class="profile-tag">Sales</span>
+              <span class="profile-tag">Marketing</span>
+              <span class="profile-tag">Business Strategy</span>
+              <span class="profile-tag">Coaching</span>
+              <span class="profile-tag">Leadership</span>
             </div>
-            <a href="https://www.industrychampions.com.au/profiles/chris-pennisi/" target="_blank" rel="noopener" class="event-btn">View Profile</a>
+            <div class="profile-view"><span>View</span> →</div>
           </div>
-        </div>
+        </a>
 
-        <div class="event-card">
-          <div class="event-image-wrap" style="aspect-ratio: 16/9;">
-            <img src="../images/champions/genene-wilson.jpg" alt="Genene Wilson" class="event-image" />
+        <a href="https://www.industrychampions.com.au/profiles/genene-wilson/" target="_blank" rel="noopener" class="profile-card">
+          <div class="profile-photo-wrap">
+            <span class="profile-badge">Featured</span>
+            <img src="../images/champions/genene-wilson.jpg" alt="Genene Wilson" class="profile-photo" />
+            <div class="profile-photo-grad"></div>
           </div>
-          <div class="event-content">
-            <span class="event-badge">Featured</span>
-            <h3 class="event-title">Genene Wilson</h3>
-            <p class="event-desc">Revenue Architect &amp; Sales Performance Strategist. Founder of the PROSPER Method helping business owners increase conversions, strengthen leadership identity, and build sustainable revenue through strategic positioning and behavioural sales psychology.</p>
-            <div class="event-meta">
-              <div class="event-meta-item">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="meta-icon"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-                <span>Professional Services</span>
-              </div>
+          <div class="profile-body">
+            <h3 class="profile-name">Genene Wilson</h3>
+            <p class="profile-industry">Professional Services</p>
+            <p class="profile-role">Revenue Architect &amp; Sales Performance Strategist</p>
+            <p class="profile-bio">Revenue Architect and Founder of the PROSPER Method helping business owners increase conversions, strengthen leadership identity, and build sustainable revenue through strategic positioning and behavioural sales psychology.</p>
+            <div class="profile-tags">
+              <span class="profile-tag">Revenue Architecture</span>
+              <span class="profile-tag">Sales Psychology</span>
+              <span class="profile-tag">Business Strategy</span>
+              <span class="profile-tag">Conversion Optimisation</span>
             </div>
-            <a href="https://www.industrychampions.com.au/profiles/genene-wilson/" target="_blank" rel="noopener" class="event-btn">View Profile</a>
+            <div class="profile-view"><span>View</span> →</div>
           </div>
-        </div>
+        </a>
 
-        <div class="event-card">
-          <div class="event-image-wrap" style="aspect-ratio: 16/9;">
-            <img src="../images/champions/daller-badaloff.jpg" alt="Daller Badaloff" class="event-image" />
+        <a href="https://www.industrychampions.com.au/profiles/daller-badaloff/" target="_blank" rel="noopener" class="profile-card">
+          <div class="profile-photo-wrap">
+            <span class="profile-badge">Featured</span>
+            <img src="../images/champions/daller-badaloff.jpg" alt="Daller Badaloff" class="profile-photo" />
+            <div class="profile-photo-grad"></div>
           </div>
-          <div class="event-content">
-            <span class="event-badge">Featured</span>
-            <h3 class="event-title">Daller Badaloff</h3>
-            <p class="event-desc">Senior Technology Leader. Senior technology and transformation leader helping organisations align strategy, delivery and execution to achieve measurable business outcomes. Experienced across financial services, consulting and complex enterprise environments.</p>
-            <div class="event-meta">
-              <div class="event-meta-item">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="meta-icon"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-                <span>Technology &amp; Digital | Professional Services</span>
-              </div>
+          <div class="profile-body">
+            <h3 class="profile-name">Daller Badaloff</h3>
+            <p class="profile-industry">Technology &amp; Digital | Professional Services</p>
+            <p class="profile-role">Senior Technology Leader</p>
+            <p class="profile-bio">Senior technology and transformation leader helping organisations align strategy, delivery and execution to achieve measurable business outcomes. Experienced across financial services, consulting and complex enterprise environments.</p>
+            <div class="profile-tags">
+              <span class="profile-tag">Technology Leadership</span>
+              <span class="profile-tag">Digital Transformation</span>
+              <span class="profile-tag">Strategy Execution</span>
+              <span class="profile-tag">Program Leadership</span>
             </div>
-            <a href="https://www.industrychampions.com.au/profiles/daller-badaloff/" target="_blank" rel="noopener" class="event-btn">View Profile</a>
+            <div class="profile-view"><span>View</span> →</div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
-
-  <!-- ══ GALLERY ══ -->
-  <section id="gallery" class="gallery-section">
-    <div class="container">
-      <div class="gallery-header">
-        <h2>Explore Industries</h2>
-        <p>Browse by sector to find leaders shaping tomorrow.</p>
-      </div>
-
-      <div class="gallery-grid">
-
-        <a class="gallery-tile" href="https://www.industrychampions.com.au/industries/professional-services/" target="_blank" rel="noopener">
-          <img src="../images/champions/sector-professional-services.avif" alt="Professional Services" />
-          <div class="gallery-overlay"></div>
-          <div class="gallery-text">
-            <span class="tile-label">Industry Champions</span>
-            <h4>Professional Services</h4>
-            <div class="gallery-view">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8" />
-                <line x1="21" x2="16.65" y1="21" y2="16.65" />
-              </svg>
-              Explore Sector
-            </div>
-          </div>
-        </a>
-
-        <a href="https://www.industrychampions.com.au/industries/technology-digital/" target="_blank" rel="noopener" class="gallery-tile">
-          <img src="../images/champions/sector-technology.avif" alt="Technology & Digital" />
-          <div class="gallery-overlay"></div>
-          <div class="gallery-text">
-            <span class="tile-label">Industry Champions</span>
-            <h4>Technology &amp; Digital</h4>
-            <div class="gallery-view">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8" />
-                <line x1="21" x2="16.65" y1="21" y2="16.65" />
-              </svg>
-              Explore Sector
-            </div>
-          </div>
-        </a>
-
-        <a href="https://www.industrychampions.com.au/industries/financial/" target="_blank" rel="noopener" class="gallery-tile">
-          <img src="../images/champions/sector-financial.jpg" alt="Financial" />
-          <div class="gallery-overlay"></div>
-          <div class="gallery-text">
-            <span class="tile-label">Industry Champions</span>
-            <h4>Financial</h4>
-            <div class="gallery-view">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8" />
-                <line x1="21" x2="16.65" y1="21" y2="16.65" />
-              </svg>
-              Explore Sector
-            </div>
-          </div>
-        </a>
-
-        <a href="https://www.industrychampions.com.au/industries/healthcare/" target="_blank" rel="noopener" class="gallery-tile">
-          <img src="../images/champions/sector-healthcare.avif" alt="Healthcare" />
-          <div class="gallery-overlay"></div>
-          <div class="gallery-text">
-            <span class="tile-label">Industry Champions</span>
-            <h4>Healthcare</h4>
-            <div class="gallery-view">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8" />
-                <line x1="21" x2="16.65" y1="21" y2="16.65" />
-              </svg>
-              Explore Sector
-            </div>
-          </div>
-        </a>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ LAYER 1: GALLERY GRID MODAL ══ -->
-  <div class="gm-overlay" id="gmOverlay">
-    <div class="gm-header">
-      <div class="gm-header-text">
-        <h3 id="gmTitle">Gallery</h3>
-        <span id="gmCount"></span>
-      </div>
-      <button class="gm-close-btn" id="gmClose" aria-label="Close gallery">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <line x1="18" y1="6" x2="6" y2="18" />
-          <line x1="6" y1="6" x2="18" y2="18" />
-        </svg>
-      </button>
-    </div>
-    <div class="gm-grid-wrap">
-      <div class="gm-grid" id="gmGrid"></div>
-    </div>
-  </div>
-
-  <!-- ══ LAYER 2: FULLSCREEN PHOTO VIEWER ══ -->
-  <div class="pv-overlay" id="pvOverlay">
-    <div class="pv-topbar">
-      <span class="pv-counter" id="pvCounter"></span>
-      <button class="pv-close" id="pvClose" aria-label="Close photo">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <line x1="18" y1="6" x2="6" y2="18" />
-          <line x1="6" y1="6" x2="18" y2="18" />
-        </svg>
-      </button>
-    </div>
-    <div class="pv-main">
-      <button class="pv-prev" id="pvPrev" aria-label="Previous">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <polyline points="15 18 9 12 15 6" />
-        </svg>
-      </button>
-      <img class="pv-main-img" id="pvImg" src="" alt="" />
-      <button class="pv-next" id="pvNext" aria-label="Next">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <polyline points="9 18 15 12 9 6" />
-        </svg>
-      </button>
-    </div>
-    <div class="pv-strip-wrap">
-      <div class="pv-strip" id="pvStrip"></div>
-    </div>
-  </div>
 
   <!-- ══ MAGAZINE ══ -->
   <section class="magazine-section">
@@ -2292,31 +2312,6 @@
           </a>
           <a class="magazine-download" href="https://www.industrychampions.com.au" target="_blank" rel="noopener">Visit industrychampions.com.au</a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ FORM ══ -->
-  <section class="form-section">
-    <div class="container">
-      <div class="form-inner">
-        <div class="form-header">
-          <div class="form-gold-bar"></div>
-          <h2>Become a Member</h2>
-          <p>Register your interest to join the Industry Champions directory.</p>
-        </div>
-        <form class="contact-form" action="#" method="POST">
-          <input class="honeypot" type="text" name="_gotcha" autocomplete="off" tabindex="-1" />
-          <div><label class="field-label">Contact Name</label><input type="text"  id="name" name="name"
-              placeholder="Your full name" required /></div>
-          <div><label class="field-label">Email Address</label><input type="email"  id="email" name="email"
-              placeholder="your@email.com" required /></div>
-          <div><label class="field-label">Phone Number</label><input type="tel"  id="phone" name="phone"
-              placeholder="+61 000 000 000" /></div>
-          <div><label class="field-label">Inquiry Details</label><textarea name="message" id="message" rows="5"
-              placeholder="Tell us about your inquiry..." required></textarea></div>
-          <button type="submit">Submit Inquiry</button>
-        </form>
       </div>
     </div>
   </section>
