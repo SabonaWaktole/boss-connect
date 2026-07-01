@@ -72,7 +72,7 @@
     about       : prefix + "about.html",
     contact     : prefix + "contact.html",
     consulting  : prefix + "capabilities/consulting.html",
-    events      : prefix + "capabilities/events.html",
+    events      : prefix + "capabilities/connect.html",
     coaching    : prefix + "capabilities/coaching.html",
     creative    : prefix + "capabilities/creative.html",
     clicks      : prefix + "capabilities/clicks.html",
@@ -98,7 +98,7 @@
     "contact.html"    : "contact",
     // ── Capability pages (inside capabilities/ folder) ──
     "consulting.html" : "consulting",
-    "events.html"     : "events",
+    "connect.html"    : "connect",
     "coaching.html"   : "coaching",
     "creative.html"   : "creative",
     "clicks.html"     : "clicks",
@@ -423,7 +423,7 @@
             </button>
             <div class="bc-cap-dropdown" id="bcCapDropdown" role="menu">
               <a href="${L.consulting}"${acHref("consulting")} role="menuitem">Consulting</a>
-              <a href="${L.events}"${acHref("events")} role="menuitem">Events</a>
+              <a href="${L.events}"${acHref("events")} role="menuitem">Connect</a>
               <a href="${L.coaching}"${acHref("coaching")} role="menuitem">Coaching</a>
               <a href="${L.creative}"${acHref("creative")} role="menuitem">Creative</a>
               <a href="${L.clicks}"${acHref("clicks")} role="menuitem">Clicks</a>
@@ -466,7 +466,7 @@
           </button>
           <div class="bc-drawer-sub${isCapability ? " open" : ""}" id="bcDrawerSub">
             <a href="${L.consulting}"${acHref("consulting")}>Consulting</a>
-            <a href="${L.events}"${acHref("events")}>Events</a>
+            <a href="${L.events}"${acHref("events")}>Connect</a>
             <a href="${L.coaching}"${acHref("coaching")}>Coaching</a>
             <a href="${L.creative}"${acHref("creative")}>Creative</a>
             <a href="${L.clicks}"${acHref("clicks")}>Clicks</a>
@@ -507,7 +507,7 @@
           <h3>Capabilities</h3>
           <ul>
             <li><a href="${L.consulting}">Consulting</a></li>
-            <li><a href="${L.events}">Events</a></li>
+            <li><a href="${L.events}">Connect</a></li>
             <li><a href="${L.coaching}">Coaching</a></li>
             <li><a href="${L.creative}">Creative</a></li>
             <li><a href="${L.clicks}">Clicks</a></li>
