@@ -72,8 +72,8 @@
     about       : prefix + "about.html",
     contact     : prefix + "contact.html",
     consulting  : prefix + "capabilities/consulting.html",
-    events      : prefix + "capabilities/connect.html",
-    coaching    : prefix + "capabilities/coaching.html",
+    events      : prefix + "capabilities/events.html",
+    travel      : prefix + "capabilities/travel.html",
     creative    : prefix + "capabilities/creative.html",
     clicks      : prefix + "capabilities/clicks.html",
     publications: prefix + "capabilities/publications.html",
@@ -98,8 +98,8 @@
     "contact.html"    : "contact",
     // ── Capability pages (inside capabilities/ folder) ──
     "consulting.html" : "consulting",
-    "connect.html"    : "connect",
-    "coaching.html"   : "coaching",
+    "events.html"     : "events",
+    "travel.html"     : "travel",
     "creative.html"   : "creative",
     "clicks.html"     : "clicks",
     "publications.html" : "publications",
@@ -134,7 +134,7 @@
     [
       "consulting",
       "events",
-      "coaching",
+      "travel",
       "creative",
       "clicks",
       "publications",
@@ -423,8 +423,8 @@
             </button>
             <div class="bc-cap-dropdown" id="bcCapDropdown" role="menu">
               <a href="${L.consulting}"${acHref("consulting")} role="menuitem">Consulting</a>
-              <a href="${L.events}"${acHref("events")} role="menuitem">Connect</a>
-              <a href="${L.coaching}"${acHref("coaching")} role="menuitem">Coaching</a>
+              <a href="${L.events}"${acHref("events")} role="menuitem">Events</a>
+              <a href="${L.travel}"${acHref("travel")} role="menuitem">Travel</a>
               <a href="${L.creative}"${acHref("creative")} role="menuitem">Creative</a>
               <a href="${L.clicks}"${acHref("clicks")} role="menuitem">Clicks</a>
               <a href="${L.publications}"${acHref("publications")} role="menuitem">Publications</a>
@@ -466,8 +466,8 @@
           </button>
           <div class="bc-drawer-sub${isCapability ? " open" : ""}" id="bcDrawerSub">
             <a href="${L.consulting}"${acHref("consulting")}>Consulting</a>
-            <a href="${L.events}"${acHref("events")}>Connect</a>
-            <a href="${L.coaching}"${acHref("coaching")}>Coaching</a>
+            <a href="${L.events}"${acHref("events")}>Events</a>
+            <a href="${L.travel}"${acHref("travel")}>Travel</a>
             <a href="${L.creative}"${acHref("creative")}>Creative</a>
             <a href="${L.clicks}"${acHref("clicks")}>Clicks</a>
             <a href="${L.publications}"${acHref("publications")}>Publications</a>
@@ -507,8 +507,8 @@
           <h3>Capabilities</h3>
           <ul>
             <li><a href="${L.consulting}">Consulting</a></li>
-            <li><a href="${L.events}">Connect</a></li>
-            <li><a href="${L.coaching}">Coaching</a></li>
+            <li><a href="${L.events}">Events</a></li>
+            <li><a href="${L.travel}">Travel</a></li>
             <li><a href="${L.creative}">Creative</a></li>
             <li><a href="${L.clicks}">Clicks</a></li>
             <li><a href="${L.publications}">Publications</a></li>
