@@ -1,4 +1,5 @@
 images/
 bcn/assets/
 fonts/
+*.zip
 */*.pdf

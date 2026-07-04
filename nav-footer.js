@@ -73,7 +73,7 @@
     contact     : prefix + "contact.html",
     consulting  : prefix + "capabilities/consulting.html",
     events      : prefix + "capabilities/events.html",
-    coaching    : prefix + "capabilities/coaching.html",
+    travel      : prefix + "capabilities/travel.html",
     creative    : prefix + "capabilities/creative.html",
     clicks      : prefix + "capabilities/clicks.html",
     publications: prefix + "capabilities/publications.html",
@@ -99,7 +99,7 @@
     // ── Capability pages (inside capabilities/ folder) ──
     "consulting.html" : "consulting",
     "events.html"     : "events",
-    "coaching.html"   : "coaching",
+    "travel.html"     : "travel",
     "creative.html"   : "creative",
     "clicks.html"     : "clicks",
     "publications.html" : "publications",
@@ -134,7 +134,7 @@
     [
       "consulting",
       "events",
-      "coaching",
+      "travel",
       "creative",
       "clicks",
       "publications",
@@ -424,7 +424,7 @@
             <div class="bc-cap-dropdown" id="bcCapDropdown" role="menu">
               <a href="${L.consulting}"${acHref("consulting")} role="menuitem">Consulting</a>
               <a href="${L.events}"${acHref("events")} role="menuitem">Events</a>
-              <a href="${L.coaching}"${acHref("coaching")} role="menuitem">Coaching</a>
+              <a href="${L.travel}"${acHref("travel")} role="menuitem">Travel</a>
               <a href="${L.creative}"${acHref("creative")} role="menuitem">Creative</a>
               <a href="${L.clicks}"${acHref("clicks")} role="menuitem">Clicks</a>
               <a href="${L.publications}"${acHref("publications")} role="menuitem">Publications</a>
@@ -467,7 +467,7 @@
           <div class="bc-drawer-sub${isCapability ? " open" : ""}" id="bcDrawerSub">
             <a href="${L.consulting}"${acHref("consulting")}>Consulting</a>
             <a href="${L.events}"${acHref("events")}>Events</a>
-            <a href="${L.coaching}"${acHref("coaching")}>Coaching</a>
+            <a href="${L.travel}"${acHref("travel")}>Travel</a>
             <a href="${L.creative}"${acHref("creative")}>Creative</a>
             <a href="${L.clicks}"${acHref("clicks")}>Clicks</a>
             <a href="${L.publications}"${acHref("publications")}>Publications</a>
@@ -508,7 +508,7 @@
           <ul>
             <li><a href="${L.consulting}">Consulting</a></li>
             <li><a href="${L.events}">Events</a></li>
-            <li><a href="${L.coaching}">Coaching</a></li>
+            <li><a href="${L.travel}">Travel</a></li>
             <li><a href="${L.creative}">Creative</a></li>
             <li><a href="${L.clicks}">Clicks</a></li>
             <li><a href="${L.publications}">Publications</a></li>

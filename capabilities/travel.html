@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Champions — Boss Connect</title>
+  <title>Travel — Boss Connect</title>
   <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <style>
     /* ══ ZALANDO SANS ══ */
@@ -456,18 +456,18 @@
     /* ══ HERO ══ */
     .hero {
       position: relative;
-      min-height: 70vh;
+      height: 70vh;
+      min-height: 480px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 5rem 0 4rem;
+      overflow: hidden;
     }
 
     .hero-bg {
       position: absolute;
       inset: 0;
       z-index: 0;
-      overflow: hidden;
     }
 
     .hero-bg img {
@@ -514,48 +514,13 @@
     .hero-logo {
       display: flex;
       justify-content: center;
-      margin-bottom: 1.25rem;
-    }
-
-    .hero-logo img {
-      max-width: 180px;
-      width: 100%;
-      height: auto;
-    }
-
-    @media(min-width:768px) {
-      .hero-logo img {
-        max-width: 260px;
-      }
-    }
-
-    .hero-title {
-      color: #fff;
-      font-family: 'ZalandoSans', sans-serif;
-      font-size: 2.25rem;
-      font-weight: 700;
-      line-height: 1.15;
-      margin-bottom: 0.75rem;
-    }
-
-    @media(min-width:768px) {
-      .hero-title {
-        font-size: 3rem;
-      }
-    }
-
-    .hero-tagline {
-      color: #d6b16a;
-      font-size: 1.125rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
       margin-bottom: 1rem;
     }
 
-    @media(min-width:768px) {
-      .hero-tagline {
-        font-size: 1.375rem;
-      }
+    .hero-logo img {
+      max-width: 400px;
+      width: 100%;
+      height: auto;
     }
 
     .hero-content p {
@@ -953,10 +918,17 @@
     @media(min-width:768px) {
       .events-grid {
         flex-direction: row;
+        flex-wrap: wrap;
         justify-content: center;
       }
       .events-grid > .event-card {
-        width: calc(33.333% - 1rem);
+        width: calc(50% - 0.75rem);
+      }
+    }
+
+    @media(min-width:1024px) {
+      .events-grid > .event-card {
+        width: calc(25% - 1.125rem);
       }
     }
 
@@ -1081,168 +1053,6 @@
       color: #fff;
       background: #A27940;
       border-color: #A27940;
-    }
-
-    /* ══ FEATURED PROFILES (Industry Champions style) ══ */
-    .profiles-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-
-    @media(min-width:768px) {
-      .profiles-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    .profile-card {
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-      color: inherit;
-      background: #0a0a0c;
-      border: 1px solid #27272a;
-      border-radius: 0.75rem;
-      overflow: hidden;
-      transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-      height: 100%;
-    }
-
-    .profile-card:hover {
-      border-color: rgba(197, 160, 89, 0.4);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
-    }
-
-    .profile-photo-wrap {
-      position: relative;
-      aspect-ratio: 1 / 1;
-      overflow: hidden;
-      background: #18181b;
-    }
-
-    .profile-photo {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-      display: block;
-      transition: transform 0.5s ease;
-    }
-
-    .profile-card:hover .profile-photo {
-      transform: scale(1.05);
-    }
-
-    .profile-photo-grad {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(10, 10, 12, 0.35) 0%, transparent 50%);
-      pointer-events: none;
-    }
-
-    .profile-badge {
-      position: absolute;
-      top: 0.75rem;
-      right: 0.75rem;
-      z-index: 2;
-      background: var(--brand);
-      color: #000;
-      font-size: 0.625rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.2rem 0.5rem;
-      border-radius: 0.125rem;
-    }
-
-    .profile-body {
-      padding: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      flex: 1;
-    }
-
-    .profile-name {
-      font-family: 'ZalandoSans', sans-serif;
-      font-size: 1rem;
-      font-weight: 700;
-      color: #fff;
-      transition: color 0.2s;
-    }
-
-    .profile-card:hover .profile-name {
-      color: var(--brand);
-    }
-
-    .profile-industry {
-      color: rgba(197, 160, 89, 0.85);
-      font-size: 0.625rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .profile-role {
-      color: #a1a1aa;
-      font-size: 0.75rem;
-    }
-
-    .profile-bio {
-      color: #71717a;
-      font-size: 0.75rem;
-      line-height: 1.55;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
-    .profile-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.25rem;
-      padding-top: 0.75rem;
-      margin-top: auto;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-      max-height: 1.6rem;
-      overflow: hidden;
-    }
-
-    .profile-tag {
-      font-size: 0.625rem;
-      background: #18181b;
-      color: #a1a1aa;
-      padding: 0.15rem 0.4rem;
-      border-radius: 0.25rem;
-      border: 1px solid #27272a;
-      white-space: nowrap;
-    }
-
-    .profile-view {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 0.35rem;
-      margin-top: 0.75rem;
-      color: #a1a1aa;
-      font-size: 0.75rem;
-      font-weight: 600;
-      transition: color 0.2s;
-    }
-
-    .profile-card:hover .profile-view {
-      color: #fff;
-    }
-
-    .profile-view span {
-      color: var(--brand);
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
     }
 
     /* ══ MAGAZINE ══ */
@@ -2140,178 +1950,105 @@
 
   <!-- ══ HERO ══ -->
   <!-- ══ SECTION 1: HERO ══ -->
-  <section class="hero">
+  <section class="hero" style="min-height: 60vh;">
     <div class="hero-bg">
-      <img src="../images/champions/hero-bg.jpg" alt="Hero Background" />
+      <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1920&q=80" alt="Hero Background" />
       <div class="hero-bg-grad"></div>
     </div>
     <div class="hero-content">
-      <div class="hero-logo">
-        <img src="../images/champions/logo.png" alt="Industry Champions" />
-      </div>
-      <span class="hero-overline">Professional Profiles</span>
-      <h1 class="hero-title">Industry Champions</h1>
-      <p class="hero-tagline">Exceptional professionals</p>
-      <p>A curated directory of exceptional professionals defining excellence.</p>
+      <span class="hero-overline">Boss Connect Travel Club</span>
+      <div class="hero-logo"><h1 style="font-family: 'ZalandoSans', sans-serif; font-size: 4rem; margin: 0; color: #fff; line-height: 1.1;">Travel</h1></div>
+      <p style="max-width: 600px; margin: 2rem auto 0; font-size: 1.1rem;">Where Luxury Travel Meets Unparalleled Value. Get instant discounts on all products with a Travluxe Membership.</p>
     </div>
   </section>
 
-  <!-- ══ SECTION 2: INTRO ══ -->
-  <section class="intro-section">
+  <!-- ══ ABOUT TRAVEL ══ -->
+  <section class="about-section" style="padding-top: 4rem;">
     <div class="container">
       <div class="intro-grid">
-        <div class="intro-left">
+        <div class="intro-left" style="max-width: 100%;">
           <div class="gold-bar"></div>
-          <h2>Leading the Future of Industry</h2>
-          <p>Showcasing excellence in business. We connect industry leaders to share stories, insights, and unparalleled expertise with the world. Explore profiles, browse by sector, and discover the leaders shaping tomorrow.</p>
-        </div>
-        <div class="intro-right">
-          <img src="../images/champions/modern-business.jpg" alt="Industry Champions" />
+          <h2>Boss Connect Travel Club... powered by Travluxe</h2>
+          <p><strong>WHERE LUXURY TRAVEL MEETS UNPARALLELED VALUE</strong></p>
+          <p>The Boss Connect Travel Club is proud to partner with Travluxe, the newest and most impressive Travel Club available today. We believe in offering our business leaders the very best of benefits across a number of areas and with various partners. In partnering with Travluxe we believe that we are giving you access to the very best travel offering available anywhere in the World. By joining Travluxe through the Boss Connect Travel Club you will enjoy many benefits. Some of these include:</p>
+          
+          <ul style="list-style: none; padding: 0; margin-top: 2rem;">
+            <li style="display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: flex-start;">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-gold); flex-shrink: 0;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              <span>Enjoy discounts of up to 20% on all travel bookings with the Passport Membership @ 100% discount - this entry level membership tier is priced at $99 per year - BUT - if you join by clicking any of the JOIN NOW buttons on our Travel Club site this membership will be <strong>FREE FOREVER</strong></span>
+            </li>
+            <li style="display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: flex-start;">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-gold); flex-shrink: 0;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              <span>OR take advantage of the best pricing anywhere, especially on accommodation bookings, by joining as or upgrading at any time to the <strong>First Class VIP Membership</strong>. Usually priced at $299 per year but through our Travel Club we have arranged a 75% discount for you - so only $99 per year.</span>
+            </li>
+            <li style="display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: flex-start;">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-gold); flex-shrink: 0;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              <span>Access to browse, search and book over 3 million accommodation properties, hundreds of thousands of tours, activities and experiences, flights, cruises and much more</span>
+            </li>
+            <li style="display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: flex-start;">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-gold); flex-shrink: 0;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              <span>By joining as a Passport Member you will be able to see all pricing on all of your accommodation searches... the regular price / the Passport Member price / and the First Class VIP Member price. Many Passport Members find upgrading a no-brainer when they see the savings will far outweigh the $99 discounted Membership Fee + Complimentary Access to the Travluxe Concierge Service</span>
+            </li>
+            <li style="display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: flex-start;">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-gold); flex-shrink: 0;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              <span>24/7 Customer Service by phone, email, live chat</span>
+            </li>
+          </ul>
+
+          <div style="margin-top: 3rem; margin-bottom: 4rem; padding: 2rem; background: var(--color-surface); border-radius: 8px;">
+            <p><strong>We would encourage you to explore this website and to then join Travluxe for FREE through the Boss Connect Travel Club.</strong></p>
+            <br>
+            <p>Whether it's relaxing via a luxury escape on a tropical island or simply an overnight stay in a neighbouring city, the Travluxe Travel Club has it all... and more.</p>
+            <p>With accommodation options at more than 3 million resorts, hotels, motels, apartments, chalets, villas, chateaus and even...castles... you are sure to find what you are looking for.</p>
+            <br>
+            <p><strong>And the best part?</strong></p>
+            <p>Travluxe members access all accommodation options at wholesale...or near wholesale rates - cheaper than anywhere else online or through a travel agent... 96% of the time.</p>
+          </div>
+
+          <div class="gold-bar"></div>
+          <h2>...Add to this:</h2>
+          <ul style="line-height: 1.8; margin-top: 1rem; padding-left: 1.5rem;">
+            <li>Access to all major airlines around the World</li>
+            <li>Hundreds of thousands of experiences, tours &amp; activities</li>
+            <li>'Done for you' travel &amp; leisure packages</li>
+            <li>Sporting tours</li>
+            <li>Racing tours</li>
+            <li>Mystery weekends</li>
+            <li>Your own Exclusive Member Concierge Service</li>
+            <li>And coming soon - Rental Car Hire, Cruising, Transfers &amp; Online Travel Goods Shopping</li>
+          </ul>
+
+          <div style="margin-top: 4rem; text-align: center;">
+            <h3 style="margin-bottom: 1rem;">Travluxe is the Travel Club that you simply MUST join NOW!</h3>
+            <p style="margin-bottom: 2rem; color: var(--color-gold);"><strong>WHERE LUXURY TRAVEL MEETS UNPARALLELED VALUE</strong></p>
+            <a href="https://bossconnect.travluxe.com.au/" target="_blank" rel="noopener" class="cap-btn" style="display: inline-block;">Join Now for Free</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══ ABOUT + CARDS ══ -->
-  <section class="about-section">
+  <!-- ══ FORM ══ -->
+  <section class="form-section">
     <div class="container">
-      <div class="about-grid">
-        <div class="about-left">
-          <h2>Why Industry Champions.</h2>
-          <p>Showcasing excellence in business. We connect industry leaders to share stories, insights, and unparalleled expertise with the world.</p>
+      <div class="form-inner">
+        <div class="form-header">
+          <div class="form-gold-bar"></div>
+          <h2>Register Your Interest to Attend</h2>
+          <p>Submit your inquiry and we'll be in touch shortly.</p>
         </div>
-        <div class="about-cards">
-          <div class="about-card">
-            <div class="card-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                <path d="M16 3.128a4 4 0 0 1 0 7.744" />
-                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                <circle cx="9" cy="7" r="4" />
-              </svg></div>
-            <h4>Curated Profiles</h4>
-            <p>Verified professional profiles highlighting expertise, achievements, and the value each leader brings to their industry.</p>
-          </div>
-          <div class="about-card">
-            <div class="card-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10" />
-                <circle cx="12" cy="12" r="6" />
-                <circle cx="12" cy="12" r="2" />
-              </svg></div>
-            <h4>Sector Directory</h4>
-            <p>Browse leaders organised by industry and specialisation — from financial services to technology and trades.</p>
-          </div>
-          <div class="about-card">
-            <div class="card-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 3v16a2 2 0 0 0 2 2h16" />
-                <path d="M18 17V9" />
-                <path d="M13 17V5" />
-                <path d="M8 17v-3" />
-              </svg></div>
-            <h4>Featured Professionals</h4>
-            <p>Discover standout leaders defining excellence — profiles that spotlight experience, credibility, and results.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ UPCOMING EVENTS ══ -->
-  <section id="events" class="events-section">
-    <div class="container">
-      <div class="events-header">
-        <h2>Featured Professionals</h2>
-        <p>Discover the leaders shaping tomorrow — exceptional professionals defining excellence across their industries.</p>
-      </div>
-
-      <div class="profiles-grid">
-        <a href="https://www.industrychampions.com.au/profiles/chris-pennisi/" target="_blank" rel="noopener" class="profile-card">
-          <div class="profile-photo-wrap">
-            <span class="profile-badge">Featured</span>
-            <img src="../images/champions/chris-pennisi.jpg" alt="Chris Pennisi" class="profile-photo" />
-            <div class="profile-photo-grad"></div>
-          </div>
-          <div class="profile-body">
-            <h3 class="profile-name">Chris Pennisi</h3>
-            <p class="profile-industry">Professional Services | Technology &amp; Digital</p>
-            <p class="profile-role">Founder &amp; Business Strategist</p>
-            <p class="profile-bio">Chris Pennisi is an accomplished business strategist with over 20 years of experience across sales, marketing, technology, and enterprise growth. He helps businesses move beyond obstacles and unlock sustainable, strategic expansion.</p>
-            <div class="profile-tags">
-              <span class="profile-tag">Sales</span>
-              <span class="profile-tag">Marketing</span>
-              <span class="profile-tag">Business Strategy</span>
-              <span class="profile-tag">Coaching</span>
-              <span class="profile-tag">Leadership</span>
-            </div>
-            <div class="profile-view"><span>View</span> →</div>
-          </div>
-        </a>
-
-        <a href="https://www.industrychampions.com.au/profiles/genene-wilson/" target="_blank" rel="noopener" class="profile-card">
-          <div class="profile-photo-wrap">
-            <span class="profile-badge">Featured</span>
-            <img src="../images/champions/genene-wilson.jpg" alt="Genene Wilson" class="profile-photo" />
-            <div class="profile-photo-grad"></div>
-          </div>
-          <div class="profile-body">
-            <h3 class="profile-name">Genene Wilson</h3>
-            <p class="profile-industry">Professional Services</p>
-            <p class="profile-role">Revenue Architect &amp; Sales Performance Strategist</p>
-            <p class="profile-bio">Revenue Architect and Founder of the PROSPER Method helping business owners increase conversions, strengthen leadership identity, and build sustainable revenue through strategic positioning and behavioural sales psychology.</p>
-            <div class="profile-tags">
-              <span class="profile-tag">Revenue Architecture</span>
-              <span class="profile-tag">Sales Psychology</span>
-              <span class="profile-tag">Business Strategy</span>
-              <span class="profile-tag">Conversion Optimisation</span>
-            </div>
-            <div class="profile-view"><span>View</span> →</div>
-          </div>
-        </a>
-
-        <a href="https://www.industrychampions.com.au/profiles/daller-badaloff/" target="_blank" rel="noopener" class="profile-card">
-          <div class="profile-photo-wrap">
-            <span class="profile-badge">Featured</span>
-            <img src="../images/champions/daller-badaloff.jpg" alt="Daller Badaloff" class="profile-photo" />
-            <div class="profile-photo-grad"></div>
-          </div>
-          <div class="profile-body">
-            <h3 class="profile-name">Daller Badaloff</h3>
-            <p class="profile-industry">Technology &amp; Digital | Professional Services</p>
-            <p class="profile-role">Senior Technology Leader</p>
-            <p class="profile-bio">Senior technology and transformation leader helping organisations align strategy, delivery and execution to achieve measurable business outcomes. Experienced across financial services, consulting and complex enterprise environments.</p>
-            <div class="profile-tags">
-              <span class="profile-tag">Technology Leadership</span>
-              <span class="profile-tag">Digital Transformation</span>
-              <span class="profile-tag">Strategy Execution</span>
-              <span class="profile-tag">Program Leadership</span>
-            </div>
-            <div class="profile-view"><span>View</span> →</div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ MAGAZINE ══ -->
-  <section class="magazine-section">
-    <div class="container">
-      <div class="magazine-inner">
-        <div class="magazine-header">
-          <h3>Explore the Full Directory</h3>
-        </div>
-        <div class="magazine-body">
-          <a class="magazine-link" href="https://www.industrychampions.com.au/directory/" target="_blank" rel="noopener">
-            <div class="magazine-cover">
-              <img
-                src="../images/champions/logo.png"
-                alt="Industry Champions directory" />
-              <div class="magazine-cover-overlay"></div>
-            </div>
-          </a>
-          <a class="magazine-download" href="https://www.industrychampions.com.au" target="_blank" rel="noopener">Visit industrychampions.com.au</a>
-        </div>
+        <form class="contact-form" action="#" method="POST">
+          <input class="honeypot" type="text" name="_gotcha" autocomplete="off" tabindex="-1" />
+          <div><label class="field-label">Contact Name</label><input type="text"  id="name" name="name"
+              placeholder="Your full name" required /></div>
+          <div><label class="field-label">Email Address</label><input type="email"  id="email" name="email"
+              placeholder="your@email.com" required /></div>
+          <div><label class="field-label">Phone Number</label><input type="tel"  id="phone" name="phone"
+              placeholder="+61 000 000 000" /></div>
+          <div><label class="field-label">Inquiry Details</label><textarea name="message" id="message" rows="5"
+              placeholder="Tell us about your inquiry..." required></textarea></div>
+          <button type="submit">Submit Inquiry</button>
+        </form>
       </div>
     </div>
   </section>
