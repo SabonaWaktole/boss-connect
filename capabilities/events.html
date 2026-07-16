@@ -2343,9 +2343,10 @@ GROWTH PARTNERS<br>
   "use strict";
 
   /* ─── CONFIG — update these 3 values only ─────────────────── */
-  var PUBLIC_KEY   = "nfe5nOYy7qc_aEbgc";
-  var SERVICE_ID   = "service_fe07mtm";
-  var TEMPLATE_ID  = "template_9c2enqc";
+  var PUBLIC_KEY   = "2q6GTd3d0ZksRK_Nx";
+  var SERVICE_ID   = "service_3fbiwny";
+  var TEMPLATE_ID  = "template_0hesm4h";
+  var TO_EMAIL     = "info@bossconnect.com.au";
   /* ─────────────────────────────────────────────────────────── */
 
   // Wait for the DOM to be ready
@@ -2380,7 +2381,8 @@ GROWTH PARTNERS<br>
         }
 
         emailjs.send(SERVICE_ID, TEMPLATE_ID, {
-          title: 'Boss Connect',
+          to_email : TO_EMAIL,
+          title    : "Boss Connect",
           NAME     : val("name"),
           EMAIL    : val("email"),
           PHONE    : val("phone"),

@@ -17,10 +17,11 @@
 (function () {
   "use strict";
 
-  /* ─── CONFIG — update these 3 values only ─────────────────── */
-  var PUBLIC_KEY   = "nfe5nOYy7qc_aEbgc";
-  var SERVICE_ID   = "service_fe07mtm";
-  var TEMPLATE_ID  = "template_edhsktc";
+  /* ─── CONFIG — update these values only ───────────────────── */
+  var PUBLIC_KEY   = "2q6GTd3d0ZksRK_Nx";
+  var SERVICE_ID   = "service_3fbiwny";
+  var TEMPLATE_ID  = "template_0hesm4h";
+  var TO_EMAIL     = "info@bossconnect.com.au";
 
   // PAGE_NAME
 const page = window.location.pathname.split('/').pop().replace('.html', '');
@@ -60,8 +61,9 @@ const page = window.location.pathname.split('/').pop().replace('.html', '');
         }
 
         emailjs.send(SERVICE_ID, TEMPLATE_ID, {
+          to_email : TO_EMAIL,
           PAGE_NAME: page,
-          title: 'Boss Capital',
+          title    : "Boss Capital",
           NAME     : val("name"),
           EMAIL    : val("email"),
           PHONE    : val("phone"),
