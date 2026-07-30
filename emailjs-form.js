@@ -9,7 +9,7 @@
  *   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
  *   <script src="emailjs-form.js"></script>
  *
- * From a subfolder (capabilities/ or gallery/):
+ * From a subfolder (services/ or gallery/):
  *
  *   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
  *   <script src="../emailjs-form.js"></script>
@@ -20,7 +20,7 @@
   /* ─── CONFIG — update these values only ───────────────────── */
   var PUBLIC_KEY   = "2q6GTd3d0ZksRK_Nx";
   var SERVICE_ID   = "service_3fbiwny";
-  var TEMPLATE_ID  = "template_0hesm4h";
+  var TEMPLATE_ID  = "template_wx49qgr";
   var TO_EMAIL     = "info@bossconnect.com.au";
 
   // PAGE_NAME
@@ -69,7 +69,7 @@ const page = window.location.pathname.split('/').pop().replace('.html', '');
           PHONE    : val("phone"),
           MESSAGE  : val("message"),
         })
-        .then(function () {
+        .then(function (response) {
           // Success
           btn.textContent      = "Message Sent \u2713";
           btn.style.background = "#2d6a4f";
