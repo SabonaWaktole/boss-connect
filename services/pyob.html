@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Champions — Boss Connect</title>
+  <title>PYOB — Boss Connect</title>
   <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <style>
     /* ══ ZALANDO SANS ══ */
@@ -525,7 +525,7 @@
 
     @media(min-width:768px) {
       .hero-logo img {
-        max-width: 260px;
+        max-width: 280px;
       }
     }
 
@@ -541,20 +541,6 @@
     @media(min-width:768px) {
       .hero-title {
         font-size: 3rem;
-      }
-    }
-
-    .hero-tagline {
-      color: #d6b16a;
-      font-size: 1.125rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      margin-bottom: 1rem;
-    }
-
-    @media(min-width:768px) {
-      .hero-tagline {
-        font-size: 1.375rem;
       }
     }
 
@@ -1081,168 +1067,6 @@
       color: #fff;
       background: #A27940;
       border-color: #A27940;
-    }
-
-    /* ══ FEATURED PROFILES (Industry Champions style) ══ */
-    .profiles-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-
-    @media(min-width:768px) {
-      .profiles-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    .profile-card {
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-      color: inherit;
-      background: #0a0a0c;
-      border: 1px solid #27272a;
-      border-radius: 0.75rem;
-      overflow: hidden;
-      transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-      height: 100%;
-    }
-
-    .profile-card:hover {
-      border-color: rgba(197, 160, 89, 0.4);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
-    }
-
-    .profile-photo-wrap {
-      position: relative;
-      aspect-ratio: 1 / 1;
-      overflow: hidden;
-      background: #18181b;
-    }
-
-    .profile-photo {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-      display: block;
-      transition: transform 0.5s ease;
-    }
-
-    .profile-card:hover .profile-photo {
-      transform: scale(1.05);
-    }
-
-    .profile-photo-grad {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(10, 10, 12, 0.35) 0%, transparent 50%);
-      pointer-events: none;
-    }
-
-    .profile-badge {
-      position: absolute;
-      top: 0.75rem;
-      right: 0.75rem;
-      z-index: 2;
-      background: var(--brand);
-      color: #000;
-      font-size: 0.625rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.2rem 0.5rem;
-      border-radius: 0.125rem;
-    }
-
-    .profile-body {
-      padding: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      flex: 1;
-    }
-
-    .profile-name {
-      font-family: 'ZalandoSans', sans-serif;
-      font-size: 1rem;
-      font-weight: 700;
-      color: #fff;
-      transition: color 0.2s;
-    }
-
-    .profile-card:hover .profile-name {
-      color: var(--brand);
-    }
-
-    .profile-industry {
-      color: rgba(197, 160, 89, 0.85);
-      font-size: 0.625rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .profile-role {
-      color: #a1a1aa;
-      font-size: 0.75rem;
-    }
-
-    .profile-bio {
-      color: #71717a;
-      font-size: 0.75rem;
-      line-height: 1.55;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
-    .profile-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.25rem;
-      padding-top: 0.75rem;
-      margin-top: auto;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-      max-height: 1.6rem;
-      overflow: hidden;
-    }
-
-    .profile-tag {
-      font-size: 0.625rem;
-      background: #18181b;
-      color: #a1a1aa;
-      padding: 0.15rem 0.4rem;
-      border-radius: 0.25rem;
-      border: 1px solid #27272a;
-      white-space: nowrap;
-    }
-
-    .profile-view {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 0.35rem;
-      margin-top: 0.75rem;
-      color: #a1a1aa;
-      font-size: 0.75rem;
-      font-weight: 600;
-      transition: color 0.2s;
-    }
-
-    .profile-card:hover .profile-view {
-      color: #fff;
-    }
-
-    .profile-view span {
-      color: var(--brand);
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
     }
 
     /* ══ MAGAZINE ══ */
@@ -2142,17 +1966,18 @@
   <!-- ══ SECTION 1: HERO ══ -->
   <section class="hero">
     <div class="hero-bg">
-      <img src="../images/champions/hero-bg.jpg" alt="Hero Background" />
+      <img src="../images/pyob/banner-2.png" alt="PYOB Hero" />
       <div class="hero-bg-grad"></div>
     </div>
     <div class="hero-content">
       <div class="hero-logo">
-        <img src="../images/champions/logo.png" alt="Industry Champions" />
+        <img src="../images/pyob/pyob-logo-white.png" alt="PYOB — Promote Your Own Business" />
       </div>
-      <span class="hero-overline">Professional Profiles</span>
-      <h1 class="hero-title">Industry Champions</h1>
-      <p class="hero-tagline">Exceptional professionals</p>
-      <p>A curated directory of exceptional professionals defining excellence.</p>
+      <span class="hero-overline">Promote Your Own Business</span>
+      <p>Uncover the best businesses in your local area to eat, drink, shop and much more.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;margin-top:1.75rem;">
+        <a href="https://pyob.com.au/" target="_blank" rel="noopener" class="magazine-download">Browse Directory</a>
+      </div>
     </div>
   </section>
 
@@ -2162,11 +1987,13 @@
       <div class="intro-grid">
         <div class="intro-left">
           <div class="gold-bar"></div>
-          <h2>Leading the Future of Industry</h2>
-          <p>Showcasing excellence in business. We connect industry leaders to share stories, insights, and unparalleled expertise with the world. Explore profiles, browse by sector, and discover the leaders shaping tomorrow.</p>
+          <h2>Your Number One Resource to Promote Your Own Business</h2>
+          <p>PYOB also known as Promote Your Own Business provides a range of services to meet your business needs, no matter if you are just starting your business or run a professional organisation. We aim to deliver quality Marketing and IT solutions.</p>
+          <p style="margin-top:1rem;">PYOB is an independent Australian owned solutions provider with over 10 years experience helping businesses adopt online technologies cost-effectively.</p>
+          <p style="margin-top:1rem;"><a href="https://pyob.com.au/about-us/" target="_blank" rel="noopener" style="color:var(--brand);text-decoration:none;font-weight:600;">Learn more on pyob.com.au →</a></p>
         </div>
         <div class="intro-right">
-          <img src="../images/champions/modern-business.jpg" alt="Industry Champions" />
+          <img src="../images/pyob/yp-growth.png" alt="PYOB" />
         </div>
       </div>
     </div>
@@ -2177,11 +2004,15 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-left">
-          <h2>Why Industry Champions.</h2>
-          <p>Showcasing excellence in business. We connect industry leaders to share stories, insights, and unparalleled expertise with the world.</p>
+          <h2>Explore PYOB.</h2>
+          <p>Browse the directory or get in touch.<br><br>
+            <a href="https://pyob.com.au/about-us/" target="_blank" rel="noopener" style="color:var(--brand);">ABOUT US</a><br>
+            <a href="https://pyob.com.au/resources/" target="_blank" rel="noopener" style="color:var(--brand);">RESOURCES &amp; SERVICES</a><br>
+            <a href="https://pyob.com.au/contact/" target="_blank" rel="noopener" style="color:var(--brand);">CONTACT US</a><br>
+          </p>
         </div>
         <div class="about-cards">
-          <div class="about-card">
+          <a href="https://pyob.com.au/" target="_blank" rel="noopener" class="about-card" style="text-decoration:none;color:inherit;display:block;">
             <div class="card-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
@@ -2189,20 +2020,20 @@
                 <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
                 <circle cx="9" cy="7" r="4" />
               </svg></div>
-            <h4>Curated Profiles</h4>
-            <p>Verified professional profiles highlighting expertise, achievements, and the value each leader brings to their industry.</p>
-          </div>
-          <div class="about-card">
+            <h4>Business Directory</h4>
+            <p>List your business and get discovered by local customers searching for the best places to eat, drink, shop and more.</p>
+          </a>
+          <a href="https://pyob.com.au/listing-category/premium/" target="_blank" rel="noopener" class="about-card" style="text-decoration:none;color:inherit;display:block;">
             <div class="card-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10" />
                 <circle cx="12" cy="12" r="6" />
                 <circle cx="12" cy="12" r="2" />
               </svg></div>
-            <h4>Sector Directory</h4>
-            <p>Browse leaders organised by industry and specialisation — from financial services to technology and trades.</p>
-          </div>
-          <div class="about-card">
+            <h4>Featured Listings</h4>
+            <p>Stand out with premium placement in featured categories and reach customers actively looking for your services.</p>
+          </a>
+          <a href="https://pyob.com.au/resources/" target="_blank" rel="noopener" class="about-card" style="text-decoration:none;color:inherit;display:block;">
             <div class="card-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path d="M3 3v16a2 2 0 0 0 2 2h16" />
@@ -2210,9 +2041,18 @@
                 <path d="M13 17V5" />
                 <path d="M8 17v-3" />
               </svg></div>
-            <h4>Featured Professionals</h4>
-            <p>Discover standout leaders defining excellence — profiles that spotlight experience, credibility, and results.</p>
-          </div>
+            <h4>Marketing Solutions</h4>
+            <p>Quality marketing services tailored to your business goals — from promotions to customer engagement.</p>
+          </a>
+          <a href="https://pyob.com.au/about-us/" target="_blank" rel="noopener" class="about-card" style="text-decoration:none;color:inherit;display:block;">
+            <div class="card-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                <rect width="20" height="14" x="2" y="6" rx="2" />
+              </svg></div>
+            <h4>IT &amp; Web Solutions</h4>
+            <p>Affordable online tools and web services without the enterprise price tag — ideal for businesses starting their digital journey.</p>
+          </a>
         </div>
       </div>
     </div>
@@ -2222,79 +2062,57 @@
   <section id="events" class="events-section">
     <div class="container">
       <div class="events-header">
-        <h2>Featured Professionals</h2>
-        <p>Discover the leaders shaping tomorrow — exceptional professionals defining excellence across their industries.</p>
+        <h2>Featured Businesses</h2>
+        <p>Just looking around? Let us suggest you something hot &amp; happening!</p>
       </div>
 
-      <div class="profiles-grid">
-        <a href="https://www.industrychampions.com.au/profiles/chris-pennisi/" target="_blank" rel="noopener" class="profile-card">
-          <div class="profile-photo-wrap">
-            <span class="profile-badge">Featured</span>
-            <img src="../images/champions/chris-pennisi.jpg" alt="Chris Pennisi" class="profile-photo" />
-            <div class="profile-photo-grad"></div>
+      <div class="events-grid">
+        <div class="event-card">
+          <div class="event-image-wrap" style="aspect-ratio: 16/9;">
+            <a href="https://pyob.com.au/listing/marble-matters/" target="_blank" rel="noopener">
+              <img src="../images/pyob/marble-matters.png" alt="Marble Matters" class="event-image" />
+            </a>
           </div>
-          <div class="profile-body">
-            <h3 class="profile-name">Chris Pennisi</h3>
-            <p class="profile-industry">Professional Services | Technology &amp; Digital</p>
-            <p class="profile-role">Founder &amp; Business Strategist</p>
-            <p class="profile-bio">Chris Pennisi is an accomplished business strategist with over 20 years of experience across sales, marketing, technology, and enterprise growth. He helps businesses move beyond obstacles and unlock sustainable, strategic expansion.</p>
-            <div class="profile-tags">
-              <span class="profile-tag">Sales</span>
-              <span class="profile-tag">Marketing</span>
-              <span class="profile-tag">Business Strategy</span>
-              <span class="profile-tag">Coaching</span>
-              <span class="profile-tag">Leadership</span>
-            </div>
-            <div class="profile-view"><span>View</span> →</div>
+          <div class="event-content">
+            <span class="event-badge">Household</span>
+            <h3 class="event-title">Marble Matters</h3>
+            <p class="event-desc">Featured household services listing on PYOB — discover trusted local providers in your area.</p>
+            <a href="https://pyob.com.au/listing/marble-matters/" target="_blank" rel="noopener" class="event-btn">View Listing</a>
           </div>
-        </a>
+        </div>
 
-        <a href="https://www.industrychampions.com.au/profiles/genene-wilson/" target="_blank" rel="noopener" class="profile-card">
-          <div class="profile-photo-wrap">
-            <span class="profile-badge">Featured</span>
-            <img src="../images/champions/genene-wilson.jpg" alt="Genene Wilson" class="profile-photo" />
-            <div class="profile-photo-grad"></div>
+        <div class="event-card">
+          <div class="event-image-wrap" style="aspect-ratio: 16/9;">
+            <a href="https://pyob.com.au/listing/carpet-cleaning-brisbane-2/" target="_blank" rel="noopener">
+              <img src="../images/pyob/carpet-cleaning-brisbane.png" alt="Carpet Cleaning Brisbane" class="event-image" />
+            </a>
           </div>
-          <div class="profile-body">
-            <h3 class="profile-name">Genene Wilson</h3>
-            <p class="profile-industry">Professional Services</p>
-            <p class="profile-role">Revenue Architect &amp; Sales Performance Strategist</p>
-            <p class="profile-bio">Revenue Architect and Founder of the PROSPER Method helping business owners increase conversions, strengthen leadership identity, and build sustainable revenue through strategic positioning and behavioural sales psychology.</p>
-            <div class="profile-tags">
-              <span class="profile-tag">Revenue Architecture</span>
-              <span class="profile-tag">Sales Psychology</span>
-              <span class="profile-tag">Business Strategy</span>
-              <span class="profile-tag">Conversion Optimisation</span>
-            </div>
-            <div class="profile-view"><span>View</span> →</div>
+          <div class="event-content">
+            <span class="event-badge">Household</span>
+            <h3 class="event-title">Carpet Cleaning Brisbane</h3>
+            <p class="event-desc">Professional carpet cleaning services — browse full listing details, contact info and more on PYOB.</p>
+            <a href="https://pyob.com.au/listing/carpet-cleaning-brisbane-2/" target="_blank" rel="noopener" class="event-btn">View Listing</a>
           </div>
-        </a>
+        </div>
 
-        <a href="https://www.industrychampions.com.au/profiles/daller-badaloff/" target="_blank" rel="noopener" class="profile-card">
-          <div class="profile-photo-wrap">
-            <span class="profile-badge">Featured</span>
-            <img src="../images/champions/daller-badaloff.jpg" alt="Daller Badaloff" class="profile-photo" />
-            <div class="profile-photo-grad"></div>
+        <div class="event-card">
+          <div class="event-image-wrap" style="aspect-ratio: 16/9;">
+            <a href="https://pyob.com.au/listing/upholstery-cleaning-melbourne/" target="_blank" rel="noopener">
+              <img src="../images/pyob/upholstery-cleaning-melbourne.png" alt="Upholstery Cleaning Melbourne" class="event-image" />
+            </a>
           </div>
-          <div class="profile-body">
-            <h3 class="profile-name">Daller Badaloff</h3>
-            <p class="profile-industry">Technology &amp; Digital | Professional Services</p>
-            <p class="profile-role">Senior Technology Leader</p>
-            <p class="profile-bio">Senior technology and transformation leader helping organisations align strategy, delivery and execution to achieve measurable business outcomes. Experienced across financial services, consulting and complex enterprise environments.</p>
-            <div class="profile-tags">
-              <span class="profile-tag">Technology Leadership</span>
-              <span class="profile-tag">Digital Transformation</span>
-              <span class="profile-tag">Strategy Execution</span>
-              <span class="profile-tag">Program Leadership</span>
-            </div>
-            <div class="profile-view"><span>View</span> →</div>
+          <div class="event-content">
+            <span class="event-badge">Household</span>
+            <h3 class="event-title">Upholstery Cleaning Melbourne</h3>
+            <p class="event-desc">Upholstery cleaning specialists — view hours, services and contact details on their PYOB listing.</p>
+            <a href="https://pyob.com.au/listing/upholstery-cleaning-melbourne/" target="_blank" rel="noopener" class="event-btn">View Listing</a>
           </div>
-        </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ══ MAGAZINE ══ -->
+  <!-- ══ FULL DIRECTORY ══ -->
   <section class="magazine-section">
     <div class="container">
       <div class="magazine-inner">
@@ -2302,15 +2120,15 @@
           <h3>Explore the Full Directory</h3>
         </div>
         <div class="magazine-body">
-          <a class="magazine-link" href="https://www.industrychampions.com.au/directory/" target="_blank" rel="noopener">
+          <a class="magazine-link" href="https://pyob.com.au/" target="_blank" rel="noopener">
             <div class="magazine-cover">
               <img
-                src="../images/champions/logo.png"
-                alt="Industry Champions directory" />
+                src="../images/pyob/yp-growth.png"
+                alt="PYOB — Promote Your Own Business directory" />
               <div class="magazine-cover-overlay"></div>
             </div>
           </a>
-          <a class="magazine-download" href="https://www.industrychampions.com.au" target="_blank" rel="noopener">Visit industrychampions.com.au</a>
+          <a class="magazine-download" href="https://pyob.com.au/" target="_blank" rel="noopener">Visit pyob.com.au</a>
         </div>
       </div>
     </div>
@@ -2326,9 +2144,10 @@
   "use strict";
 
   /* ─── CONFIG — update these 3 values only ─────────────────── */
-  var PUBLIC_KEY   = "nfe5nOYy7qc_aEbgc";
-  var SERVICE_ID   = "service_fe07mtm";
-  var TEMPLATE_ID  = "template_9c2enqc";
+  var PUBLIC_KEY   = "2q6GTd3d0ZksRK_Nx";
+  var SERVICE_ID   = "service_3fbiwny";
+  var TEMPLATE_ID  = "template_wx49qgr";
+  var TO_EMAIL     = "info@bossconnect.com.au";
   /* ─────────────────────────────────────────────────────────── */
 
   // Wait for the DOM to be ready
@@ -2363,7 +2182,8 @@
         }
 
         emailjs.send(SERVICE_ID, TEMPLATE_ID, {
-          title: 'Boss Connect',
+          to_email : TO_EMAIL,
+          title    : "Boss Connect",
           NAME     : val("name"),
           EMAIL    : val("email"),
           PHONE    : val("phone"),

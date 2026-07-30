@@ -31,7 +31,7 @@
   /* ─── 1b. DETECT IF INSIDE A SUBFOLDER ──────────────────────── */
   // Read the script src to determine depth.
   // Root pages:              <script src="nav-footer.js">      → prefix ""
-  // capabilities/ pages:    <script src="../nav-footer.js">   → prefix "../"
+  // services/ pages:    <script src="../nav-footer.js">   → prefix "../"
   // gallery/ pages:         <script src="../nav-footer.js">   → prefix "../"
   var _scriptSrc = "";
   var _scripts = document.getElementsByTagName("script");
@@ -50,7 +50,7 @@
   }
 
   // On live server, also check the URL path depth
-  // e.g. /website_v4/capabilities/consulting.html → we're 1 level deep inside capabilities/
+  // e.g. /website_v4/services/consulting.html → we're 1 level deep inside services/
   if (!isLocal && depth === 0) {
     var pathParts = window.location.pathname.split("/").filter(Boolean);
 
@@ -59,7 +59,7 @@
     // Check if last segment is a known subfolder
     var lastFolder = pathParts[pathParts.length - 1] || "";
     console.log(lastFolder)
-    if (lastFolder === "capabilities" || lastFolder === "gallery") {
+    if (lastFolder === "Services" || lastFolder === "gallery") {
       depth = 1;
     }
   }
@@ -71,15 +71,15 @@
     home        : prefix + "index.html",
     about       : prefix + "about.html",
     contact     : prefix + "contact.html",
-    consulting  : prefix + "capabilities/consulting.html",
-    events      : prefix + "capabilities/events.html",
-    travel      : prefix + "capabilities/travel.html",
-    creative    : prefix + "capabilities/creative.html",
-    clicks      : prefix + "capabilities/clicks.html",
-    publications: prefix + "capabilities/publications.html",
-    champions   : prefix + "capabilities/champions.html",
-    pyob        : prefix + "capabilities/pyob.html",
-    media       : prefix + "capabilities/media.html",
+    consulting  : prefix + "services/consulting.html",
+    events      : prefix + "services/events.html",
+    travel      : prefix + "tc/",
+    creative    : prefix + "services/creative.html",
+    clicks      : prefix + "services/clicks.html",
+    publications: prefix + "services/publications.html",
+    champions   : prefix + "services/champions.html",
+    pyob        : prefix + "services/pyob.html",
+    media       : prefix + "services/media.html",
     galleryWsi        : prefix + "gallery/wsi.html",
     galleryAmazon     : prefix + "gallery/amazon.html",
     galleryDoltone    : prefix + "gallery/doltone_house.html",
@@ -96,10 +96,9 @@
     ""                : "home",
     "about.html"      : "about",
     "contact.html"    : "contact",
-    // ── Capability pages (inside capabilities/ folder) ──
+    // ── Capability pages (inside services/ folder) ──
     "consulting.html" : "consulting",
     "events.html"     : "events",
-    "travel.html"     : "travel",
     "creative.html"   : "creative",
     "clicks.html"     : "clicks",
     "publications.html" : "publications",
@@ -121,10 +120,15 @@
 
   // null  = page exists but should have NO active highlight
   // undefined = unknown page → fall back to "home"
-  const activePage =
+  let activePage =
     rawPath in ACTIVE_MAP
       ? ACTIVE_MAP[rawPath] // could be a string or null
       : "home"; // truly unknown page
+
+  // Override for travel club short URL
+  if (window.location.pathname.indexOf("/tc/") !== -1 || window.location.pathname.endsWith("/tc")) {
+    activePage = "travel";
+  }
 
   // noActive = true means this page should have zero highlighting
   const noActive = activePage === null;
@@ -215,13 +219,13 @@
       pointer-events:none;
     }
 
-    /* Chevron inside Capabilities button */
+    /* Chevron inside Services button */
     .bc-cap-toggle svg {
       width:1em; height:1em; fill:currentColor;
       transition:transform .25s ease; flex-shrink:0;
     }
 
-    /* ── CAPABILITIES DROPDOWN — opens on CSS hover ── */
+    /* ── Services DROPDOWN — opens on CSS hover ── */
     .bc-cap-li { position:relative; }
 
     .bc-cap-dropdown {
@@ -416,10 +420,10 @@
           <li><a href="${L.about}"${ac("about")}>About</a></li>
           <li><a href="${L.contact}"${ac("contact")}>Contact</a></li>
 
-          <!-- Capabilities: hover via CSS, no JS needed -->
+          <!-- Services: hover via CSS, no JS needed -->
           <li class="bc-cap-li">
             <button class="bc-cap-toggle" id="bcCapToggle" aria-haspopup="true">
-              Capabilities ${CHEV_SVG}
+              Services ${CHEV_SVG}
             </button>
             <div class="bc-cap-dropdown" id="bcCapDropdown" role="menu">
               <a href="${L.consulting}"${acHref("consulting")} role="menuitem">Consulting</a>
@@ -462,7 +466,7 @@
         <li><a href="${L.contact}"${ac("contact")}>Contact</a></li>
         <li>
           <button class="bc-drawer-cap-btn${isCapability ? " open" : ""}" id="bcDrawerCapBtn">
-            Capabilities ${CHEV_SVG}
+            Services ${CHEV_SVG}
           </button>
           <div class="bc-drawer-sub${isCapability ? " open" : ""}" id="bcDrawerSub">
             <a href="${L.consulting}"${acHref("consulting")}>Consulting</a>
@@ -504,7 +508,7 @@
           </ul>
         </div>
         <div class="bc-footer-col">
-          <h3>Capabilities</h3>
+          <h3>Services</h3>
           <ul>
             <li><a href="${L.consulting}">Consulting</a></li>
             <li><a href="${L.events}">Events</a></li>
@@ -522,7 +526,7 @@
           <div class="bc-footer-connect">
             <a href="mailto:info@bossconnect.com.au" class="bc-footer-email">info@bossconnect.com.au</a>
             <div class="bc-footer-socials">
-              <a href="https://www.linkedin.com/company/boss-connect-aus" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/company/bossconnect-aus/" target="_blank" rel="noopener" aria-label="LinkedIn">
                 <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
               </a>
             </div>
@@ -563,7 +567,7 @@
   drawerClose.addEventListener("click", closeDrawer);
   drawerOvl.addEventListener("click", closeDrawer);
 
-  /* ── Mobile capabilities accordion (tap to expand) ── */
+  /* ── Mobile Services accordion (tap to expand) ── */
   drawerCapBtn.addEventListener("click", function () {
     const open = drawerSub.classList.toggle("open");
     drawerCapBtn.classList.toggle("open", open);
@@ -591,7 +595,7 @@
       });
     });
 
-    // On capability pages → indicator sits under the Capabilities toggle
+    // On capability pages → indicator sits under the Services toggle
     if (isCapability) activeEl = capToggle;
 
     // Hover on toggle

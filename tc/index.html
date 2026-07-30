@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PYOB — Boss Connect</title>
+  <title>Travel — Boss Connect</title>
   <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <style>
     /* ══ ZALANDO SANS ══ */
@@ -456,18 +456,18 @@
     /* ══ HERO ══ */
     .hero {
       position: relative;
-      min-height: 70vh;
+      height: 70vh;
+      min-height: 480px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 5rem 0 4rem;
+      overflow: hidden;
     }
 
     .hero-bg {
       position: absolute;
       inset: 0;
       z-index: 0;
-      overflow: hidden;
     }
 
     .hero-bg img {
@@ -514,34 +514,13 @@
     .hero-logo {
       display: flex;
       justify-content: center;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
     }
 
     .hero-logo img {
-      max-width: 180px;
+      max-width: 400px;
       width: 100%;
       height: auto;
-    }
-
-    @media(min-width:768px) {
-      .hero-logo img {
-        max-width: 280px;
-      }
-    }
-
-    .hero-title {
-      color: #fff;
-      font-family: 'ZalandoSans', sans-serif;
-      font-size: 2.25rem;
-      font-weight: 700;
-      line-height: 1.15;
-      margin-bottom: 0.75rem;
-    }
-
-    @media(min-width:768px) {
-      .hero-title {
-        font-size: 3rem;
-      }
     }
 
     .hero-content p {
@@ -939,10 +918,17 @@
     @media(min-width:768px) {
       .events-grid {
         flex-direction: row;
+        flex-wrap: wrap;
         justify-content: center;
       }
       .events-grid > .event-card {
-        width: calc(33.333% - 1rem);
+        width: calc(50% - 0.75rem);
+      }
+    }
+
+    @media(min-width:1024px) {
+      .events-grid > .event-card {
+        width: calc(25% - 1.125rem);
       }
     }
 
@@ -1963,266 +1949,122 @@
 
 
   <!-- ══ HERO ══ -->
-  <!-- ══ SECTION 1: HERO ══ -->
-  <section class="hero">
+  <section class="hero" style="min-height: 60vh;">
     <div class="hero-bg">
-      <img src="../images/pyob/banner-2.png" alt="PYOB Hero" />
+      <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1920&q=80" alt="Hero Background" />
       <div class="hero-bg-grad"></div>
     </div>
     <div class="hero-content">
-      <div class="hero-logo">
-        <img src="../images/pyob/pyob-logo-white.png" alt="PYOB — Promote Your Own Business" />
-      </div>
-      <span class="hero-overline">Promote Your Own Business</span>
-      <p>Uncover the best businesses in your local area to eat, drink, shop and much more.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;margin-top:1.75rem;">
-        <a href="https://pyob.com.au/" target="_blank" rel="noopener" class="magazine-download">Browse Directory</a>
-      </div>
+      <span class="hero-overline">Boss Connect Travel Club... powered by Travluxe</span>
+      <div class="hero-logo"><h1 style="font-family: 'ZalandoSans', sans-serif; font-size: 4rem; margin: 0; color: #fff; line-height: 1.1;">Travel</h1></div>
+      <p style="max-width: 600px; margin: 2rem auto 0; font-size: 1.1rem;">Where Luxury Travel Meets Unparalleled Value. Get instant discounts on all products with a Travluxe Membership.</p>
     </div>
   </section>
 
-  <!-- ══ SECTION 2: INTRO ══ -->
-  <section class="intro-section">
+  <!-- ══ ABOUT TRAVEL ══ -->
+  <section class="about-section" style="padding-top: 4rem;">
     <div class="container">
       <div class="intro-grid">
+        <!-- LEFT COLUMN -->
         <div class="intro-left">
           <div class="gold-bar"></div>
-          <h2>Your Number One Resource to Promote Your Own Business</h2>
-          <p>PYOB also known as Promote Your Own Business provides a range of services to meet your business needs, no matter if you are just starting your business or run a professional organisation. We aim to deliver quality Marketing and IT solutions.</p>
-          <p style="margin-top:1rem;">PYOB is an independent Australian owned solutions provider with over 10 years experience helping businesses adopt online technologies cost-effectively.</p>
-          <p style="margin-top:1rem;"><a href="https://pyob.com.au/about-us/" target="_blank" rel="noopener" style="color:var(--brand);text-decoration:none;font-weight:600;">Learn more on pyob.com.au →</a></p>
+          <h2 style="white-space: nowrap;">Boss Connect Travel Club</h2>
+          <p><strong>WHERE LUXURY TRAVEL MEETS UNPARALLELED VALUE</strong></p>
+          <p>The Boss Connect Travel Club is proud to partner with Travluxe, the newest and most impressive Travel Club available today. We believe in offering our business leaders the very best of benefits across a number of areas and with various partners. In partnering with Travluxe we believe that we are giving you access to the very best travel offering available anywhere in the World. By joining Travluxe through the Boss Connect Travel Club you will enjoy many benefits. Some of these include:</p>
+          
+          <ul style="list-style: none; padding: 0; margin-top: 2rem;">
+            <li style="display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: flex-start;">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--brand); flex-shrink: 0;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              <span>Enjoy discounts of up to 20% on all travel bookings with the Passport Membership @ 100% discount - this entry level membership tier is priced at $99 per year - BUT - if you join by clicking any of the JOIN NOW buttons on our Travel Club site this membership will be <strong>FREE FOREVER</strong></span>
+            </li>
+            <li style="display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: flex-start;">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--brand); flex-shrink: 0;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              <span>OR take advantage of the best pricing anywhere, especially on accommodation bookings, by joining as or upgrading at any time to the <strong>First Class VIP Membership</strong>. Usually priced at $299 per year but through our Travel Club we have arranged a 75% discount for you - so only $99 per year.</span>
+            </li>
+            <li style="display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: flex-start;">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--brand); flex-shrink: 0;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              <span>Access to browse, search and book over 3 million accommodation properties, hundreds of thousands of tours, activities and experiences, flights, cruises and much more</span>
+            </li>
+            <li style="display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: flex-start;">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--brand); flex-shrink: 0;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              <span>By joining as a Passport Member you will be able to see all pricing on all of your accommodation searches... the regular price / the Passport Member price / and the First Class VIP Member price. Many Passport Members find upgrading a no-brainer when they see the savings will far outweigh the $99 discounted Membership Fee + Complimentary Access to the Travluxe Concierge Service</span>
+            </li>
+            <li style="display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: flex-start;">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--brand); flex-shrink: 0;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              <span>24/7 Customer Service by phone, email, live chat</span>
+            </li>
+          </ul>
         </div>
-        <div class="intro-right">
-          <img src="../images/pyob/yp-growth.png" alt="PYOB" />
-        </div>
-      </div>
-    </div>
-  </section>
+        
+        <!-- RIGHT COLUMN -->
+        <div class="intro-right" style="position: relative;">
+          <div style="position: sticky; top: 8rem;">
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/AXeVCu6aKZk?si=RRTEEGqY_lWUNCOH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="border-radius: 12px; margin-bottom: 2rem; border: 1px solid #262626;"></iframe >
 
-  <!-- ══ ABOUT + CARDS ══ -->
-  <section class="about-section">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-left">
-          <h2>Explore PYOB.</h2>
-          <p>Browse the directory or get in touch.<br><br>
-            <a href="https://pyob.com.au/about-us/" target="_blank" rel="noopener" style="color:var(--brand);">ABOUT US</a><br>
-            <a href="https://pyob.com.au/resources/" target="_blank" rel="noopener" style="color:var(--brand);">RESOURCES &amp; SERVICES</a><br>
-            <a href="https://pyob.com.au/contact/" target="_blank" rel="noopener" style="color:var(--brand);">CONTACT US</a><br>
-          </p>
-        </div>
-        <div class="about-cards">
-          <a href="https://pyob.com.au/" target="_blank" rel="noopener" class="about-card" style="text-decoration:none;color:inherit;display:block;">
-            <div class="card-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                <path d="M16 3.128a4 4 0 0 1 0 7.744" />
-                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                <circle cx="9" cy="7" r="4" />
-              </svg></div>
-            <h4>Business Directory</h4>
-            <p>List your business and get discovered by local customers searching for the best places to eat, drink, shop and more.</p>
-          </a>
-          <a href="https://pyob.com.au/listing-category/premium/" target="_blank" rel="noopener" class="about-card" style="text-decoration:none;color:inherit;display:block;">
-            <div class="card-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10" />
-                <circle cx="12" cy="12" r="6" />
-                <circle cx="12" cy="12" r="2" />
-              </svg></div>
-            <h4>Featured Listings</h4>
-            <p>Stand out with premium placement in featured categories and reach customers actively looking for your services.</p>
-          </a>
-          <a href="https://pyob.com.au/resources/" target="_blank" rel="noopener" class="about-card" style="text-decoration:none;color:inherit;display:block;">
-            <div class="card-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 3v16a2 2 0 0 0 2 2h16" />
-                <path d="M18 17V9" />
-                <path d="M13 17V5" />
-                <path d="M8 17v-3" />
-              </svg></div>
-            <h4>Marketing Solutions</h4>
-            <p>Quality marketing services tailored to your business goals — from promotions to customer engagement.</p>
-          </a>
-          <a href="https://pyob.com.au/about-us/" target="_blank" rel="noopener" class="about-card" style="text-decoration:none;color:inherit;display:block;">
-            <div class="card-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-                <rect width="20" height="14" x="2" y="6" rx="2" />
-              </svg></div>
-            <h4>IT &amp; Web Solutions</h4>
-            <p>Affordable online tools and web services without the enterprise price tag — ideal for businesses starting their digital journey.</p>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ UPCOMING EVENTS ══ -->
-  <section id="events" class="events-section">
-    <div class="container">
-      <div class="events-header">
-        <h2>Featured Businesses</h2>
-        <p>Just looking around? Let us suggest you something hot &amp; happening!</p>
-      </div>
-
-      <div class="events-grid">
-        <div class="event-card">
-          <div class="event-image-wrap" style="aspect-ratio: 16/9;">
-            <a href="https://pyob.com.au/listing/marble-matters/" target="_blank" rel="noopener">
-              <img src="../images/pyob/marble-matters.png" alt="Marble Matters" class="event-image" />
-            </a>
-          </div>
-          <div class="event-content">
-            <span class="event-badge">Household</span>
-            <h3 class="event-title">Marble Matters</h3>
-            <p class="event-desc">Featured household services listing on PYOB — discover trusted local providers in your area.</p>
-            <a href="https://pyob.com.au/listing/marble-matters/" target="_blank" rel="noopener" class="event-btn">View Listing</a>
-          </div>
-        </div>
-
-        <div class="event-card">
-          <div class="event-image-wrap" style="aspect-ratio: 16/9;">
-            <a href="https://pyob.com.au/listing/carpet-cleaning-brisbane-2/" target="_blank" rel="noopener">
-              <img src="../images/pyob/carpet-cleaning-brisbane.png" alt="Carpet Cleaning Brisbane" class="event-image" />
-            </a>
-          </div>
-          <div class="event-content">
-            <span class="event-badge">Household</span>
-            <h3 class="event-title">Carpet Cleaning Brisbane</h3>
-            <p class="event-desc">Professional carpet cleaning services — browse full listing details, contact info and more on PYOB.</p>
-            <a href="https://pyob.com.au/listing/carpet-cleaning-brisbane-2/" target="_blank" rel="noopener" class="event-btn">View Listing</a>
-          </div>
-        </div>
-
-        <div class="event-card">
-          <div class="event-image-wrap" style="aspect-ratio: 16/9;">
-            <a href="https://pyob.com.au/listing/upholstery-cleaning-melbourne/" target="_blank" rel="noopener">
-              <img src="../images/pyob/upholstery-cleaning-melbourne.png" alt="Upholstery Cleaning Melbourne" class="event-image" />
-            </a>
-          </div>
-          <div class="event-content">
-            <span class="event-badge">Household</span>
-            <h3 class="event-title">Upholstery Cleaning Melbourne</h3>
-            <p class="event-desc">Upholstery cleaning specialists — view hours, services and contact details on their PYOB listing.</p>
-            <a href="https://pyob.com.au/listing/upholstery-cleaning-melbourne/" target="_blank" rel="noopener" class="event-btn">View Listing</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ FULL DIRECTORY ══ -->
-  <section class="magazine-section">
-    <div class="container">
-      <div class="magazine-inner">
-        <div class="magazine-header">
-          <h3>Explore the Full Directory</h3>
-        </div>
-        <div class="magazine-body">
-          <a class="magazine-link" href="https://pyob.com.au/" target="_blank" rel="noopener">
-            <div class="magazine-cover">
-              <img
-                src="../images/pyob/yp-growth.png"
-                alt="PYOB — Promote Your Own Business directory" />
-              <div class="magazine-cover-overlay"></div>
+            <div style="padding: 2rem; background: #171717; border: 1px solid #262626; border-radius: 8px;">
+              <p><strong>We would encourage you to explore this website and to then join Travluxe for FREE through the Boss Connect Travel Club.</strong></p>
+              <br>
+              <p>Whether it's relaxing via a luxury escape on a tropical island or simply an overnight stay in a neighbouring city, the Travluxe Travel Club has it all... and more.</p>
+              <br>
+              <p>With accommodation options at more than 3 million resorts, hotels, motels, apartments, chalets, villas, chateaus and even...castles... you are sure to find what you are looking for.</p>
+              <br>
+              <p><strong>And the best part?</strong></p>
+              <p>Travluxe members access all accommodation options at wholesale...or near wholesale rates - cheaper than anywhere else online or through a travel agent... 96% of the time.</p>
             </div>
-          </a>
-          <a class="magazine-download" href="https://pyob.com.au/" target="_blank" rel="noopener">Visit pyob.com.au</a>
+          </div>
         </div>
+      </div>
+
+      <!-- ADDITIONAL BENEFITS -->
+      <div style="margin-top: 4rem;">
+        <div class="gold-bar"></div>
+        <h2>...Add to this:</h2>
+        <div class="gallery-grid" style="margin-top: 2rem;">
+          <div style="background: #171717; border: 1px solid #262626; padding: 1.5rem; border-radius: 8px; display: flex; align-items: center; gap: 1rem;">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--brand)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <span style="font-weight: 500; font-family: 'ZalandoSans', sans-serif;">Access to all major airlines around the World</span>
+          </div>
+          <div style="background: #171717; border: 1px solid #262626; padding: 1.5rem; border-radius: 8px; display: flex; align-items: center; gap: 1rem;">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--brand)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <span style="font-weight: 500; font-family: 'ZalandoSans', sans-serif;">Hundreds of thousands of experiences, tours &amp; activities</span>
+          </div>
+          <div style="background: #171717; border: 1px solid #262626; padding: 1.5rem; border-radius: 8px; display: flex; align-items: center; gap: 1rem;">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--brand)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <span style="font-weight: 500; font-family: 'ZalandoSans', sans-serif;">'Done for you' travel &amp; leisure packages</span>
+          </div>
+          <div style="background: #171717; border: 1px solid #262626; padding: 1.5rem; border-radius: 8px; display: flex; align-items: center; gap: 1rem;">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--brand)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <span style="font-weight: 500; font-family: 'ZalandoSans', sans-serif;">Sporting tours</span>
+          </div>
+          <div style="background: #171717; border: 1px solid #262626; padding: 1.5rem; border-radius: 8px; display: flex; align-items: center; gap: 1rem;">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--brand)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <span style="font-weight: 500; font-family: 'ZalandoSans', sans-serif;">Racing tours</span>
+          </div>
+          <div style="background: #171717; border: 1px solid #262626; padding: 1.5rem; border-radius: 8px; display: flex; align-items: center; gap: 1rem;">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--brand)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <span style="font-weight: 500; font-family: 'ZalandoSans', sans-serif;">Mystery weekends</span>
+          </div>
+          <div style="background: #171717; border: 1px solid #262626; padding: 1.5rem; border-radius: 8px; display: flex; align-items: center; gap: 1rem;">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--brand)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <span style="font-weight: 500; font-family: 'ZalandoSans', sans-serif;">Your own Exclusive Member Concierge Service</span>
+          </div>
+          <div style="background: #171717; border: 1px solid #262626; padding: 1.5rem; border-radius: 8px; display: flex; align-items: center; gap: 1rem; grid-column: 1 / -1;">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--brand)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <span style="font-weight: 500; font-family: 'ZalandoSans', sans-serif;">And coming soon - Rental Car Hire, Cruising, Transfers &amp; Online Travel Goods Shopping</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CALL TO ACTION -->
+      <div style="margin-top: 6rem; margin-bottom: 2rem; text-align: center;">
+        <h3 style="margin-bottom: 1rem; font-family: 'ZalandoSans', sans-serif; font-size: 2rem; font-weight: 200;">Travluxe is the Travel Club that you simply MUST join NOW!</h3>
+        <p style="margin-bottom: 3rem; color: var(--brand); letter-spacing: 0.1em; text-transform: uppercase;"><strong>WHERE LUXURY TRAVEL MEETS UNPARALLELED VALUE</strong></p>
+        <a href="https://www.travluxe.au/bossconnect" target="_blank" rel="noopener" class="cta-btn" style="display: inline-flex; width: auto; font-size: 1rem; padding: 1rem 3rem;">JOIN NOW</a>
       </div>
     </div>
   </section>
-
-
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
   <script src="../nav-footer.js"></script>
-  
-  <script>
-  (function () {
-  "use strict";
-
-  /* ─── CONFIG — update these 3 values only ─────────────────── */
-  var PUBLIC_KEY   = "nfe5nOYy7qc_aEbgc";
-  var SERVICE_ID   = "service_fe07mtm";
-  var TEMPLATE_ID  = "template_9c2enqc";
-  /* ─────────────────────────────────────────────────────────── */
-
-  // Wait for the DOM to be ready
-  function init() {
-    // Initialise EmailJS
-    emailjs.init(PUBLIC_KEY);
-
-    // Find ALL forms with class="contact-form" on the page
-    var forms = document.querySelectorAll(".contact-form");
-    if (!forms.length) return;
-
-    forms.forEach(function (form, index) {
-      // Give each form a unique id if it doesn't already have one
-      if (!form.id) form.id = "contact-form-" + index;
-
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        // Honeypot check — silently reject bots
-        var honeypot = form.querySelector('[name="_gotcha"]');
-        if (honeypot && honeypot.value) return;
-
-        var btn  = form.querySelector('button[type="submit"]');
-        var orig = btn.textContent;
-        btn.disabled    = true;
-        btn.textContent = "Sending\u2026";
-
-        // Collect field values — works whether fields have id or just name
-        function val(nameOrId) {
-          var el = form.querySelector('[id="' + nameOrId + '"], [name="' + nameOrId + '"]');
-          return el ? el.value : "";
-        }
-
-        emailjs.send(SERVICE_ID, TEMPLATE_ID, {
-          title: 'Boss Connect',
-          NAME     : val("name"),
-          EMAIL    : val("email"),
-          PHONE    : val("phone"),
-          MESSAGE  : val("message"),
-        })
-        .then(function () {
-          // Success
-          btn.textContent      = "Message Sent \u2713";
-          btn.style.background = "#2d6a4f";
-          btn.style.color      = "#fff";
-          form.reset();
-
-          // Reset button after 5 seconds
-          setTimeout(function () {
-            btn.disabled         = false;
-            btn.textContent      = orig;
-            btn.style.background = "";
-            btn.style.color      = "";
-          }, 5000);
-        })
-        .catch(function (err) {
-          // Error
-          console.error("EmailJS error:", err);
-          btn.disabled    = false;
-          btn.textContent = orig;
-          alert("Something went wrong. Please call us on 0421 121 985.");
-        });
-      });
-    });
-  }
-
-  // Run when DOM is ready
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
-  } else {
-    init();
-  }
-
-})();
-
- </script>
 
 
   <!-- <script>
