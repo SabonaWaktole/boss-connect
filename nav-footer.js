@@ -433,7 +433,7 @@
               <a href="${L.clicks}"${acHref("clicks")} role="menuitem">Clicks</a>
               <a href="${L.publications}"${acHref("publications")} role="menuitem">Publications</a>
               <a href="${L.champions}"${acHref("champions")} role="menuitem">Champions</a>
-              <a href="${L.pyob}"${acHref("pyob")} role="menuitem">PYOB</a>
+              <a href="${L.pyob}"${acHref("pyob")} role="menuitem">Directory</a>
               <a href="${L.media}"${acHref("media")} role="menuitem">Media</a>
             </div>
           </li>
@@ -476,7 +476,7 @@
             <a href="${L.clicks}"${acHref("clicks")}>Clicks</a>
             <a href="${L.publications}"${acHref("publications")}>Publications</a>
             <a href="${L.champions}"${acHref("champions")}>Champions</a>
-            <a href="${L.pyob}"${acHref("pyob")}>PYOB</a>
+            <a href="${L.pyob}"${acHref("pyob")}>Directory</a>
             <a href="${L.media}"${acHref("media")}>Media</a>
           </div>
         </li>
@@ -517,7 +517,7 @@
             <li><a href="${L.clicks}">Clicks</a></li>
             <li><a href="${L.publications}">Publications</a></li>
             <li><a href="${L.champions}">Champions</a></li>
-            <li><a href="${L.pyob}">PYOB</a></li>
+            <li><a href="${L.pyob}">Directory</a></li>
             <li><a href="${L.media}">Media</a></li>
           </ul>
         </div>
