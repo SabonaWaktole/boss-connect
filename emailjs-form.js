@@ -18,10 +18,10 @@
   "use strict";
 
   /* ─── CONFIG — update these values only ───────────────────── */
-  var PUBLIC_KEY   = "2q6GTd3d0ZksRK_Nx";
-  var SERVICE_ID   = "service_3fbiwny";
-  var TEMPLATE_ID  = "template_wx49qgr";
-  var TO_EMAIL     = "info@bossconnect.com.au";
+  var PUBLIC_KEY   = "";
+  var SERVICE_ID   = "";
+  var TEMPLATE_ID  = "";
+  var TO_EMAIL     = "";
 
   // PAGE_NAME
 const page = window.location.pathname.split('/').pop().replace('.html', '');
